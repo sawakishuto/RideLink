@@ -1,0 +1,651 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		08C0BCC82BB321AA0088109A /* RideLinkApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C0BCC72BB321AA0088109A /* RideLinkApp.swift */; };
+		08C0BCCA2BB321AA0088109A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C0BCC92BB321AA0088109A /* ContentView.swift */; };
+		08C0BCCC2BB321AC0088109A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 08C0BCCB2BB321AC0088109A /* Assets.xcassets */; };
+		08C0BCCF2BB321AC0088109A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 08C0BCCE2BB321AC0088109A /* Preview Assets.xcassets */; };
+		08C0BCD92BB321AC0088109A /* RideLinkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C0BCD82BB321AC0088109A /* RideLinkTests.swift */; };
+		08C0BCE32BB321AC0088109A /* RideLinkUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C0BCE22BB321AC0088109A /* RideLinkUITests.swift */; };
+		08C0BCE52BB321AC0088109A /* RideLinkUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C0BCE42BB321AC0088109A /* RideLinkUITestsLaunchTests.swift */; };
+		08C0BCF32BB322770088109A /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 08C0BCF22BB322770088109A /* FirebaseAuth */; };
+		08C0BCF52BB322770088109A /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 08C0BCF42BB322770088109A /* FirebaseDatabase */; };
+		08C0BCF72BB322770088109A /* FirebaseDatabaseSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 08C0BCF62BB322770088109A /* FirebaseDatabaseSwift */; };
+		08C0BCFA2BB323160088109A /* LocalStores.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 08C0BCF82BB323160088109A /* LocalStores.xcdatamodeld */; };
+		08C0BCFC2BB323D20088109A /* GoogleService-Info (4).plist in Resources */ = {isa = PBXBuildFile; fileRef = 08C0BCFB2BB323D20088109A /* GoogleService-Info (4).plist */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		08C0BCD52BB321AC0088109A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 08C0BCBC2BB321AA0088109A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 08C0BCC32BB321AA0088109A;
+			remoteInfo = RideLink;
+		};
+		08C0BCDF2BB321AC0088109A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 08C0BCBC2BB321AA0088109A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 08C0BCC32BB321AA0088109A;
+			remoteInfo = RideLink;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		08C0BCC42BB321AA0088109A /* RideLink.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RideLink.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		08C0BCC72BB321AA0088109A /* RideLinkApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideLinkApp.swift; sourceTree = "<group>"; };
+		08C0BCC92BB321AA0088109A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		08C0BCCB2BB321AC0088109A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		08C0BCCE2BB321AC0088109A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		08C0BCD42BB321AC0088109A /* RideLinkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RideLinkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		08C0BCD82BB321AC0088109A /* RideLinkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideLinkTests.swift; sourceTree = "<group>"; };
+		08C0BCDE2BB321AC0088109A /* RideLinkUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RideLinkUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		08C0BCE22BB321AC0088109A /* RideLinkUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideLinkUITests.swift; sourceTree = "<group>"; };
+		08C0BCE42BB321AC0088109A /* RideLinkUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideLinkUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		08C0BCF92BB323160088109A /* LocalStores.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LocalStores.xcdatamodel; sourceTree = "<group>"; };
+		08C0BCFB2BB323D20088109A /* GoogleService-Info (4).plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info (4).plist"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		08C0BCC12BB321AA0088109A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				08C0BCF72BB322770088109A /* FirebaseDatabaseSwift in Frameworks */,
+				08C0BCF52BB322770088109A /* FirebaseDatabase in Frameworks */,
+				08C0BCF32BB322770088109A /* FirebaseAuth in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		08C0BCD12BB321AC0088109A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		08C0BCDB2BB321AC0088109A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		08C0BCBB2BB321AA0088109A = {
+			isa = PBXGroup;
+			children = (
+				08C0BCFB2BB323D20088109A /* GoogleService-Info (4).plist */,
+				08C0BCC62BB321AA0088109A /* RideLink */,
+				08C0BCD72BB321AC0088109A /* RideLinkTests */,
+				08C0BCE12BB321AC0088109A /* RideLinkUITests */,
+				08C0BCC52BB321AA0088109A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		08C0BCC52BB321AA0088109A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				08C0BCC42BB321AA0088109A /* RideLink.app */,
+				08C0BCD42BB321AC0088109A /* RideLinkTests.xctest */,
+				08C0BCDE2BB321AC0088109A /* RideLinkUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		08C0BCC62BB321AA0088109A /* RideLink */ = {
+			isa = PBXGroup;
+			children = (
+				08C0BCC72BB321AA0088109A /* RideLinkApp.swift */,
+				08C0BCC92BB321AA0088109A /* ContentView.swift */,
+				08C0BCF82BB323160088109A /* LocalStores.xcdatamodeld */,
+				08C0BCCB2BB321AC0088109A /* Assets.xcassets */,
+				08C0BCCD2BB321AC0088109A /* Preview Content */,
+			);
+			path = RideLink;
+			sourceTree = "<group>";
+		};
+		08C0BCCD2BB321AC0088109A /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				08C0BCCE2BB321AC0088109A /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		08C0BCD72BB321AC0088109A /* RideLinkTests */ = {
+			isa = PBXGroup;
+			children = (
+				08C0BCD82BB321AC0088109A /* RideLinkTests.swift */,
+			);
+			path = RideLinkTests;
+			sourceTree = "<group>";
+		};
+		08C0BCE12BB321AC0088109A /* RideLinkUITests */ = {
+			isa = PBXGroup;
+			children = (
+				08C0BCE22BB321AC0088109A /* RideLinkUITests.swift */,
+				08C0BCE42BB321AC0088109A /* RideLinkUITestsLaunchTests.swift */,
+			);
+			path = RideLinkUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		08C0BCC32BB321AA0088109A /* RideLink */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 08C0BCE82BB321AC0088109A /* Build configuration list for PBXNativeTarget "RideLink" */;
+			buildPhases = (
+				08C0BCC02BB321AA0088109A /* Sources */,
+				08C0BCC12BB321AA0088109A /* Frameworks */,
+				08C0BCC22BB321AA0088109A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RideLink;
+			packageProductDependencies = (
+				08C0BCF22BB322770088109A /* FirebaseAuth */,
+				08C0BCF42BB322770088109A /* FirebaseDatabase */,
+				08C0BCF62BB322770088109A /* FirebaseDatabaseSwift */,
+			);
+			productName = RideLink;
+			productReference = 08C0BCC42BB321AA0088109A /* RideLink.app */;
+			productType = "com.apple.product-type.application";
+		};
+		08C0BCD32BB321AC0088109A /* RideLinkTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 08C0BCEB2BB321AC0088109A /* Build configuration list for PBXNativeTarget "RideLinkTests" */;
+			buildPhases = (
+				08C0BCD02BB321AC0088109A /* Sources */,
+				08C0BCD12BB321AC0088109A /* Frameworks */,
+				08C0BCD22BB321AC0088109A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				08C0BCD62BB321AC0088109A /* PBXTargetDependency */,
+			);
+			name = RideLinkTests;
+			productName = RideLinkTests;
+			productReference = 08C0BCD42BB321AC0088109A /* RideLinkTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		08C0BCDD2BB321AC0088109A /* RideLinkUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 08C0BCEE2BB321AC0088109A /* Build configuration list for PBXNativeTarget "RideLinkUITests" */;
+			buildPhases = (
+				08C0BCDA2BB321AC0088109A /* Sources */,
+				08C0BCDB2BB321AC0088109A /* Frameworks */,
+				08C0BCDC2BB321AC0088109A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				08C0BCE02BB321AC0088109A /* PBXTargetDependency */,
+			);
+			name = RideLinkUITests;
+			productName = RideLinkUITests;
+			productReference = 08C0BCDE2BB321AC0088109A /* RideLinkUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		08C0BCBC2BB321AA0088109A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					08C0BCC32BB321AA0088109A = {
+						CreatedOnToolsVersion = 15.0;
+					};
+					08C0BCD32BB321AC0088109A = {
+						CreatedOnToolsVersion = 15.0;
+						TestTargetID = 08C0BCC32BB321AA0088109A;
+					};
+					08C0BCDD2BB321AC0088109A = {
+						CreatedOnToolsVersion = 15.0;
+						TestTargetID = 08C0BCC32BB321AA0088109A;
+					};
+				};
+			};
+			buildConfigurationList = 08C0BCBF2BB321AA0088109A /* Build configuration list for PBXProject "RideLink" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 08C0BCBB2BB321AA0088109A;
+			packageReferences = (
+				08C0BCF12BB322770088109A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
+			productRefGroup = 08C0BCC52BB321AA0088109A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				08C0BCC32BB321AA0088109A /* RideLink */,
+				08C0BCD32BB321AC0088109A /* RideLinkTests */,
+				08C0BCDD2BB321AC0088109A /* RideLinkUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		08C0BCC22BB321AA0088109A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				08C0BCCF2BB321AC0088109A /* Preview Assets.xcassets in Resources */,
+				08C0BCFC2BB323D20088109A /* GoogleService-Info (4).plist in Resources */,
+				08C0BCCC2BB321AC0088109A /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		08C0BCD22BB321AC0088109A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		08C0BCDC2BB321AC0088109A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		08C0BCC02BB321AA0088109A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				08C0BCFA2BB323160088109A /* LocalStores.xcdatamodeld in Sources */,
+				08C0BCCA2BB321AA0088109A /* ContentView.swift in Sources */,
+				08C0BCC82BB321AA0088109A /* RideLinkApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		08C0BCD02BB321AC0088109A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				08C0BCD92BB321AC0088109A /* RideLinkTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		08C0BCDA2BB321AC0088109A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				08C0BCE52BB321AC0088109A /* RideLinkUITestsLaunchTests.swift in Sources */,
+				08C0BCE32BB321AC0088109A /* RideLinkUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		08C0BCD62BB321AC0088109A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 08C0BCC32BB321AA0088109A /* RideLink */;
+			targetProxy = 08C0BCD52BB321AC0088109A /* PBXContainerItemProxy */;
+		};
+		08C0BCE02BB321AC0088109A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 08C0BCC32BB321AA0088109A /* RideLink */;
+			targetProxy = 08C0BCDF2BB321AC0088109A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		08C0BCE62BB321AC0088109A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		08C0BCE72BB321AC0088109A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		08C0BCE92BB321AC0088109A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"RideLink/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.example.sample-sample.landmark.RideLink";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		08C0BCEA2BB321AC0088109A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"RideLink/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.example.sample-sample.landmark.RideLink";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		08C0BCEC2BB321AC0088109A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.example.sample-sample.landmark.RideLinkTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RideLink.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/RideLink";
+			};
+			name = Debug;
+		};
+		08C0BCED2BB321AC0088109A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.example.sample-sample.landmark.RideLinkTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RideLink.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/RideLink";
+			};
+			name = Release;
+		};
+		08C0BCEF2BB321AC0088109A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.example.sample-sample.landmark.RideLinkUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = RideLink;
+			};
+			name = Debug;
+		};
+		08C0BCF02BB321AC0088109A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.example.sample-sample.landmark.RideLinkUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = RideLink;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		08C0BCBF2BB321AA0088109A /* Build configuration list for PBXProject "RideLink" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				08C0BCE62BB321AC0088109A /* Debug */,
+				08C0BCE72BB321AC0088109A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		08C0BCE82BB321AC0088109A /* Build configuration list for PBXNativeTarget "RideLink" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				08C0BCE92BB321AC0088109A /* Debug */,
+				08C0BCEA2BB321AC0088109A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		08C0BCEB2BB321AC0088109A /* Build configuration list for PBXNativeTarget "RideLinkTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				08C0BCEC2BB321AC0088109A /* Debug */,
+				08C0BCED2BB321AC0088109A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		08C0BCEE2BB321AC0088109A /* Build configuration list for PBXNativeTarget "RideLinkUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				08C0BCEF2BB321AC0088109A /* Debug */,
+				08C0BCF02BB321AC0088109A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		08C0BCF12BB322770088109A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.23.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		08C0BCF22BB322770088109A /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 08C0BCF12BB322770088109A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		08C0BCF42BB322770088109A /* FirebaseDatabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 08C0BCF12BB322770088109A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabase;
+		};
+		08C0BCF62BB322770088109A /* FirebaseDatabaseSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 08C0BCF12BB322770088109A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabaseSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		08C0BCF82BB323160088109A /* LocalStores.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				08C0BCF92BB323160088109A /* LocalStores.xcdatamodel */,
+			);
+			currentVersion = 08C0BCF92BB323160088109A /* LocalStores.xcdatamodel */;
+			path = LocalStores.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 08C0BCBC2BB321AA0088109A /* Project object */;
+}
