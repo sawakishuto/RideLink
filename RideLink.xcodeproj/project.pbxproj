@@ -18,7 +18,7 @@
 		08C0BCF52BB322770088109A /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 08C0BCF42BB322770088109A /* FirebaseDatabase */; };
 		08C0BCF72BB322770088109A /* FirebaseDatabaseSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 08C0BCF62BB322770088109A /* FirebaseDatabaseSwift */; };
 		08C0BCFA2BB323160088109A /* LocalStores.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 08C0BCF82BB323160088109A /* LocalStores.xcdatamodeld */; };
-		08C0BCFC2BB323D20088109A /* GoogleService-Info (4).plist in Resources */ = {isa = PBXBuildFile; fileRef = 08C0BCFB2BB323D20088109A /* GoogleService-Info (4).plist */; };
+		08C0BCFC2BB323D20088109A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 08C0BCFB2BB323D20088109A /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,7 +50,8 @@
 		08C0BCE22BB321AC0088109A /* RideLinkUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideLinkUITests.swift; sourceTree = "<group>"; };
 		08C0BCE42BB321AC0088109A /* RideLinkUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideLinkUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		08C0BCF92BB323160088109A /* LocalStores.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LocalStores.xcdatamodel; sourceTree = "<group>"; };
-		08C0BCFB2BB323D20088109A /* GoogleService-Info (4).plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info (4).plist"; sourceTree = "<group>"; };
+		08C0BCFB2BB323D20088109A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		08C0BCFD2BB5B7790088109A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,7 +85,7 @@
 		08C0BCBB2BB321AA0088109A = {
 			isa = PBXGroup;
 			children = (
-				08C0BCFB2BB323D20088109A /* GoogleService-Info (4).plist */,
+				08C0BCFB2BB323D20088109A /* GoogleService-Info.plist */,
 				08C0BCC62BB321AA0088109A /* RideLink */,
 				08C0BCD72BB321AC0088109A /* RideLinkTests */,
 				08C0BCE12BB321AC0088109A /* RideLinkUITests */,
@@ -105,6 +106,7 @@
 		08C0BCC62BB321AA0088109A /* RideLink */ = {
 			isa = PBXGroup;
 			children = (
+				08C0BCFD2BB5B7790088109A /* Info.plist */,
 				08C0BCC72BB321AA0088109A /* RideLinkApp.swift */,
 				08C0BCC92BB321AA0088109A /* ContentView.swift */,
 				08C0BCF82BB323160088109A /* LocalStores.xcdatamodeld */,
@@ -252,7 +254,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				08C0BCCF2BB321AC0088109A /* Preview Assets.xcassets in Resources */,
-				08C0BCFC2BB323D20088109A /* GoogleService-Info (4).plist in Resources */,
+				08C0BCFC2BB323D20088109A /* GoogleService-Info.plist in Resources */,
 				08C0BCCC2BB321AC0088109A /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -444,11 +446,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"RideLink/Preview Content\"";
+				DEVELOPMENT_TEAM = 5285K4Z956;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = RideLink/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -472,11 +475,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"RideLink/Preview Content\"";
+				DEVELOPMENT_TEAM = 5285K4Z956;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = RideLink/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
