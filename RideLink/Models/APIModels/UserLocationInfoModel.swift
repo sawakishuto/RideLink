@@ -6,3 +6,11 @@
 //
 
 import Foundation
+
+
+struct UserLocationInfoModel: Codable {
+    let uid: String
+    let latitude: Double
+    let longitude: Double
+    var createAt = Date()
+}
