@@ -51,7 +51,7 @@
 		08C0BCE42BB321AC0088109A /* RideLinkUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideLinkUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		08C0BCF92BB323160088109A /* LocalStores.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LocalStores.xcdatamodel; sourceTree = "<group>"; };
 		08C0BCFB2BB323D20088109A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		08C0BCFD2BB5B7790088109A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		08C0BCFD2BB5B7790088109A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,8 +85,9 @@
 		08C0BCBB2BB321AA0088109A = {
 			isa = PBXGroup;
 			children = (
-				08C0BCFB2BB323D20088109A /* GoogleService-Info.plist */,
 				08C0BCC62BB321AA0088109A /* RideLink */,
+				08C0BCFB2BB323D20088109A /* GoogleService-Info.plist */,
+				08C0BCFD2BB5B7790088109A /* Info.plist */,
 				08C0BCD72BB321AC0088109A /* RideLinkTests */,
 				08C0BCE12BB321AC0088109A /* RideLinkUITests */,
 				08C0BCC52BB321AA0088109A /* Products */,
@@ -106,22 +107,17 @@
 		08C0BCC62BB321AA0088109A /* RideLink */ = {
 			isa = PBXGroup;
 			children = (
-				08C0BCFD2BB5B7790088109A /* Info.plist */,
-				08C0BCC72BB321AA0088109A /* RideLinkApp.swift */,
-				08C0BCC92BB321AA0088109A /* ContentView.swift */,
-				08C0BCF82BB323160088109A /* LocalStores.xcdatamodeld */,
-				08C0BCCB2BB321AC0088109A /* Assets.xcassets */,
-				08C0BCCD2BB321AC0088109A /* Preview Content */,
+				08CB693E2BD7DE7000E5940C /* App */,
+				08CB69372BD7D9FD00E5940C /* Models */,
+				08CB69392BD7DA1400E5940C /* ViewModels */,
+				08CB69382BD7DA0C00E5940C /* Views */,
+				08CB69402BD7E1C100E5940C /* Network */,
+				08CB69412BD7E1E200E5940C /* Repository */,
+				08CB693F2BD7DEF400E5940C /* CoreData */,
+				08CB693D2BD7DE3200E5940C /* Utility */,
+				08CB693C2BD7DDED00E5940C /* Resources */,
 			);
 			path = RideLink;
-			sourceTree = "<group>";
-		};
-		08C0BCCD2BB321AC0088109A /* Preview Content */ = {
-			isa = PBXGroup;
-			children = (
-				08C0BCCE2BB321AC0088109A /* Preview Assets.xcassets */,
-			);
-			path = "Preview Content";
 			sourceTree = "<group>";
 		};
 		08C0BCD72BB321AC0088109A /* RideLinkTests */ = {
@@ -139,6 +135,90 @@
 				08C0BCE42BB321AC0088109A /* RideLinkUITestsLaunchTests.swift */,
 			);
 			path = RideLinkUITests;
+			sourceTree = "<group>";
+		};
+		08CB69372BD7D9FD00E5940C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		08CB69382BD7DA0C00E5940C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				08CB693B2BD7DA2D00E5940C /* ViewParts */,
+				08CB693A2BD7DA1F00E5940C /* Screens */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		08CB69392BD7DA1400E5940C /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		08CB693A2BD7DA1F00E5940C /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				08C0BCC92BB321AA0088109A /* ContentView.swift */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		08CB693B2BD7DA2D00E5940C /* ViewParts */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewParts;
+			sourceTree = "<group>";
+		};
+		08CB693C2BD7DDED00E5940C /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				08C0BCCE2BB321AC0088109A /* Preview Assets.xcassets */,
+				08C0BCCB2BB321AC0088109A /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		08CB693D2BD7DE3200E5940C /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+		08CB693E2BD7DE7000E5940C /* App */ = {
+			isa = PBXGroup;
+			children = (
+				08C0BCC72BB321AA0088109A /* RideLinkApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		08CB693F2BD7DEF400E5940C /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				08C0BCF82BB323160088109A /* LocalStores.xcdatamodeld */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		08CB69402BD7E1C100E5940C /* Network */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		08CB69412BD7E1E200E5940C /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Repository;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
