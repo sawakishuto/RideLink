@@ -8,9 +8,14 @@
 import Foundation
 
 
-struct EncountInfoModel: Codable {
+struct EncountInfoModel: Identifiable, Codable {
+    var id = UUID().uuidString
     let userInfo: UserProfileModel
     let touringInfo: TouringInfoModel
     let encountLocationLatitude: Double
     let encountLocationLongitude: Double
+}
+
+struct EncountResponse: Codable {
+    let encountInfos: [EncountInfoModel]
 }
