@@ -7,10 +7,11 @@
 
 import Foundation
 
-struct UserProfileAPIModel: Codable {
+struct UserProfileModel: Codable {
     let uid: String
     let userName: String
     let bikeName: String
-    let profileIcon: URL
-    let createAt: Date
+    let profileIcon: String
+    let comment: String
+    var createAt = Date()
 }

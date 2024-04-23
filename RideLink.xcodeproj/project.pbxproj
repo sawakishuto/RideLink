@@ -19,6 +19,10 @@
 		08C0BCF72BB322770088109A /* FirebaseDatabaseSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 08C0BCF62BB322770088109A /* FirebaseDatabaseSwift */; };
 		08C0BCFA2BB323160088109A /* LocalStores.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 08C0BCF82BB323160088109A /* LocalStores.xcdatamodeld */; };
 		08C0BCFC2BB323D20088109A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 08C0BCFB2BB323D20088109A /* GoogleService-Info.plist */; };
+		08CB69452BD8162D00E5940C /* UserProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CB69442BD8162D00E5940C /* UserProfileModel.swift */; };
+		08CB69472BD817EC00E5940C /* TouringInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CB69462BD817EC00E5940C /* TouringInfoModel.swift */; };
+		08CB69492BD818AC00E5940C /* EncountInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CB69482BD818AC00E5940C /* EncountInfoModel.swift */; };
+		08CB694B2BD81B2400E5940C /* FrendInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CB694A2BD81B2400E5940C /* FrendInfoModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +56,10 @@
 		08C0BCF92BB323160088109A /* LocalStores.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LocalStores.xcdatamodel; sourceTree = "<group>"; };
 		08C0BCFB2BB323D20088109A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		08C0BCFD2BB5B7790088109A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		08CB69442BD8162D00E5940C /* UserProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileModel.swift; sourceTree = "<group>"; };
+		08CB69462BD817EC00E5940C /* TouringInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouringInfoModel.swift; sourceTree = "<group>"; };
+		08CB69482BD818AC00E5940C /* EncountInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncountInfoModel.swift; sourceTree = "<group>"; };
+		08CB694A2BD81B2400E5940C /* FrendInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrendInfoModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +148,7 @@
 		08CB69372BD7D9FD00E5940C /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				08CB69432BD8160400E5940C /* APIModels */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -219,6 +228,17 @@
 			children = (
 			);
 			path = Repository;
+			sourceTree = "<group>";
+		};
+		08CB69432BD8160400E5940C /* APIModels */ = {
+			isa = PBXGroup;
+			children = (
+				08CB69442BD8162D00E5940C /* UserProfileModel.swift */,
+				08CB69462BD817EC00E5940C /* TouringInfoModel.swift */,
+				08CB69482BD818AC00E5940C /* EncountInfoModel.swift */,
+				08CB694A2BD81B2400E5940C /* FrendInfoModel.swift */,
+			);
+			path = APIModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -362,7 +382,11 @@
 			files = (
 				08C0BCFA2BB323160088109A /* LocalStores.xcdatamodeld in Sources */,
 				08C0BCCA2BB321AA0088109A /* ContentView.swift in Sources */,
+				08CB69492BD818AC00E5940C /* EncountInfoModel.swift in Sources */,
+				08CB694B2BD81B2400E5940C /* FrendInfoModel.swift in Sources */,
+				08CB69452BD8162D00E5940C /* UserProfileModel.swift in Sources */,
 				08C0BCC82BB321AA0088109A /* RideLinkApp.swift in Sources */,
+				08CB69472BD817EC00E5940C /* TouringInfoModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -6,3 +6,11 @@
 //
 
 import Foundation
+
+
+struct EncountInfoModel: Codable {
+    let userInfo: UserProfileModel
+    let touringInfo: TouringInfoModel
+    let encountLocationLatitude: Double
+    let encountLocationLongitude: Double
+}
