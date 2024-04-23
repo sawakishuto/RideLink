@@ -23,6 +23,7 @@
 		08CB69472BD817EC00E5940C /* TouringInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CB69462BD817EC00E5940C /* TouringInfoModel.swift */; };
 		08CB69492BD818AC00E5940C /* EncountInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CB69482BD818AC00E5940C /* EncountInfoModel.swift */; };
 		08CB694B2BD81B2400E5940C /* FrendInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CB694A2BD81B2400E5940C /* FrendInfoModel.swift */; };
+		08CB694D2BD81E9400E5940C /* UserLocationInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CB694C2BD81E9400E5940C /* UserLocationInfoModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,7 @@
 		08CB69462BD817EC00E5940C /* TouringInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouringInfoModel.swift; sourceTree = "<group>"; };
 		08CB69482BD818AC00E5940C /* EncountInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncountInfoModel.swift; sourceTree = "<group>"; };
 		08CB694A2BD81B2400E5940C /* FrendInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrendInfoModel.swift; sourceTree = "<group>"; };
+		08CB694C2BD81E9400E5940C /* UserLocationInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLocationInfoModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -237,6 +239,7 @@
 				08CB69462BD817EC00E5940C /* TouringInfoModel.swift */,
 				08CB69482BD818AC00E5940C /* EncountInfoModel.swift */,
 				08CB694A2BD81B2400E5940C /* FrendInfoModel.swift */,
+				08CB694C2BD81E9400E5940C /* UserLocationInfoModel.swift */,
 			);
 			path = APIModels;
 			sourceTree = "<group>";
@@ -383,6 +386,7 @@
 				08C0BCFA2BB323160088109A /* LocalStores.xcdatamodeld in Sources */,
 				08C0BCCA2BB321AA0088109A /* ContentView.swift in Sources */,
 				08CB69492BD818AC00E5940C /* EncountInfoModel.swift in Sources */,
+				08CB694D2BD81E9400E5940C /* UserLocationInfoModel.swift in Sources */,
 				08CB694B2BD81B2400E5940C /* FrendInfoModel.swift in Sources */,
 				08CB69452BD8162D00E5940C /* UserProfileModel.swift in Sources */,
 				08C0BCC82BB321AA0088109A /* RideLinkApp.swift in Sources */,
