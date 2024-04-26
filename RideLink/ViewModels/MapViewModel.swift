@@ -5,17 +5,17 @@ import Combine
 class MapViewModel: NSObject, CLLocationManagerDelegate {
     var locationSubject = CurrentValueSubject<LocationData?, Never>(nil)
     private let locationManager = CLLocationManager()
-
+    
     override init() {
         super.init()
         locationManager.delegate = self
     }
-
+    
     func requestLocationAuthorization() {
         locationManager.requestWhenInUseAuthorization()
     }
-
-
+    
+    
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         switch status {
         case .notDetermined:
@@ -29,3 +29,4 @@ class MapViewModel: NSObject, CLLocationManagerDelegate {
             break
         }
     }
+}
