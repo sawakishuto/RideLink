@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		08515F372BDBDE91009D20D1 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08515F362BDBDE91009D20D1 /* MapView.swift */; };
+		08515F392BDBDE9D009D20D1 /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08515F382BDBDE9D009D20D1 /* MapViewModel.swift */; };
+		08515F3C2BDBE065009D20D1 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 08515F3B2BDBE065009D20D1 /* SnapKit */; };
+		08515F3F2BDBE274009D20D1 /* LocationDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08515F3E2BDBE274009D20D1 /* LocationDataModel.swift */; };
 		08C0BCC82BB321AA0088109A /* RideLinkApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C0BCC72BB321AA0088109A /* RideLinkApp.swift */; };
 		08C0BCCA2BB321AA0088109A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C0BCC92BB321AA0088109A /* ContentView.swift */; };
 		08C0BCCC2BB321AC0088109A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 08C0BCCB2BB321AC0088109A /* Assets.xcassets */; };
@@ -44,6 +48,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		08515F362BDBDE91009D20D1 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		08515F382BDBDE9D009D20D1 /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
+		08515F3E2BDBE274009D20D1 /* LocationDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDataModel.swift; sourceTree = "<group>"; };
 		08C0BCC42BB321AA0088109A /* RideLink.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RideLink.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		08C0BCC72BB321AA0088109A /* RideLinkApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideLinkApp.swift; sourceTree = "<group>"; };
 		08C0BCC92BB321AA0088109A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -70,6 +77,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				08C0BCF72BB322770088109A /* FirebaseDatabaseSwift in Frameworks */,
+				08515F3C2BDBE065009D20D1 /* SnapKit in Frameworks */,
 				08C0BCF52BB322770088109A /* FirebaseDatabase in Frameworks */,
 				08C0BCF32BB322770088109A /* FirebaseAuth in Frameworks */,
 			);
@@ -92,12 +100,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		08515EF92BDB8DD1009D20D1 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				08515F382BDBDE9D009D20D1 /* MapViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		08515F3D2BDBE254009D20D1 /* Bisiness */ = {
+			isa = PBXGroup;
+			children = (
+				08515F3E2BDBE274009D20D1 /* LocationDataModel.swift */,
+			);
+			path = Bisiness;
+			sourceTree = "<group>";
+		};
 		08C0BCBB2BB321AA0088109A = {
 			isa = PBXGroup;
 			children = (
 				08C0BCC62BB321AA0088109A /* RideLink */,
-				08C0BCFB2BB323D20088109A /* GoogleService-Info.plist */,
-				08C0BCFD2BB5B7790088109A /* Info.plist */,
 				08C0BCD72BB321AC0088109A /* RideLinkTests */,
 				08C0BCE12BB321AC0088109A /* RideLinkUITests */,
 				08C0BCC52BB321AA0088109A /* Products */,
@@ -117,9 +139,11 @@
 		08C0BCC62BB321AA0088109A /* RideLink */ = {
 			isa = PBXGroup;
 			children = (
+				08C0BCFD2BB5B7790088109A /* Info.plist */,
+				08C0BCFB2BB323D20088109A /* GoogleService-Info.plist */,
 				08CB693E2BD7DE7000E5940C /* App */,
 				08CB69372BD7D9FD00E5940C /* Models */,
-				08CB69392BD7DA1400E5940C /* ViewModels */,
+				08515EF92BDB8DD1009D20D1 /* ViewModels */,
 				08CB69382BD7DA0C00E5940C /* Views */,
 				08CB69402BD7E1C100E5940C /* Network */,
 				08CB69412BD7E1E200E5940C /* Repository */,
@@ -150,6 +174,7 @@
 		08CB69372BD7D9FD00E5940C /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				08515F3D2BDBE254009D20D1 /* Bisiness */,
 				08CB69432BD8160400E5940C /* APIModels */,
 			);
 			path = Models;
@@ -164,17 +189,11 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		08CB69392BD7DA1400E5940C /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModels;
-			sourceTree = "<group>";
-		};
 		08CB693A2BD7DA1F00E5940C /* Screens */ = {
 			isa = PBXGroup;
 			children = (
 				08C0BCC92BB321AA0088109A /* ContentView.swift */,
+				08515F362BDBDE91009D20D1 /* MapView.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -264,6 +283,7 @@
 				08C0BCF22BB322770088109A /* FirebaseAuth */,
 				08C0BCF42BB322770088109A /* FirebaseDatabase */,
 				08C0BCF62BB322770088109A /* FirebaseDatabaseSwift */,
+				08515F3B2BDBE065009D20D1 /* SnapKit */,
 			);
 			productName = RideLink;
 			productReference = 08C0BCC42BB321AA0088109A /* RideLink.app */;
@@ -339,6 +359,7 @@
 			mainGroup = 08C0BCBB2BB321AA0088109A;
 			packageReferences = (
 				08C0BCF12BB322770088109A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				08515F3A2BDBE064009D20D1 /* XCRemoteSwiftPackageReference "SnapKit" */,
 			);
 			productRefGroup = 08C0BCC52BB321AA0088109A /* Products */;
 			projectDirPath = "";
@@ -383,13 +404,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				08515F3F2BDBE274009D20D1 /* LocationDataModel.swift in Sources */,
 				08C0BCFA2BB323160088109A /* LocalStores.xcdatamodeld in Sources */,
+				08515F392BDBDE9D009D20D1 /* MapViewModel.swift in Sources */,
 				08C0BCCA2BB321AA0088109A /* ContentView.swift in Sources */,
 				08CB69492BD818AC00E5940C /* EncountInfoModel.swift in Sources */,
 				08CB694D2BD81E9400E5940C /* UserLocationInfoModel.swift in Sources */,
 				08CB694B2BD81B2400E5940C /* FrendInfoModel.swift in Sources */,
 				08CB69452BD8162D00E5940C /* UserProfileModel.swift in Sources */,
 				08C0BCC82BB321AA0088109A /* RideLinkApp.swift in Sources */,
+				08515F372BDBDE91009D20D1 /* MapView.swift in Sources */,
 				08CB69472BD817EC00E5940C /* TouringInfoModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -553,11 +577,13 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"RideLink/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"RideLink/Resources\"";
 				DEVELOPMENT_TEAM = 5285K4Z956;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RideLink/Info.plist;
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "現在地の取得を許可しますか";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -582,11 +608,13 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"RideLink/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"RideLink/Resources\"";
 				DEVELOPMENT_TEAM = 5285K4Z956;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RideLink/Info.plist;
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "現在地の取得を許可しますか";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -718,6 +746,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		08515F3A2BDBE064009D20D1 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.7.1;
+			};
+		};
 		08C0BCF12BB322770088109A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
@@ -729,6 +765,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		08515F3B2BDBE065009D20D1 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 08515F3A2BDBE064009D20D1 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
 		08C0BCF22BB322770088109A /* FirebaseAuth */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 08C0BCF12BB322770088109A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
