@@ -49,3 +49,46 @@ class MapViewController: UIViewController {
         return map
     }()
 }
+
+extension MapViewController {
+
+    func createAnnotations(location: CLLocationCoordinate2D) {
+        let annotation = MKPointAnnotation()
+        annotation.coordinate = location
+        self.mapView.addAnnotation(annotation)
+    }
+
+    func createRoot(location: CLLocationCoordinate2D) {
+        let sourcePlaceMark = MKPlacemark(coordinate: self.mapView.userLocation.coordinate)
+        let distinationPlaceMark = MKPlacemark(coordinate: location)
+        let directionRequest = MKDirections.Request()
+        directionRequest.source = MKMapItem(placemark: sourcePlaceMark)
+        directionRequest.destination = MKMapItem(placemark: distinationPlaceMark)
+        directionRequest.transportType = .automobile
+        let directions = MKDirections(request: directionRequest)
+        directions.calculate { (response, error) in
+            guard let directionResonse = response else {
+                if let error = error {
+                    print("we have error getting directions==\(error.localizedDescription)")
+                }
+                return
+            }
+            let route = directionResonse.routes[0]
+            self.mapView.addOverlay(route.polyline, level: .aboveRoads)
+            let rect = route.polyline.boundingMapRect
+            self.mapView.setRegion(MKCoordinateRegion(rect), animated: true)
+        }
+    }
+}
+
+extension MapViewController: MKMapViewDelegate {
+    func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
+        if overlay is MKPolyline {
+            let renderer = MKPolylineRenderer(overlay: overlay)
+            renderer.strokeColor = .blue
+            renderer.lineWidth = 3
+            return renderer
+        }
+        return MKOverlayRenderer(overlay: overlay)
+    }
+}
