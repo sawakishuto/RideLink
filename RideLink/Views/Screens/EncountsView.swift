@@ -8,8 +8,11 @@
 import SwiftUI
 
 struct EncountsView: View {
+    var datalist: [Any] = ["aaa", "vvv", "ccc", "mmm", "aaaaa"]
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        CarouselBaseView(content: {
+            EncountBaseView()
+        }, dataList: datalist)
     }
 }
 
