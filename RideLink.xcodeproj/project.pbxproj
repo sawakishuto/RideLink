@@ -12,6 +12,8 @@
 		08515F3C2BDBE065009D20D1 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 08515F3B2BDBE065009D20D1 /* SnapKit */; };
 		08515F3F2BDBE274009D20D1 /* LocationDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08515F3E2BDBE274009D20D1 /* LocationDataModel.swift */; };
 		08515F412BE0C6EE009D20D1 /* TabViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08515F402BE0C6EE009D20D1 /* TabViews.swift */; };
+		08809D792BE7AF6600A2F31D /* CustomTabViewsStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08809D782BE7AF6600A2F31D /* CustomTabViewsStyle.swift */; };
+		08809D7C2BE7B24900A2F31D /* Tab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08809D7B2BE7B24900A2F31D /* Tab.swift */; };
 		08C0BCC82BB321AA0088109A /* RideLinkApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C0BCC72BB321AA0088109A /* RideLinkApp.swift */; };
 		08C0BCCA2BB321AA0088109A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C0BCC92BB321AA0088109A /* ContentView.swift */; };
 		08C0BCCC2BB321AC0088109A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 08C0BCCB2BB321AC0088109A /* Assets.xcassets */; };
@@ -53,6 +55,8 @@
 		08515F382BDBDE9D009D20D1 /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
 		08515F3E2BDBE274009D20D1 /* LocationDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDataModel.swift; sourceTree = "<group>"; };
 		08515F402BE0C6EE009D20D1 /* TabViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViews.swift; sourceTree = "<group>"; };
+		08809D782BE7AF6600A2F31D /* CustomTabViewsStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabViewsStyle.swift; sourceTree = "<group>"; };
+		08809D7B2BE7B24900A2F31D /* Tab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tab.swift; sourceTree = "<group>"; };
 		08C0BCC42BB321AA0088109A /* RideLink.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RideLink.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		08C0BCC72BB321AA0088109A /* RideLinkApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideLinkApp.swift; sourceTree = "<group>"; };
 		08C0BCC92BB321AA0088109A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -118,6 +122,22 @@
 			path = Bisiness;
 			sourceTree = "<group>";
 		};
+		08809D772BE7AF4200A2F31D /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				08809D782BE7AF6600A2F31D /* CustomTabViewsStyle.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		08809D7A2BE7B23300A2F31D /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				08809D7B2BE7B24900A2F31D /* Tab.swift */,
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
 		08C0BCBB2BB321AA0088109A = {
 			isa = PBXGroup;
 			children = (
@@ -147,7 +167,7 @@
 				08CB69372BD7D9FD00E5940C /* Models */,
 				08515EF92BDB8DD1009D20D1 /* ViewModels */,
 				08CB69382BD7DA0C00E5940C /* Views */,
-				08CB69402BD7E1C100E5940C /* Network */,
+				08CB69402BD7E1C100E5940C /* Service */,
 				08CB69412BD7E1E200E5940C /* Repository */,
 				08CB693F2BD7DEF400E5940C /* CoreData */,
 				08CB693D2BD7DE3200E5940C /* Utility */,
@@ -176,6 +196,7 @@
 		08CB69372BD7D9FD00E5940C /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				08809D7A2BE7B23300A2F31D /* Enums */,
 				08515F3D2BDBE254009D20D1 /* Bisiness */,
 				08CB69432BD8160400E5940C /* APIModels */,
 			);
@@ -220,6 +241,7 @@
 		08CB693D2BD7DE3200E5940C /* Utility */ = {
 			isa = PBXGroup;
 			children = (
+				08809D772BE7AF4200A2F31D /* Extension */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -240,11 +262,11 @@
 			path = CoreData;
 			sourceTree = "<group>";
 		};
-		08CB69402BD7E1C100E5940C /* Network */ = {
+		08CB69402BD7E1C100E5940C /* Service */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			path = Network;
+			path = Service;
 			sourceTree = "<group>";
 		};
 		08CB69412BD7E1E200E5940C /* Repository */ = {
@@ -408,11 +430,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				08515F3F2BDBE274009D20D1 /* LocationDataModel.swift in Sources */,
+				08809D7C2BE7B24900A2F31D /* Tab.swift in Sources */,
 				08C0BCFA2BB323160088109A /* LocalStores.xcdatamodeld in Sources */,
 				08515F392BDBDE9D009D20D1 /* MapViewModel.swift in Sources */,
 				08C0BCCA2BB321AA0088109A /* ContentView.swift in Sources */,
 				08CB69492BD818AC00E5940C /* EncountInfoModel.swift in Sources */,
 				08CB694D2BD81E9400E5940C /* UserLocationInfoModel.swift in Sources */,
+				08809D792BE7AF6600A2F31D /* CustomTabViewsStyle.swift in Sources */,
 				08CB694B2BD81B2400E5940C /* FrendInfoModel.swift in Sources */,
 				08CB69452BD8162D00E5940C /* UserProfileModel.swift in Sources */,
 				08C0BCC82BB321AA0088109A /* RideLinkApp.swift in Sources */,
