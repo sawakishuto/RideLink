@@ -26,8 +26,8 @@ struct CarouselBaseView<Content: View>: View {
             VStack {
 
                 LazyHStack(spacing: itemPadding) {
-                    ForEach(examples.indices, id: \.self) { index in
-                        EncountBaseView()
+                    ForEach(dataList.indices, id: \.self) { index in
+                        content()
                             .frame(width: bodyView.size.width * 1.0)
                     }
 
@@ -40,7 +40,7 @@ struct CarouselBaseView<Content: View>: View {
                             // 先頭・末尾ではスクロールする必要がないので、画面サイズの1/5までドラッグで制御する
                             if self.currentIndex == 0, value.translation.width > 0 {
                                 state = value.translation.width / 5
-                            } else if self.currentIndex == (self.examples.count - 1), value.translation.width < 0 {
+                            } else if self.currentIndex == (self.dataList.count - 1), value.translation.width < 0 {
                                 state = value.translation.width / 5
                             } else {
                                 state = value.translation.width
@@ -56,15 +56,15 @@ struct CarouselBaseView<Content: View>: View {
                             // 最小ページ、最大ページを超えないようチェック
                             if newIndex < 0 {
                                 newIndex = 0
-                            } else if newIndex > (self.examples.count - 1) {
-                                newIndex = self.examples.count - 1
+                            } else if newIndex > (self.dataList.count - 1) {
+                                newIndex = self.dataList.count - 1
                             }
 
                             self.currentIndex = newIndex
                         })
                 )
             }
-            Text("\(currentIndex + 1)/\(examples.count)")
+            Text("\(currentIndex + 1)/\(dataList.count)")
                 .fontWeight(.black)
                 .font(.system(size: 20))
                 .offset(x: bodyView.size.width * 0.45, y: bodyView.size.height * 0.85)
@@ -88,7 +88,7 @@ struct CarouselBaseView<Content: View>: View {
                 })
                 .offset(x: bodyView.size.width * 0.1, y: bodyView.size.height * 0.85)
             }
-            if currentIndex < examples.count - 1 {
+            if currentIndex < dataList.count - 1 {
                 Button(action: {
                     currentIndex += 1
                 }, label: {
