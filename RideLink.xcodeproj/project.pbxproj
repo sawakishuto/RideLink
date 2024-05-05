@@ -145,7 +145,7 @@
 				08CB69372BD7D9FD00E5940C /* Models */,
 				08515EF92BDB8DD1009D20D1 /* ViewModels */,
 				08CB69382BD7DA0C00E5940C /* Views */,
-				08CB69402BD7E1C100E5940C /* Network */,
+				08CB69402BD7E1C100E5940C /* Service */,
 				08CB69412BD7E1E200E5940C /* Repository */,
 				08CB693F2BD7DEF400E5940C /* CoreData */,
 				08CB693D2BD7DE3200E5940C /* Utility */,
@@ -237,11 +237,11 @@
 			path = CoreData;
 			sourceTree = "<group>";
 		};
-		08CB69402BD7E1C100E5940C /* Network */ = {
+		08CB69402BD7E1C100E5940C /* Service */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			path = Network;
+			path = Service;
 			sourceTree = "<group>";
 		};
 		08CB69412BD7E1E200E5940C /* Repository */ = {
