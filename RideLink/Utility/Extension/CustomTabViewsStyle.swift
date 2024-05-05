@@ -6,3 +6,32 @@
 //
 
 import Foundation
+import SwiftUI
+
+struct CustomTabViewsStyle: View {
+    @Binding var currentTab: Tab
+    var body: some View {
+        GeometryReader(content: { g in
+            HStack(spacing: 0) {
+                ForEach(Tab.allCases, id: \.hashValue) { tab in
+                    Button(action: {
+                        currentTab = tab
+                    }, label: {
+                        Image(systemName: tab.synbolName())
+                            .renderingMode(.template)
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 30, height: 30)
+                            .frame(maxWidth: .infinity)
+                            .foregroundColor(currentTab == tab ? .green : .gray)
+                    })
+                }
+            }
+            .frame(width: .infinity)
+        })
+        .frame(height: 30)
+        .padding(.bottom, 10)
+        .padding([.horizontal, .top])
+
+    }
+}
