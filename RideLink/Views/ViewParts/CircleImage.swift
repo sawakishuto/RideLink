@@ -9,7 +9,12 @@ import SwiftUI
 
 struct CircleImage: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Image("TestBikeImage")
+            .resizable()
+            .scaledToFit()
+            .frame(width: 250)
+            .cornerRadius(500)
+            .shadow(color: .gray, radius: 4, x: 2, y: 5)
     }
 }
 
