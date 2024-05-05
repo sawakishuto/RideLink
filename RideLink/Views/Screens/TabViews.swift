@@ -21,10 +21,10 @@ struct TabViews: View {
 
                 ContentView()
                     .tag(Tab.encounts)
-
+                
                 Text("Frired")
                     .tag(Tab.friends)
-
+                
                 Text("settings")
                     .tag(Tab.settings)
             }
