@@ -7,14 +7,16 @@
 
 import SwiftUI
 
-struct EncountsView: View {
-    let content: ViewBuilder
+struct CarouselBaseView<Content: View>: View {
     @State private var currentIndex = 0
     @State private var examples = ["1", "2", "3", "4"]
     @GestureState private var dragOffset: CGFloat = 0
+    let content: () -> Content
+    let dataList: [Any]
 
-    init(@ViewBuilder content: () ->  ViewBuilder) {
-        self.content = content()
+    init(@ViewBuilder content: @escaping () ->  Content, dataList: [Any]) {
+        self.content = content
+        self.dataList = dataList
     }
 
     let itemPadding: CGFloat = 40
