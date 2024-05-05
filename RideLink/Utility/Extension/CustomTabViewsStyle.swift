@@ -16,22 +16,22 @@ struct CustomTabViewsStyle: View {
                 ForEach(Tab.allCases, id: \.hashValue) { tab in
                     Button(action: {
                         currentTab = tab
+                        AudioServicesPlaySystemSound(1519)
                     }, label: {
-                        Image(systemName: tab.synbolName())
-                            .renderingMode(.template)
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width: 30, height: 30)
-                            .frame(maxWidth: .infinity)
-                            .foregroundColor(currentTab == tab ? .green : .gray)
+                        ZStack() {
+                            Image(systemName: tab.synbolName())
+                                .renderingMode(.template)
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: 30, height: 30)
+                                .frame(maxWidth: .infinity)
+                                .foregroundColor(currentTab == tab ? .green : .gray)
+                        }
                     })
                 }
             }
-            .frame(width: .infinity)
+            .frame(width: g.size.width)
         })
         .frame(height: 30)
-        .padding(.bottom, 10)
-        .padding([.horizontal, .top])
-
     }
 }
