@@ -7,11 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		083AE4ED2BE7D9E8002D933F /* CarouselBaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083AE4EC2BE7D9E8002D933F /* CarouselBaseView.swift */; };
+		0847B1722BE7EAE600C7230B /* EncountsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0847B1712BE7EAE600C7230B /* EncountsView.swift */; };
 		08515F372BDBDE91009D20D1 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08515F362BDBDE91009D20D1 /* MapView.swift */; };
 		08515F392BDBDE9D009D20D1 /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08515F382BDBDE9D009D20D1 /* MapViewModel.swift */; };
 		08515F3C2BDBE065009D20D1 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 08515F3B2BDBE065009D20D1 /* SnapKit */; };
 		08515F3F2BDBE274009D20D1 /* LocationDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08515F3E2BDBE274009D20D1 /* LocationDataModel.swift */; };
 		08809D802BE7C3F600A2F31D /* UserProfileCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08809D7F2BE7C3F600A2F31D /* UserProfileCard.swift */; };
+		08809D822BE7CDA300A2F31D /* EncountBaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08809D812BE7CDA300A2F31D /* EncountBaseView.swift */; };
+		08809D842BE7CE5B00A2F31D /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08809D832BE7CE5B00A2F31D /* Color.swift */; };
+		08809D862BE7D16700A2F31D /* CircleImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08809D852BE7D16700A2F31D /* CircleImage.swift */; };
 		08C0BCC82BB321AA0088109A /* RideLinkApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C0BCC72BB321AA0088109A /* RideLinkApp.swift */; };
 		08C0BCCA2BB321AA0088109A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C0BCC92BB321AA0088109A /* ContentView.swift */; };
 		08C0BCCC2BB321AC0088109A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 08C0BCCB2BB321AC0088109A /* Assets.xcassets */; };
@@ -49,10 +54,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		083AE4EC2BE7D9E8002D933F /* CarouselBaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselBaseView.swift; sourceTree = "<group>"; };
+		0847B1712BE7EAE600C7230B /* EncountsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncountsView.swift; sourceTree = "<group>"; };
 		08515F362BDBDE91009D20D1 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		08515F382BDBDE9D009D20D1 /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
 		08515F3E2BDBE274009D20D1 /* LocationDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDataModel.swift; sourceTree = "<group>"; };
 		08809D7F2BE7C3F600A2F31D /* UserProfileCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileCard.swift; sourceTree = "<group>"; };
+		08809D812BE7CDA300A2F31D /* EncountBaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncountBaseView.swift; sourceTree = "<group>"; };
+		08809D832BE7CE5B00A2F31D /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Color.swift; path = RideLink/Views/Screens/Color.swift; sourceTree = SOURCE_ROOT; };
+		08809D852BE7D16700A2F31D /* CircleImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleImage.swift; sourceTree = "<group>"; };
 		08C0BCC42BB321AA0088109A /* RideLink.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RideLink.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		08C0BCC72BB321AA0088109A /* RideLinkApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideLinkApp.swift; sourceTree = "<group>"; };
 		08C0BCC92BB321AA0088109A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -194,8 +204,10 @@
 		08CB693A2BD7DA1F00E5940C /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				0847B1712BE7EAE600C7230B /* EncountsView.swift */,
 				08C0BCC92BB321AA0088109A /* ContentView.swift */,
 				08515F362BDBDE91009D20D1 /* MapView.swift */,
+				08809D812BE7CDA300A2F31D /* EncountBaseView.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -203,7 +215,9 @@
 		08CB693B2BD7DA2D00E5940C /* ViewParts */ = {
 			isa = PBXGroup;
 			children = (
+				083AE4EC2BE7D9E8002D933F /* CarouselBaseView.swift */,
 				08809D7F2BE7C3F600A2F31D /* UserProfileCard.swift */,
+				08809D852BE7D16700A2F31D /* CircleImage.swift */,
 			);
 			path = ViewParts;
 			sourceTree = "<group>";
@@ -220,6 +234,7 @@
 		08CB693D2BD7DE3200E5940C /* Utility */ = {
 			isa = PBXGroup;
 			children = (
+				08809D832BE7CE5B00A2F31D /* Color.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -413,12 +428,17 @@
 				08C0BCCA2BB321AA0088109A /* ContentView.swift in Sources */,
 				08CB69492BD818AC00E5940C /* EncountInfoModel.swift in Sources */,
 				08CB694D2BD81E9400E5940C /* UserLocationInfoModel.swift in Sources */,
+				0847B1722BE7EAE600C7230B /* EncountsView.swift in Sources */,
 				08809D802BE7C3F600A2F31D /* UserProfileCard.swift in Sources */,
+				083AE4ED2BE7D9E8002D933F /* CarouselBaseView.swift in Sources */,
 				08CB694B2BD81B2400E5940C /* FrendInfoModel.swift in Sources */,
 				08CB69452BD8162D00E5940C /* UserProfileModel.swift in Sources */,
+				08809D842BE7CE5B00A2F31D /* Color.swift in Sources */,
 				08C0BCC82BB321AA0088109A /* RideLinkApp.swift in Sources */,
+				08809D822BE7CDA300A2F31D /* EncountBaseView.swift in Sources */,
 				08515F372BDBDE91009D20D1 /* MapView.swift in Sources */,
 				08CB69472BD817EC00E5940C /* TouringInfoModel.swift in Sources */,
+				08809D862BE7D16700A2F31D /* CircleImage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
