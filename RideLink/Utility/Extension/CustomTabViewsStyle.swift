@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import AudioToolbox
 import SwiftUI
 
 struct CustomTabViewsStyle: View {
