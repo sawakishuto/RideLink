@@ -11,6 +11,7 @@
 		08515F392BDBDE9D009D20D1 /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08515F382BDBDE9D009D20D1 /* MapViewModel.swift */; };
 		08515F3C2BDBE065009D20D1 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 08515F3B2BDBE065009D20D1 /* SnapKit */; };
 		08515F3F2BDBE274009D20D1 /* LocationDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08515F3E2BDBE274009D20D1 /* LocationDataModel.swift */; };
+		08809D802BE7C3F600A2F31D /* UserProfileCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08809D7F2BE7C3F600A2F31D /* UserProfileCard.swift */; };
 		08C0BCC82BB321AA0088109A /* RideLinkApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C0BCC72BB321AA0088109A /* RideLinkApp.swift */; };
 		08C0BCCA2BB321AA0088109A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C0BCC92BB321AA0088109A /* ContentView.swift */; };
 		08C0BCCC2BB321AC0088109A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 08C0BCCB2BB321AC0088109A /* Assets.xcassets */; };
@@ -51,6 +52,7 @@
 		08515F362BDBDE91009D20D1 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		08515F382BDBDE9D009D20D1 /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
 		08515F3E2BDBE274009D20D1 /* LocationDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDataModel.swift; sourceTree = "<group>"; };
+		08809D7F2BE7C3F600A2F31D /* UserProfileCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileCard.swift; sourceTree = "<group>"; };
 		08C0BCC42BB321AA0088109A /* RideLink.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RideLink.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		08C0BCC72BB321AA0088109A /* RideLinkApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideLinkApp.swift; sourceTree = "<group>"; };
 		08C0BCC92BB321AA0088109A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -201,6 +203,7 @@
 		08CB693B2BD7DA2D00E5940C /* ViewParts */ = {
 			isa = PBXGroup;
 			children = (
+				08809D7F2BE7C3F600A2F31D /* UserProfileCard.swift */,
 			);
 			path = ViewParts;
 			sourceTree = "<group>";
@@ -410,6 +413,7 @@
 				08C0BCCA2BB321AA0088109A /* ContentView.swift in Sources */,
 				08CB69492BD818AC00E5940C /* EncountInfoModel.swift in Sources */,
 				08CB694D2BD81E9400E5940C /* UserLocationInfoModel.swift in Sources */,
+				08809D802BE7C3F600A2F31D /* UserProfileCard.swift in Sources */,
 				08CB694B2BD81B2400E5940C /* FrendInfoModel.swift in Sources */,
 				08CB69452BD8162D00E5940C /* UserProfileModel.swift in Sources */,
 				08C0BCC82BB321AA0088109A /* RideLinkApp.swift in Sources */,
