@@ -28,9 +28,7 @@ struct ProfileView: View {
             ProfilePreView()
             Spacer().frame(height: 30)
             ProfileEditor(editSubject: $tempUsername, text: "ユーザーネーム")
-            Spacer().frame(height: 30)
             ProfileEditor(editSubject: $tempBikename, text: "バイク名")
-            Spacer().frame(height: 30)
             ProfileEditor(editSubject: $tempComment, text: "コメント")
             Spacer().frame(height: 60)
             Button(action: {

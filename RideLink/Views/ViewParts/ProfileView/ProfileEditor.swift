@@ -40,6 +40,7 @@ struct ProfileEditor: View {
             }
             .padding(.leading, 40)
             CustomTextField(placeholder: Text("\(text)を入力してください"), text: $editSubject)
+            Spacer().frame(height: 30)
         }
     }
 }
