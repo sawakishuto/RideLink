@@ -49,7 +49,7 @@ struct CarouselBaseView<Content: View>: View {
                         .onEnded({ value in
                             var newIndex = self.currentIndex
                             // ドラッグ幅からページングを判定
-                            if abs(value.translation.width) > bodyView.size.width * 0.3 {
+                            if abs(value.translation.width) > bodyView.size.width * 0.4 {
                                 newIndex = value.translation.width > 0 ? self.currentIndex - 1 : self.currentIndex + 1
                             }
 
