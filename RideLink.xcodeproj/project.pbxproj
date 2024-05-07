@@ -28,6 +28,9 @@
 		08CB69492BD818AC00E5940C /* EncountInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CB69482BD818AC00E5940C /* EncountInfoModel.swift */; };
 		08CB694B2BD81B2400E5940C /* FrendInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CB694A2BD81B2400E5940C /* FrendInfoModel.swift */; };
 		08CB694D2BD81E9400E5940C /* UserLocationInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CB694C2BD81E9400E5940C /* UserLocationInfoModel.swift */; };
+		22C1CED12BE9C046002EECAC /* OnlineIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C1CED02BE9C046002EECAC /* OnlineIndicator.swift */; };
+		22C1CED32BE9C7A0002EECAC /* OfflineIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C1CED22BE9C7A0002EECAC /* OfflineIndicator.swift */; };
+		22C1CED52BE9D0C0002EECAC /* UserCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C1CED42BE9D0C0002EECAC /* UserCard.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +72,9 @@
 		08CB69482BD818AC00E5940C /* EncountInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncountInfoModel.swift; sourceTree = "<group>"; };
 		08CB694A2BD81B2400E5940C /* FrendInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrendInfoModel.swift; sourceTree = "<group>"; };
 		08CB694C2BD81E9400E5940C /* UserLocationInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLocationInfoModel.swift; sourceTree = "<group>"; };
+		22C1CED02BE9C046002EECAC /* OnlineIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnlineIndicator.swift; sourceTree = "<group>"; };
+		22C1CED22BE9C7A0002EECAC /* OfflineIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfflineIndicator.swift; sourceTree = "<group>"; };
+		22C1CED42BE9D0C0002EECAC /* UserCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCard.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -201,6 +207,7 @@
 		08CB693B2BD7DA2D00E5940C /* ViewParts */ = {
 			isa = PBXGroup;
 			children = (
+				22C1CECF2BE9C00E002EECAC /* FriendList */,
 			);
 			path = ViewParts;
 			sourceTree = "<group>";
@@ -261,6 +268,16 @@
 				08CB694C2BD81E9400E5940C /* UserLocationInfoModel.swift */,
 			);
 			path = APIModels;
+			sourceTree = "<group>";
+		};
+		22C1CECF2BE9C00E002EECAC /* FriendList */ = {
+			isa = PBXGroup;
+			children = (
+				22C1CED02BE9C046002EECAC /* OnlineIndicator.swift */,
+				22C1CED22BE9C7A0002EECAC /* OfflineIndicator.swift */,
+				22C1CED42BE9D0C0002EECAC /* UserCard.swift */,
+			);
+			path = FriendList;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -409,11 +426,14 @@
 				08515F392BDBDE9D009D20D1 /* MapViewModel.swift in Sources */,
 				08C0BCCA2BB321AA0088109A /* ContentView.swift in Sources */,
 				08CB69492BD818AC00E5940C /* EncountInfoModel.swift in Sources */,
+				22C1CED32BE9C7A0002EECAC /* OfflineIndicator.swift in Sources */,
 				08CB694D2BD81E9400E5940C /* UserLocationInfoModel.swift in Sources */,
+				22C1CED12BE9C046002EECAC /* OnlineIndicator.swift in Sources */,
 				08CB694B2BD81B2400E5940C /* FrendInfoModel.swift in Sources */,
 				08CB69452BD8162D00E5940C /* UserProfileModel.swift in Sources */,
 				08C0BCC82BB321AA0088109A /* RideLinkApp.swift in Sources */,
 				08515F372BDBDE91009D20D1 /* MapView.swift in Sources */,
+				22C1CED52BE9D0C0002EECAC /* UserCard.swift in Sources */,
 				08CB69472BD817EC00E5940C /* TouringInfoModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
