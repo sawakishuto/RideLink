@@ -7,4 +7,9 @@
 
 import Foundation
 
-encount
+protocol EncountRepositoryProtocol {
+    func fetchEncounters(uid: String)
+    func sendFriendRequest(ownUid uid: String, recipientUid uid: String)
+    func saveEncounters(encounterInfo: EncounterInfo)
+    func deleteEncounters(encounterUid: String)
+}
