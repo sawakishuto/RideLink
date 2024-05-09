@@ -8,17 +8,25 @@
 import SwiftUI
 
 struct UserProfileCard: View {
+    let userName: String
+    let bikeName: String
+    let destinationName: String
+    let comment: String
+    let encountLatitude: Double
+    let encountLongitude: Double
     var body: some View {
         VStack(alignment: .leading, spacing: 10) {
             HStack(spacing: 100){
-                Text("澤木柊斗")
+                Text(userName)
                     .font(.system(size: 35))
                     .fontWeight(.black)
 
-                Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
+                Button(action: {
+                    // mapViewへ遷移するロジック
+                }, label: {
                     ZStack {
                         Circle()
-                            .frame(width: 55, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                            .frame(width: 55, alignment: .center)
                             .foregroundStyle(.green)
                             .shadow(color: .gray, radius: 4, x: 5, y: 2)
 
@@ -30,6 +38,7 @@ struct UserProfileCard: View {
                     }
                 })
             }
+            
             HStack(alignment: .center , spacing: 30) {
 
                 VStack(alignment: .center, spacing: 10) {
@@ -47,17 +56,17 @@ struct UserProfileCard: View {
                 }
                 VStack(alignment: .leading, spacing: 10) {
 
-                    Text("YZF R-15")
+                    Text(bikeName)
                         .font(.system(size: 20))
                         .foregroundStyle( Color(red: 0.4, green: 0.4, blue: 0.4, opacity: 1))
 
-                    Text("千里浜ドライブウェイ")
+                    Text(destinationName)
                         .fontWeight(.bold)
                         .foregroundStyle(.green)
 
                 }
             }
-            Text("今日ツーリングデビュー！チピチピチャパチるびるびらんらんらんんんんんんんんんんんんんんんんん今日ツーリングデビュー！チピチピチャパチるびるびらんらんらんんんんんんんんんんんんんんんんん今日ツーリングデビュー！チピチピチャパチるびるびらんらんらんんんんんんんんんんんんんんんんん")
+            Text(comment)
                 .lineLimit(3)
         }
         .padding(.horizontal, 50)
@@ -69,5 +78,5 @@ struct UserProfileCard: View {
 }
 
 #Preview {
-    UserProfileCard()
+    UserProfileCard(userName: "", bikeName: "", destinationName: "", comment: "", encountLatitude: 0.00, encountLongitude: 0.00)
 }
