@@ -7,18 +7,12 @@
 
 import SwiftUI
 
-struct CarouselBaseView<Content: View>: View {
+struct EncountView<Content: View>: View {
+    @StateObject var vm = EncountViewModel()
     @State private var currentIndex = 0
     @State private var examples = ["1", "2", "3", "4"]
     @GestureState private var dragOffset: CGFloat = 0
-    let content: () -> Content
     let dataList: [Any]
-
-    init(@ViewBuilder content: @escaping () ->  Content, dataList: [Any]) {
-        self.content = content
-        self.dataList = dataList
-    }
-
     let itemPadding: CGFloat = 40
 
     var body: some View {
@@ -26,8 +20,16 @@ struct CarouselBaseView<Content: View>: View {
             VStack {
 
                 LazyHStack(spacing: itemPadding) {
-                    ForEach(dataList.indices, id: \.self) { index in
-                        content()
+                    ForEach(vm.encountInfos) { vm in
+                        EncountBaseView(
+                            ImageURL: vm.userInfo.profileImageUrl,
+                            userName: vm.userInfo.userName,
+                            bikeName: vm.userInfo.bikeName,
+                            destinationName: vm.touringInfo.destinationName ?? "",
+                            comment: vm.userInfo.comment,
+                            encountLatitude: vm.encountLocationLatitude,
+                            encountLogitude: vm.encountLocationLongitude
+                        )
                             .frame(width: bodyView.size.width * 1.0)
                     }
 
