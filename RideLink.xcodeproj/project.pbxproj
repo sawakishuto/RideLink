@@ -7,12 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		083AE4ED2BE7D9E8002D933F /* CarouselBaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083AE4EC2BE7D9E8002D933F /* CarouselBaseView.swift */; };
-		0847B1722BE7EAE600C7230B /* EncountsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0847B1712BE7EAE600C7230B /* EncountsView.swift */; };
+		083AE4ED2BE7D9E8002D933F /* EncountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083AE4EC2BE7D9E8002D933F /* EncountView.swift */; };
 		08515F372BDBDE91009D20D1 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08515F362BDBDE91009D20D1 /* MapView.swift */; };
 		08515F392BDBDE9D009D20D1 /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08515F382BDBDE9D009D20D1 /* MapViewModel.swift */; };
 		08515F3C2BDBE065009D20D1 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 08515F3B2BDBE065009D20D1 /* SnapKit */; };
 		08515F3F2BDBE274009D20D1 /* LocationDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08515F3E2BDBE274009D20D1 /* LocationDataModel.swift */; };
+		08582C7A2BED3ACD00B7FEE5 /* EncountRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08582C792BED3ACD00B7FEE5 /* EncountRepositoryProtocol.swift */; };
+		08582C7C2BED4A3500B7FEE5 /* EncountRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08582C7B2BED4A3500B7FEE5 /* EncountRepository.swift */; };
+		087C22B12BED2174003434BC /* EncountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 087C22B02BED2174003434BC /* EncountViewModel.swift */; };
 		08809D802BE7C3F600A2F31D /* UserProfileCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08809D7F2BE7C3F600A2F31D /* UserProfileCard.swift */; };
 		08809D822BE7CDA300A2F31D /* EncountBaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08809D812BE7CDA300A2F31D /* EncountBaseView.swift */; };
 		08809D842BE7CE5B00A2F31D /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08809D832BE7CE5B00A2F31D /* Color.swift */; };
@@ -31,8 +33,8 @@
 		08C0BCFC2BB323D20088109A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 08C0BCFB2BB323D20088109A /* GoogleService-Info.plist */; };
 		08CB69452BD8162D00E5940C /* UserProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CB69442BD8162D00E5940C /* UserProfileModel.swift */; };
 		08CB69472BD817EC00E5940C /* TouringInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CB69462BD817EC00E5940C /* TouringInfoModel.swift */; };
-		08CB69492BD818AC00E5940C /* EncountInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CB69482BD818AC00E5940C /* EncountInfoModel.swift */; };
-		08CB694B2BD81B2400E5940C /* FrendInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CB694A2BD81B2400E5940C /* FrendInfoModel.swift */; };
+		08CB69492BD818AC00E5940C /* EncounterInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CB69482BD818AC00E5940C /* EncounterInfo.swift */; };
+		08CB694B2BD81B2400E5940C /* FriendInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CB694A2BD81B2400E5940C /* FriendInfoModel.swift */; };
 		08CB694D2BD81E9400E5940C /* UserLocationInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CB694C2BD81E9400E5940C /* UserLocationInfoModel.swift */; };
 /* End PBXBuildFile section */
 
@@ -54,11 +56,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		083AE4EC2BE7D9E8002D933F /* CarouselBaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselBaseView.swift; sourceTree = "<group>"; };
-		0847B1712BE7EAE600C7230B /* EncountsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncountsView.swift; sourceTree = "<group>"; };
+		083AE4EC2BE7D9E8002D933F /* EncountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncountView.swift; sourceTree = "<group>"; };
 		08515F362BDBDE91009D20D1 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		08515F382BDBDE9D009D20D1 /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
 		08515F3E2BDBE274009D20D1 /* LocationDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDataModel.swift; sourceTree = "<group>"; };
+		08582C792BED3ACD00B7FEE5 /* EncountRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncountRepositoryProtocol.swift; sourceTree = "<group>"; };
+		08582C7B2BED4A3500B7FEE5 /* EncountRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncountRepository.swift; sourceTree = "<group>"; };
+		087C22B02BED2174003434BC /* EncountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncountViewModel.swift; sourceTree = "<group>"; };
 		08809D7F2BE7C3F600A2F31D /* UserProfileCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileCard.swift; sourceTree = "<group>"; };
 		08809D812BE7CDA300A2F31D /* EncountBaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncountBaseView.swift; sourceTree = "<group>"; };
 		08809D832BE7CE5B00A2F31D /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Color.swift; path = RideLink/Views/Screens/Color.swift; sourceTree = SOURCE_ROOT; };
@@ -78,8 +82,8 @@
 		08C0BCFD2BB5B7790088109A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		08CB69442BD8162D00E5940C /* UserProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileModel.swift; sourceTree = "<group>"; };
 		08CB69462BD817EC00E5940C /* TouringInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouringInfoModel.swift; sourceTree = "<group>"; };
-		08CB69482BD818AC00E5940C /* EncountInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncountInfoModel.swift; sourceTree = "<group>"; };
-		08CB694A2BD81B2400E5940C /* FrendInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrendInfoModel.swift; sourceTree = "<group>"; };
+		08CB69482BD818AC00E5940C /* EncounterInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncounterInfo.swift; sourceTree = "<group>"; };
+		08CB694A2BD81B2400E5940C /* FriendInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendInfoModel.swift; sourceTree = "<group>"; };
 		08CB694C2BD81E9400E5940C /* UserLocationInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLocationInfoModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -116,6 +120,7 @@
 			isa = PBXGroup;
 			children = (
 				08515F382BDBDE9D009D20D1 /* MapViewModel.swift */,
+				087C22B02BED2174003434BC /* EncountViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -204,8 +209,8 @@
 		08CB693A2BD7DA1F00E5940C /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				0847B1712BE7EAE600C7230B /* EncountsView.swift */,
 				08C0BCC92BB321AA0088109A /* ContentView.swift */,
+				083AE4EC2BE7D9E8002D933F /* EncountView.swift */,
 				08515F362BDBDE91009D20D1 /* MapView.swift */,
 				08809D812BE7CDA300A2F31D /* EncountBaseView.swift */,
 			);
@@ -215,7 +220,6 @@
 		08CB693B2BD7DA2D00E5940C /* ViewParts */ = {
 			isa = PBXGroup;
 			children = (
-				083AE4EC2BE7D9E8002D933F /* CarouselBaseView.swift */,
 				08809D7F2BE7C3F600A2F31D /* UserProfileCard.swift */,
 				08809D852BE7D16700A2F31D /* CircleImage.swift */,
 			);
@@ -265,6 +269,8 @@
 		08CB69412BD7E1E200E5940C /* Repository */ = {
 			isa = PBXGroup;
 			children = (
+				08582C792BED3ACD00B7FEE5 /* EncountRepositoryProtocol.swift */,
+				08582C7B2BED4A3500B7FEE5 /* EncountRepository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -274,8 +280,8 @@
 			children = (
 				08CB69442BD8162D00E5940C /* UserProfileModel.swift */,
 				08CB69462BD817EC00E5940C /* TouringInfoModel.swift */,
-				08CB69482BD818AC00E5940C /* EncountInfoModel.swift */,
-				08CB694A2BD81B2400E5940C /* FrendInfoModel.swift */,
+				08CB69482BD818AC00E5940C /* EncounterInfo.swift */,
+				08CB694A2BD81B2400E5940C /* FriendInfoModel.swift */,
 				08CB694C2BD81E9400E5940C /* UserLocationInfoModel.swift */,
 			);
 			path = APIModels;
@@ -422,16 +428,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				08582C7A2BED3ACD00B7FEE5 /* EncountRepositoryProtocol.swift in Sources */,
 				08515F3F2BDBE274009D20D1 /* LocationDataModel.swift in Sources */,
 				08C0BCFA2BB323160088109A /* LocalStores.xcdatamodeld in Sources */,
 				08515F392BDBDE9D009D20D1 /* MapViewModel.swift in Sources */,
 				08C0BCCA2BB321AA0088109A /* ContentView.swift in Sources */,
-				08CB69492BD818AC00E5940C /* EncountInfoModel.swift in Sources */,
+				08CB69492BD818AC00E5940C /* EncounterInfo.swift in Sources */,
+				08582C7C2BED4A3500B7FEE5 /* EncountRepository.swift in Sources */,
 				08CB694D2BD81E9400E5940C /* UserLocationInfoModel.swift in Sources */,
-				0847B1722BE7EAE600C7230B /* EncountsView.swift in Sources */,
 				08809D802BE7C3F600A2F31D /* UserProfileCard.swift in Sources */,
-				083AE4ED2BE7D9E8002D933F /* CarouselBaseView.swift in Sources */,
-				08CB694B2BD81B2400E5940C /* FrendInfoModel.swift in Sources */,
+				083AE4ED2BE7D9E8002D933F /* EncountView.swift in Sources */,
+				087C22B12BED2174003434BC /* EncountViewModel.swift in Sources */,
+				08CB694B2BD81B2400E5940C /* FriendInfoModel.swift in Sources */,
 				08CB69452BD8162D00E5940C /* UserProfileModel.swift in Sources */,
 				08809D842BE7CE5B00A2F31D /* Color.swift in Sources */,
 				08C0BCC82BB321AA0088109A /* RideLinkApp.swift in Sources */,
