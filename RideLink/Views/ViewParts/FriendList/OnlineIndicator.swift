@@ -12,10 +12,11 @@ struct OnlineIndicator: View {
         HStack {
                 Image("mainBike")
                     .resizable()
-                    .frame(width: 35, height: 30)
+                    .frame(width: 30, height: 25)
                 Text("オンライン")
+                    .font(.system(size: 13))
             }
-            .frame(width: 125, height: 10)
+            .frame(width: 100, height: 5)
             .padding()
             .background(Color(red: 5/255, green: 254/255, blue: 90/255))
             .foregroundColor(.black)

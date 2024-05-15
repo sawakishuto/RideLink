@@ -12,11 +12,12 @@ struct OfflineIndicator: View {
         HStack {
             Image("subBike")
                 .resizable()
-                .frame(width: 40, height: 40)
+                .frame(width: 30, height: 30)
                 .padding(.leading, -3)
             Text("オフライン")
+                .font(.system(size: 13))
         }
-        .frame(width: 125, height: 10)
+        .frame(width: 100, height: 5)
         .padding()
         .background(Color(red: 217/255, green: 212/255, blue: 212/255))
         .foregroundColor(.black)
