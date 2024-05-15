@@ -15,6 +15,7 @@
 		08582C822BF3D86A00B7FEE5 /* HTTPMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08582C812BF3D86900B7FEE5 /* HTTPMethods.swift */; };
 		08582C842BF3E62000B7FEE5 /* EndPoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08582C832BF3E62000B7FEE5 /* EndPoints.swift */; };
 		08582C862BF3E67300B7FEE5 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08582C852BF3E67300B7FEE5 /* APIError.swift */; };
+		08582C892BF4CD2F00B7FEE5 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 08582C882BF4CD2F00B7FEE5 /* Alamofire */; };
 		08C0BCC82BB321AA0088109A /* RideLinkApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C0BCC72BB321AA0088109A /* RideLinkApp.swift */; };
 		08C0BCCA2BB321AA0088109A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C0BCC92BB321AA0088109A /* ContentView.swift */; };
 		08C0BCCC2BB321AC0088109A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 08C0BCCB2BB321AC0088109A /* Assets.xcassets */; };
@@ -90,6 +91,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				08582C892BF4CD2F00B7FEE5 /* Alamofire in Frameworks */,
 				08C0BCF72BB322770088109A /* FirebaseDatabaseSwift in Frameworks */,
 				08515F3C2BDBE065009D20D1 /* SnapKit in Frameworks */,
 				08C0BCF52BB322770088109A /* FirebaseDatabase in Frameworks */,
@@ -313,6 +315,7 @@
 				08C0BCF42BB322770088109A /* FirebaseDatabase */,
 				08C0BCF62BB322770088109A /* FirebaseDatabaseSwift */,
 				08515F3B2BDBE065009D20D1 /* SnapKit */,
+				08582C882BF4CD2F00B7FEE5 /* Alamofire */,
 			);
 			productName = RideLink;
 			productReference = 08C0BCC42BB321AA0088109A /* RideLink.app */;
@@ -389,6 +392,7 @@
 			packageReferences = (
 				08C0BCF12BB322770088109A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				08515F3A2BDBE064009D20D1 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				08582C872BF4CD2F00B7FEE5 /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = 08C0BCC52BB321AA0088109A /* Products */;
 			projectDirPath = "";
@@ -790,6 +794,14 @@
 				minimumVersion = 5.7.1;
 			};
 		};
+		08582C872BF4CD2F00B7FEE5 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.9.1;
+			};
+		};
 		08C0BCF12BB322770088109A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
@@ -805,6 +817,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 08515F3A2BDBE064009D20D1 /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
+		};
+		08582C882BF4CD2F00B7FEE5 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 08582C872BF4CD2F00B7FEE5 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
 		};
 		08C0BCF22BB322770088109A /* FirebaseAuth */ = {
 			isa = XCSwiftPackageProductDependency;
