@@ -32,6 +32,9 @@
 		22C1CED32BE9C7A0002EECAC /* OfflineIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C1CED22BE9C7A0002EECAC /* OfflineIndicator.swift */; };
 		22C1CED52BE9D0C0002EECAC /* UserCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C1CED42BE9D0C0002EECAC /* UserCard.swift */; };
 		22E82FCD2BF3BFF500F37076 /* FriendListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E82FCC2BF3BFF500F37076 /* FriendListView.swift */; };
+		220293B12BE921E1009BC2A6 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 220293B02BE921E1009BC2A6 /* ProfileView.swift */; };
+		220293B92BE926E1009BC2A6 /* ProfileEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 220293B82BE926E1009BC2A6 /* ProfileEditor.swift */; };
+		220293BD2BE92864009BC2A6 /* ProfilePreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 220293BC2BE92864009BC2A6 /* ProfilePreview.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +80,9 @@
 		22C1CED22BE9C7A0002EECAC /* OfflineIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfflineIndicator.swift; sourceTree = "<group>"; };
 		22C1CED42BE9D0C0002EECAC /* UserCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCard.swift; sourceTree = "<group>"; };
 		22E82FCC2BF3BFF500F37076 /* FriendListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendListView.swift; sourceTree = "<group>"; };
+		220293B02BE921E1009BC2A6 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		220293B82BE926E1009BC2A6 /* ProfileEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEditor.swift; sourceTree = "<group>"; };
+		220293BC2BE92864009BC2A6 /* ProfilePreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePreview.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -191,7 +197,7 @@
 		08CB69382BD7DA0C00E5940C /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				08CB693B2BD7DA2D00E5940C /* ViewParts */,
+				220293B62BE926C5009BC2A6 /* ViewParts */,
 				08CB693A2BD7DA1F00E5940C /* Screens */,
 			);
 			path = Views;
@@ -203,10 +209,12 @@
 				08C0BCC92BB321AA0088109A /* ContentView.swift */,
 				22E82FCC2BF3BFF500F37076 /* FriendListView.swift */,
 				08515F362BDBDE91009D20D1 /* MapView.swift */,
+				220293B02BE921E1009BC2A6 /* ProfileView.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
 		};
+
 		08CB693B2BD7DA2D00E5940C /* ViewParts */ = {
 			isa = PBXGroup;
 			children = (
@@ -215,6 +223,7 @@
 			path = ViewParts;
 			sourceTree = "<group>";
 		};
+
 		08CB693C2BD7DDED00E5940C /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -273,6 +282,7 @@
 			path = APIModels;
 			sourceTree = "<group>";
 		};
+
 		22C1CECF2BE9C00E002EECAC /* FriendList */ = {
 			isa = PBXGroup;
 			children = (
@@ -281,6 +291,23 @@
 				22C1CED42BE9D0C0002EECAC /* UserCard.swift */,
 			);
 			path = FriendList;
+
+		220293B62BE926C5009BC2A6 /* ViewParts */ = {
+			isa = PBXGroup;
+			children = (
+				220293B72BE926C5009BC2A6 /* ProfileView */,
+			);
+			path = ViewParts;
+			sourceTree = "<group>";
+		};
+		220293B72BE926C5009BC2A6 /* ProfileView */ = {
+			isa = PBXGroup;
+			children = (
+				220293B82BE926E1009BC2A6 /* ProfileEditor.swift */,
+				220293BC2BE92864009BC2A6 /* ProfilePreview.swift */,
+			);
+			path = ProfileView;
+
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -428,6 +455,9 @@
 				08C0BCFA2BB323160088109A /* LocalStores.xcdatamodeld in Sources */,
 				08515F392BDBDE9D009D20D1 /* MapViewModel.swift in Sources */,
 				08C0BCCA2BB321AA0088109A /* ContentView.swift in Sources */,
+				220293BD2BE92864009BC2A6 /* ProfilePreview.swift in Sources */,
+				220293B92BE926E1009BC2A6 /* ProfileEditor.swift in Sources */,
+				220293B12BE921E1009BC2A6 /* ProfileView.swift in Sources */,
 				08CB69492BD818AC00E5940C /* EncountInfoModel.swift in Sources */,
 				22C1CED32BE9C7A0002EECAC /* OfflineIndicator.swift in Sources */,
 				08CB694D2BD81E9400E5940C /* UserLocationInfoModel.swift in Sources */,
