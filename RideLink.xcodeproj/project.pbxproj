@@ -31,6 +31,11 @@
 		220293B12BE921E1009BC2A6 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 220293B02BE921E1009BC2A6 /* ProfileView.swift */; };
 		220293B92BE926E1009BC2A6 /* ProfileEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 220293B82BE926E1009BC2A6 /* ProfileEditor.swift */; };
 		220293BD2BE92864009BC2A6 /* ProfilePreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 220293BC2BE92864009BC2A6 /* ProfilePreview.swift */; };
+		E1E7AF1E2BEC9AD0002F1CFF /* AppTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E7AF1D2BEC9AD0002F1CFF /* AppTextFieldView.swift */; };
+		E1E7AF202BED0256002F1CFF /* AppButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E7AF1F2BED0256002F1CFF /* AppButtonView.swift */; };
+		E1E7AF222BED0308002F1CFF /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E7AF212BED0308002F1CFF /* LoginView.swift */; };
+		E1E7AF242BF5D093002F1CFF /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = E1E7AF232BF5D093002F1CFF /* SnapKit */; };
+		E1E7AF262BF5D0F7002F1CFF /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = E1E7AF252BF5D0F7002F1CFF /* SnapKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +80,9 @@
 		220293B02BE921E1009BC2A6 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		220293B82BE926E1009BC2A6 /* ProfileEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEditor.swift; sourceTree = "<group>"; };
 		220293BC2BE92864009BC2A6 /* ProfilePreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePreview.swift; sourceTree = "<group>"; };
+		E1E7AF1D2BEC9AD0002F1CFF /* AppTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTextFieldView.swift; sourceTree = "<group>"; };
+		E1E7AF1F2BED0256002F1CFF /* AppButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppButtonView.swift; sourceTree = "<group>"; };
+		E1E7AF212BED0308002F1CFF /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +101,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1E7AF242BF5D093002F1CFF /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -100,6 +109,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1E7AF262BF5D0F7002F1CFF /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -201,6 +211,7 @@
 				08C0BCC92BB321AA0088109A /* ContentView.swift */,
 				08515F362BDBDE91009D20D1 /* MapView.swift */,
 				220293B02BE921E1009BC2A6 /* ProfileView.swift */,
+				E1E7AF212BED0308002F1CFF /* LoginView.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -267,6 +278,8 @@
 			isa = PBXGroup;
 			children = (
 				220293B72BE926C5009BC2A6 /* ProfileView */,
+				E1E7AF1D2BEC9AD0002F1CFF /* AppTextFieldView.swift */,
+				E1E7AF1F2BED0256002F1CFF /* AppButtonView.swift */,
 			);
 			path = ViewParts;
 			sourceTree = "<group>";
@@ -320,6 +333,9 @@
 				08C0BCD62BB321AC0088109A /* PBXTargetDependency */,
 			);
 			name = RideLinkTests;
+			packageProductDependencies = (
+				E1E7AF232BF5D093002F1CFF /* SnapKit */,
+			);
 			productName = RideLinkTests;
 			productReference = 08C0BCD42BB321AC0088109A /* RideLinkTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -338,6 +354,9 @@
 				08C0BCE02BB321AC0088109A /* PBXTargetDependency */,
 			);
 			name = RideLinkUITests;
+			packageProductDependencies = (
+				E1E7AF252BF5D0F7002F1CFF /* SnapKit */,
+			);
 			productName = RideLinkUITests;
 			productReference = 08C0BCDE2BB321AC0088109A /* RideLinkUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
@@ -427,11 +446,14 @@
 				08C0BCCA2BB321AA0088109A /* ContentView.swift in Sources */,
 				220293BD2BE92864009BC2A6 /* ProfilePreview.swift in Sources */,
 				220293B92BE926E1009BC2A6 /* ProfileEditor.swift in Sources */,
+				E1E7AF202BED0256002F1CFF /* AppButtonView.swift in Sources */,
 				220293B12BE921E1009BC2A6 /* ProfileView.swift in Sources */,
 				08CB69492BD818AC00E5940C /* EncountInfoModel.swift in Sources */,
 				08CB694D2BD81E9400E5940C /* UserLocationInfoModel.swift in Sources */,
+				E1E7AF222BED0308002F1CFF /* LoginView.swift in Sources */,
 				08CB694B2BD81B2400E5940C /* FrendInfoModel.swift in Sources */,
 				08CB69452BD8162D00E5940C /* UserProfileModel.swift in Sources */,
+				E1E7AF1E2BEC9AD0002F1CFF /* AppTextFieldView.swift in Sources */,
 				08C0BCC82BB321AA0088109A /* RideLinkApp.swift in Sources */,
 				08515F372BDBDE91009D20D1 /* MapView.swift in Sources */,
 				08CB69472BD817EC00E5940C /* TouringInfoModel.swift in Sources */,
@@ -598,7 +620,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"RideLink/Resources\"";
-				DEVELOPMENT_TEAM = 5285K4Z956;
+				DEVELOPMENT_TEAM = 77TFA268F3;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RideLink/Info.plist;
@@ -629,7 +651,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"RideLink/Resources\"";
-				DEVELOPMENT_TEAM = 5285K4Z956;
+				DEVELOPMENT_TEAM = 77TFA268F3;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RideLink/Info.plist;
@@ -804,6 +826,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 08C0BCF12BB322770088109A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseDatabaseSwift;
+		};
+		E1E7AF232BF5D093002F1CFF /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 08515F3A2BDBE064009D20D1 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+		E1E7AF252BF5D0F7002F1CFF /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 08515F3A2BDBE064009D20D1 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
 		};
 /* End XCSwiftPackageProductDependency section */
 
