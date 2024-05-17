@@ -7,23 +7,37 @@
 
 import SwiftUI
 
-struct TextFieldView: TextFieldStyle {
+struct AppTextFieldView: TextFieldStyle {
     @FocusState private var isFocused
+    
+    @Binding var text: String
     
     func _body(configuration: TextField<Self._Label>) -> some View {
         HStack(spacing: 8) {
-            HStack(spacing: 8) {
-                configuration
-            }
-            .padding(.vertical, 10)
-            .padding(.horizontal, 12)
-            .background(.secondary.opacity(0.3), in: Capsule())
+            configuration
+                .padding(.vertical, 10)
+                .padding(.horizontal, 12)
+                .background(Color.secondary.opacity(0.3), in: Capsule())
+                .overlay(
+                    HStack {
+                        Spacer()
+                        if !text.isEmpty {
+                            Button(action: {
+                                text = ""
+                            }) {
+                                Image(systemName: "xmark.circle.fill")
+                                    .foregroundColor(.secondary)
+                            }
+                            .padding(.trailing, 12)
+                        }
+                    }
+                )
         }
     }
 }
 
-extension TextFieldStyle where Self == TextFieldView {
-    static var withCancel: TextFieldView {
-        .init()
+extension TextFieldStyle where Self == AppTextFieldView {
+    static func withCancel(text: Binding<String>) -> AppTextFieldView {
+        .init(text: text)
     }
 }

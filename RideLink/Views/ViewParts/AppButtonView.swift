@@ -5,14 +5,25 @@
 //  Created by 拓実 on 2024/05/09.
 //
 
+// CustomButton.swift
+
 import SwiftUI
 
 struct AppButtonView: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
-}
+    var title: String
+    var color: Color
+    var action: () -> Void
 
-#Preview {
-    AppButtonView()
+    var body: some View {
+        Button(action: action) {
+            Text(title)
+                .bold()
+                .padding()
+                .frame(width: 150, height: 50)
+                .foregroundColor(.black)
+                .background(color)
+                .cornerRadius(25)
+        }
+        .padding(.horizontal)
+    }
 }
