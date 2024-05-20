@@ -31,6 +31,18 @@
 		08CB69492BD818AC00E5940C /* EncountInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CB69482BD818AC00E5940C /* EncountInfoModel.swift */; };
 		08CB694B2BD81B2400E5940C /* FrendInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CB694A2BD81B2400E5940C /* FrendInfoModel.swift */; };
 		08CB694D2BD81E9400E5940C /* UserLocationInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CB694C2BD81E9400E5940C /* UserLocationInfoModel.swift */; };
+		220293B12BE921E1009BC2A6 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 220293B02BE921E1009BC2A6 /* ProfileView.swift */; };
+		220293B92BE926E1009BC2A6 /* ProfileEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 220293B82BE926E1009BC2A6 /* ProfileEditor.swift */; };
+		220293BD2BE92864009BC2A6 /* ProfilePreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 220293BC2BE92864009BC2A6 /* ProfilePreview.swift */; };
+		224CE15B2BF76D1F00AA201F /* FriendListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224CE15A2BF76D1F00AA201F /* FriendListView.swift */; };
+		224CE15E2BF7715B00AA201F /* OfflineIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224CE15D2BF7715B00AA201F /* OfflineIndicator.swift */; };
+		224CE1622BF771E200AA201F /* OnlineIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224CE1612BF771E200AA201F /* OnlineIndicator.swift */; };
+		224CE1642BF7722100AA201F /* UserCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224CE1632BF7722100AA201F /* UserCard.swift */; };
+		E1E7AF1E2BEC9AD0002F1CFF /* AppTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E7AF1D2BEC9AD0002F1CFF /* AppTextFieldView.swift */; };
+		E1E7AF202BED0256002F1CFF /* AppButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E7AF1F2BED0256002F1CFF /* AppButtonView.swift */; };
+		E1E7AF222BED0308002F1CFF /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E7AF212BED0308002F1CFF /* LoginView.swift */; };
+		E1E7AF242BF5D093002F1CFF /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = E1E7AF232BF5D093002F1CFF /* SnapKit */; };
+		E1E7AF262BF5D0F7002F1CFF /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = E1E7AF252BF5D0F7002F1CFF /* SnapKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +87,16 @@
 		08CB69482BD818AC00E5940C /* EncountInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncountInfoModel.swift; sourceTree = "<group>"; };
 		08CB694A2BD81B2400E5940C /* FrendInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrendInfoModel.swift; sourceTree = "<group>"; };
 		08CB694C2BD81E9400E5940C /* UserLocationInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLocationInfoModel.swift; sourceTree = "<group>"; };
+		220293B02BE921E1009BC2A6 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		220293B82BE926E1009BC2A6 /* ProfileEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEditor.swift; sourceTree = "<group>"; };
+		220293BC2BE92864009BC2A6 /* ProfilePreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePreview.swift; sourceTree = "<group>"; };
+		224CE15A2BF76D1F00AA201F /* FriendListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendListView.swift; sourceTree = "<group>"; };
+		224CE15D2BF7715B00AA201F /* OfflineIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfflineIndicator.swift; sourceTree = "<group>"; };
+		224CE1612BF771E200AA201F /* OnlineIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnlineIndicator.swift; sourceTree = "<group>"; };
+		224CE1632BF7722100AA201F /* UserCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCard.swift; sourceTree = "<group>"; };
+		E1E7AF1D2BEC9AD0002F1CFF /* AppTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTextFieldView.swift; sourceTree = "<group>"; };
+		E1E7AF1F2BED0256002F1CFF /* AppButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppButtonView.swift; sourceTree = "<group>"; };
+		E1E7AF212BED0308002F1CFF /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +115,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1E7AF242BF5D093002F1CFF /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -100,6 +123,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1E7AF262BF5D0F7002F1CFF /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -206,7 +230,7 @@
 		08CB69382BD7DA0C00E5940C /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				08CB693B2BD7DA2D00E5940C /* ViewParts */,
+				220293B62BE926C5009BC2A6 /* ViewParts */,
 				08CB693A2BD7DA1F00E5940C /* Screens */,
 			);
 			path = Views;
@@ -218,15 +242,11 @@
 				08C0BCC92BB321AA0088109A /* ContentView.swift */,
 				08515F362BDBDE91009D20D1 /* MapView.swift */,
 				08515F402BE0C6EE009D20D1 /* TabViews.swift */,
+				220293B02BE921E1009BC2A6 /* ProfileView.swift */,
+				E1E7AF212BED0308002F1CFF /* LoginView.swift */,
+				224CE15A2BF76D1F00AA201F /* FriendListView.swift */,
 			);
 			path = Screens;
-			sourceTree = "<group>";
-		};
-		08CB693B2BD7DA2D00E5940C /* ViewParts */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewParts;
 			sourceTree = "<group>";
 		};
 		08CB693C2BD7DDED00E5940C /* Resources */ = {
@@ -288,6 +308,36 @@
 			path = APIModels;
 			sourceTree = "<group>";
 		};
+		220293B62BE926C5009BC2A6 /* ViewParts */ = {
+			isa = PBXGroup;
+			children = (
+				224CE15C2BF76D5300AA201F /* FriendList */,
+				220293B72BE926C5009BC2A6 /* ProfileView */,
+				E1E7AF1D2BEC9AD0002F1CFF /* AppTextFieldView.swift */,
+				E1E7AF1F2BED0256002F1CFF /* AppButtonView.swift */,
+			);
+			path = ViewParts;
+			sourceTree = "<group>";
+		};
+		220293B72BE926C5009BC2A6 /* ProfileView */ = {
+			isa = PBXGroup;
+			children = (
+				220293B82BE926E1009BC2A6 /* ProfileEditor.swift */,
+				220293BC2BE92864009BC2A6 /* ProfilePreview.swift */,
+			);
+			path = ProfileView;
+			sourceTree = "<group>";
+		};
+		224CE15C2BF76D5300AA201F /* FriendList */ = {
+			isa = PBXGroup;
+			children = (
+				224CE15D2BF7715B00AA201F /* OfflineIndicator.swift */,
+				224CE1612BF771E200AA201F /* OnlineIndicator.swift */,
+				224CE1632BF7722100AA201F /* UserCard.swift */,
+			);
+			path = FriendList;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -328,6 +378,9 @@
 				08C0BCD62BB321AC0088109A /* PBXTargetDependency */,
 			);
 			name = RideLinkTests;
+			packageProductDependencies = (
+				E1E7AF232BF5D093002F1CFF /* SnapKit */,
+			);
 			productName = RideLinkTests;
 			productReference = 08C0BCD42BB321AC0088109A /* RideLinkTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -346,6 +399,9 @@
 				08C0BCE02BB321AC0088109A /* PBXTargetDependency */,
 			);
 			name = RideLinkUITests;
+			packageProductDependencies = (
+				E1E7AF252BF5D0F7002F1CFF /* SnapKit */,
+			);
 			productName = RideLinkUITests;
 			productReference = 08C0BCDE2BB321AC0088109A /* RideLinkUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
@@ -432,16 +488,26 @@
 				08515F3F2BDBE274009D20D1 /* LocationDataModel.swift in Sources */,
 				08809D7C2BE7B24900A2F31D /* Tab.swift in Sources */,
 				08C0BCFA2BB323160088109A /* LocalStores.xcdatamodeld in Sources */,
+				224CE15E2BF7715B00AA201F /* OfflineIndicator.swift in Sources */,
 				08515F392BDBDE9D009D20D1 /* MapViewModel.swift in Sources */,
 				08C0BCCA2BB321AA0088109A /* ContentView.swift in Sources */,
+				220293BD2BE92864009BC2A6 /* ProfilePreview.swift in Sources */,
+				220293B92BE926E1009BC2A6 /* ProfileEditor.swift in Sources */,
+				E1E7AF202BED0256002F1CFF /* AppButtonView.swift in Sources */,
+				220293B12BE921E1009BC2A6 /* ProfileView.swift in Sources */,
+				224CE15B2BF76D1F00AA201F /* FriendListView.swift in Sources */,
+				224CE1622BF771E200AA201F /* OnlineIndicator.swift in Sources */,
 				08CB69492BD818AC00E5940C /* EncountInfoModel.swift in Sources */,
 				08CB694D2BD81E9400E5940C /* UserLocationInfoModel.swift in Sources */,
 				08809D792BE7AF6600A2F31D /* CustomTabViewsStyle.swift in Sources */,
+				E1E7AF222BED0308002F1CFF /* LoginView.swift in Sources */,
 				08CB694B2BD81B2400E5940C /* FrendInfoModel.swift in Sources */,
 				08CB69452BD8162D00E5940C /* UserProfileModel.swift in Sources */,
+				E1E7AF1E2BEC9AD0002F1CFF /* AppTextFieldView.swift in Sources */,
 				08C0BCC82BB321AA0088109A /* RideLinkApp.swift in Sources */,
 				08515F372BDBDE91009D20D1 /* MapView.swift in Sources */,
 				08515F412BE0C6EE009D20D1 /* TabViews.swift in Sources */,
+				224CE1642BF7722100AA201F /* UserCard.swift in Sources */,
 				08CB69472BD817EC00E5940C /* TouringInfoModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -606,7 +672,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"RideLink/Resources\"";
-				DEVELOPMENT_TEAM = 5285K4Z956;
+				DEVELOPMENT_TEAM = 77TFA268F3;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RideLink/Info.plist;
@@ -637,7 +703,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"RideLink/Resources\"";
-				DEVELOPMENT_TEAM = 5285K4Z956;
+				DEVELOPMENT_TEAM = 77TFA268F3;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RideLink/Info.plist;
@@ -812,6 +878,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 08C0BCF12BB322770088109A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseDatabaseSwift;
+		};
+		E1E7AF232BF5D093002F1CFF /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 08515F3A2BDBE064009D20D1 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+		E1E7AF252BF5D0F7002F1CFF /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 08515F3A2BDBE064009D20D1 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
 		};
 /* End XCSwiftPackageProductDependency section */
 

@@ -1,8 +1,8 @@
 .DS_Store
 *.xcodeproj/*.pbxuser
-*/xcuserdata/*
-!*.xcworkspace/xcshareddata
-!*.xcodeproj/project.xcworkspace/xcshareddata
-*.xcuserstate
-*.xcuserdatad
-*.xcuserstate
+*.xcodeproj/*.perspectivev3
+*.xcworkspace/xcuserdata/
+xcshareddata
+xcuserdata
+*.xccheckout
+*.moved-aside
