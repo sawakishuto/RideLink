@@ -67,3 +67,24 @@ import Foundation
                 }
             }
     }
+
+    // 差分があるときにデータを更新するメソッド（プロフィール欄とか, コメントとか, 位置情報とか？）
+    func patchData(endPoint: paths.RawValue,  params: Parameters, token: String) {
+        let headers: HTTPHeaders = [
+            "Token": token
+        ]
+        let path = endPoint
+        let url = baseUrl.appending(path)
+
+        let request = AF.request(url, method: .patch, parameters: params, encoding: JSONEncoding.default, headers: headers)
+            .responseJSON { response in
+                if let response = response.response { return }
+                
+                switch response.result {
+                case .success(let data):
+                    print("リクエスト成功\(data)")
+                case .failure(let error):
+                    print("リクエスト失敗\(error)")
+                }
+            }
+    }
