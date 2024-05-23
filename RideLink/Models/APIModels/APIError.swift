@@ -22,17 +22,17 @@ enum APIError: Error {
         case .unknown:
             return "不明なエラー"
         }
+    }
 
-        var description: String {
-            switch self {
+    var description: String {
+        switch self {
 
-            case .invalidUrl:
-                return "URLが無効です。"
-            case .networkError:
-                return "接続環境の良いところでもう一度お試しください。"
-            case .unknown:
-                return "不明なエラーです。"
-            }
+        case .invalidUrl:
+            return "URLが無効です。"
+        case .networkError:
+            return "接続環境の良いところでもう一度お試しください。"
+        case .unknown:
+            return "不明なエラーです。"
         }
     }
 }
