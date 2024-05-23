@@ -47,3 +47,23 @@ import Foundation
             }
         }
     }
+    // 新規でデータを保存するメソッド
+    func postData<T: Decodable>(endPoint: paths.RawValue,  params: Parameters, token: String, type: T.Type) {
+        let headers: HTTPHeaders = [
+            "Token": token
+        ]
+        let path = endPoint
+        let url = baseUrl.appending(path)
+
+        let request = AF.request(url, method: .post, parameters: params, encoding: JSONEncoding.default, headers: headers)
+            .responseDecodable(of: T.self){ response in
+                if let response = response.response { return }
+
+                switch response.result {
+                case .success(let data):
+                    print("リクエスト成功\(data)")
+                case .failure(let error):
+                    print("リクエスト失敗\(error)")
+                }
+            }
+    }
