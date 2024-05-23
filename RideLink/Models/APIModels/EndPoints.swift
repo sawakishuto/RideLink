@@ -6,3 +6,10 @@
 //
 
 import Foundation
+
+enum paths: String {
+    case userData = "https://userData"
+    case encount = "https://encount"
+    case friend = "https://friend"
+    case pokemon = "pokemon"
+}
