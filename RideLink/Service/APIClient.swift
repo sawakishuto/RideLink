@@ -106,3 +106,20 @@ import Foundation
             }
         }
     }
+    // 写真を変更する時に使うメソッド
+    func patchImageData(id: String, imageData: Data) {
+        let url = baseUrl
+        AF.upload(multipartFormData: { mfData in
+            mfData.append(imageData,withName: "\(id)ProfileImageData", fileName: "\(id)ProfileImage.jpg", mimeType: "image/jpeg")
+        }, to: url, method: .patch)
+        .responseJSON { response in
+            if let response = response.response {return}
+
+            switch response.result {
+            case .success(let data):
+                print("リクエスト成功\(data)")
+            case .failure(let error):
+                print("リクエスト失敗\(error)")
+            }
+        }
+    }
