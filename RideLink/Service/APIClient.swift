@@ -6,6 +6,12 @@
 //
 
 import Foundation
+import Combine
+import Alamofire
+
+final class APIClient {
+
+    static let shared = APIClient()
     // データを取得するメソッド  ジェネリクスで指定してるから柔軟に使えるはずだよ
     func fetchData<T: Decodable>(endPoint: paths.RawValue, params: Parameters, type: T.Type,headers: HTTPHeaders , completion: @escaping (T) -> Void) {
 
