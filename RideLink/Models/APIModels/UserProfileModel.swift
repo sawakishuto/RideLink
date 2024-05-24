@@ -12,6 +12,6 @@ struct UserProfileModel: Codable {
     let userName: String
     let bikeName: String
     let profileIcon: String
-    let comment: String
+    let touringcomment: String?
     var createAt = Date()
 }
