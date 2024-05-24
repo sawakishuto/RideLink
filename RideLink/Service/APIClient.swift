@@ -100,6 +100,7 @@ final class APIClient {
                 print("不明なエラー")
             }
         }
+        .eraseToAnyPublisher()
     }
     // 新規でデータを保存するメソッド
     func postData<T: Decodable>(endPoint: paths.RawValue,  params: Parameters, token: String, type: T.Type) {
