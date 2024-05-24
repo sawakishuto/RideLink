@@ -50,6 +50,34 @@ final class APIClient {
                             let value = try decode.decode(T.self, from: data)
                             promise(.success(value))
 
+                        }
+                    } catch {
+                        print("デコードに失敗しました😢")
+                        print(response.debugDescription)
+                        promise(.failure(APIError.decodeError))
+                    }
+                    switch statusCode {
+                    case 400:
+                        print(response.description)
+                        promise(.failure(APIError.forbidden))
+                    case 401:
+                        print(response.description)
+                        print("認証失敗😭")
+                        promise(.failure(APIError.auth))
+
+                    case 403:
+                        print(response.description)
+                        print("アクセス権がありません😭")
+                        promise(.failure(APIError.forbidden))
+                    case 404:
+                        print(response.description)
+                        print("URLがあかんよ😭")
+                        promise(.failure(APIError.invalidUrl))
+
+                    default:
+                        print("不明なエラー")
+                        promise(.failure(APIError.unknown))
+                    }
                 }
             } catch {
                 print("デコードに失敗しました😢")
