@@ -9,27 +9,13 @@ import Foundation
 import Combine
 import Alamofire
 
+
 final class APIClient {
 
     static let shared = APIClient()
-    // データを取得するメソッド  ジェネリクスで指定してるから柔軟に使えるはずだよ
-    func fetchData<T: Decodable>(endPoint: paths.RawValue, params: Parameters, type: T.Type,headers: HTTPHeaders , completion: @escaping (T) -> Void) {
 
-        let path = endPoint
-        let url = baseUrl.appending(path)
+    private let baseUrl = "https://pokeapi.co/api/v2/pokemon/"
 
-        let request = AF.request(url, method: .get, parameters: params, headers: headers)
-            .validate(contentType: ["application/json"])
-        request.response { response in
-            let statusCode = response.response!.statusCode
-
-            do {
-                if statusCode <= 300 {
-                    guard let data = response.data else {return}
-
-                    let decode = JSONDecoder()
-                    let value = try decode.decode(T.self, from: data)
-                    completion(value)
     // データを取得するメソッド  ジェネリクスで指定してるから柔軟に使えるはずだよ
     func fetchData<T: Decodable>(endPoint: paths.RawValue, params: Parameters, type: T.Type,headers: HTTPHeaders) -> AnyPublisher<T, Error> {
         return Deferred {
@@ -79,25 +65,6 @@ final class APIClient {
                         promise(.failure(APIError.unknown))
                     }
                 }
-            } catch {
-                print("デコードに失敗しました😢")
-                print(response.debugDescription)
-            }
-            switch statusCode {
-            case 400:
-                print(response.description)
-            case 401:
-                print(response.description)
-                print("認証失敗😭")
-            case 403:
-                print(response.description)
-                print("認証失敗()")
-            case 404:
-                print(response.description)
-                print("URLがあかんよ😭")
-
-            default:
-                print("不明なエラー")
             }
         }
         .eraseToAnyPublisher()
