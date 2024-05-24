@@ -30,6 +30,26 @@ final class APIClient {
                     let decode = JSONDecoder()
                     let value = try decode.decode(T.self, from: data)
                     completion(value)
+    // データを取得するメソッド  ジェネリクスで指定してるから柔軟に使えるはずだよ
+    func fetchData<T: Decodable>(endPoint: paths.RawValue, params: Parameters, type: T.Type,headers: HTTPHeaders) -> AnyPublisher<T, Error> {
+        return Deferred {
+            Future { promise in
+                let path = endPoint
+                let url = self.baseUrl.appending(path)
+
+                let request = AF.request(url, method: .get, parameters: params, headers: headers)
+                    .validate(contentType: ["application/json"])
+                request.response { response in
+                    let statusCode = response.response!.statusCode
+
+                    do {
+                        if statusCode <= 300 {
+                            guard let data = response.data else {return}
+
+                            let decode = JSONDecoder()
+                            let value = try decode.decode(T.self, from: data)
+                            promise(.success(value))
+
                 }
             } catch {
                 print("デコードに失敗しました😢")
