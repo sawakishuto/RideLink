@@ -16,7 +16,7 @@ class ProfileData: ObservableObject {
 
 
 struct ProfileView: View {
-    @EnvironmentObject var profileData: ProfileData
+    @ObservedObject var profileData: ProfileData
     @State var tempUsername: String = ""
     @State var tempBikename: String = ""
     @State var tempComment: String = ""
@@ -25,7 +25,7 @@ struct ProfileView: View {
     
     var body: some View {
         VStack {
-            ProfilePreView()
+            ProfilePreView(profileData: profileData)
             Spacer().frame(height: 30)
             ProfileEditor(editSubject: $tempUsername, text: "ユーザーネーム")
             ProfileEditor(editSubject: $tempBikename, text: "バイク名")
@@ -64,7 +64,5 @@ struct ProfileView: View {
 
 
 #Preview {
-    ProfileView().environmentObject(
-        ProfileData()
-    )
+    ProfileView(profileData: ProfileData())
 }

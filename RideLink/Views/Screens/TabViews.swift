@@ -7,6 +7,62 @@
 
 import SwiftUI
 
+let mock1 = UserProfileModel(
+    uid: "1",
+    userName: "1",
+    bikeName: "バイク名",
+    profileIcon: "orangeBike",
+    comment: "コメント"
+)
+
+let mock2 = UserProfileModel(
+    uid: "2",
+    userName: "2",
+    bikeName: "バイク名",
+    profileIcon: "orangeBike",
+    comment: "コメント"
+)
+
+let mock3 = UserProfileModel(
+    uid: "3",
+    userName: "3",
+    bikeName: "バイク名",
+    profileIcon: "orangeBike",
+    comment: "コメント"
+)
+
+let mock4 = UserProfileModel(
+    uid: "4",
+    userName: "4",
+    bikeName: "バイク名",
+    profileIcon: "orangeBike",
+    comment: "コメント"
+)
+
+let mock5 = UserProfileModel(
+    uid: "5",
+    userName: "5",
+    bikeName: "バイク名",
+    profileIcon: "orangeBike",
+    comment: "コメント"
+)
+
+let mock6 = UserProfileModel(
+    uid: "6",
+    userName: "6",
+    bikeName: "バイク名",
+    profileIcon: "orangeBike",
+    comment: "コメント"
+)
+
+let friends = [
+    FrendInfoModel(isOnline: true, profile: mock1),
+    FrendInfoModel(isOnline: false, profile: mock2),
+    FrendInfoModel(isOnline: true, profile: mock3),
+    FrendInfoModel(isOnline: false, profile: mock4),
+    FrendInfoModel(isOnline: true, profile: mock5),
+    FrendInfoModel(isOnline: false, profile: mock6)
+]
 
 struct TabViews: View {
     init() {
@@ -22,10 +78,10 @@ struct TabViews: View {
                 ContentView()
                     .tag(Tab.encounts)
                 
-                Text("Frired")
+                FriendListView(friends: friends)
                     .tag(Tab.friends)
                 
-                Text("settings")
+                ProfileView(profileData: ProfileData())
                     .tag(Tab.settings)
             }
             Divider()
