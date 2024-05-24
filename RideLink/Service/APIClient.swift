@@ -143,6 +143,7 @@ final class APIClient {
                 }
             }
     }
+
     // 新規登録で写真を保存する時に使う
     func postImageData(id: String, imageData: Data) {
         let url = baseUrl
@@ -161,6 +162,7 @@ final class APIClient {
             }
         }
     }
+
     // 写真を変更する時に使うメソッド
     func patchImageData(id: String, imageData: Data) {
         let url = baseUrl
