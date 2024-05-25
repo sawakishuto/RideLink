@@ -7,6 +7,7 @@
 
 import Foundation
 import Combine
+import FirebaseAuth
 
 protocol AuthRepositoryProtocol: AnyObject {
 //    signInが成功した時はRepositoryでそのままUserProfileを取得するメソッドを呼び出して取得したユーザー情報をViewModelで返す
@@ -16,6 +17,7 @@ protocol AuthRepositoryProtocol: AnyObject {
 //    signUpが成功した時はRepositoryでそのままUserProfileを取得するメソッドを呼び出して取得したユーザー情報をViewModelで返す
     func signUp(mailAdress: String, password: String, user: UserProfileModel)
 
+    func getUserToken() -> Future<String, Error>
 //    追加でできれば
 //    func deleteAccount()を調査して実装してみてほしい
 }

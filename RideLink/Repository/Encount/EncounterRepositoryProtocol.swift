@@ -11,11 +11,11 @@ import Combine
 
 protocol EncounterRepositoryProtocol: AnyObject {
 
-    func sendFriendReqest(ownUid: String, toUid: String) -> AnyPublisher<Bool, Error>
+    func sendFriendReqest(toUid: String) -> AnyPublisher<Bool, Error>
 
     func receptionFriendReqest() -> AnyPublisher<FriendInfoModel, Error>
 
-    func acceptFriendRequest(ownUid: String, toUid: String) -> AnyPublisher<Bool, Error>
+    func acceptFriendRequest(toUid: String) -> AnyPublisher<Bool, Error>
 //    誰とすれ違ったかを取得するメソッド
     func getEncountInfo() -> AnyPublisher<[EncountInfoModel], Error>
 //   自分の位置をポストするメソッド

@@ -9,7 +9,6 @@ import Foundation
 
 
 struct UserLocationInfoModel: Codable {
-    let uid: String
     let locationInfo: [LocatinInfo]
 }
 
