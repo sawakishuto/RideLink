@@ -8,7 +8,6 @@
 import Foundation
 
 struct UserProfileModel: Codable {
-    let uid: String
     let userName: String
     let bikeName: String
     let profileIcon: String
