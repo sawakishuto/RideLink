@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ProfilePreView: View {
-    @EnvironmentObject var profileData: ProfileData
+    @Binding var profileData: ProfileData
 
     var body: some View {
         HStack {

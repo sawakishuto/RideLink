@@ -27,10 +27,15 @@ class ProfileViewModel: ObservableObject {
 
     init(originalData: ProfileData) {
         self.originalData = originalData
-        self.editData = originalData
+        self.editData = 
+            ProfileData(
+                username: originalData.username, 
+                bikename: originalData.bikename, 
+                comment: originalData.comment
+            )//変更前の状態を保持
 
         Publishers
-            .CombineLatest3(Just(editData.username),Just(editData.bikename) , Just(editData.comment))
+            .CombineLatest3($editData.map(\.username), $editData.map(\.bikename), $editData.map(\.comment))
                 .map { [unowned self] (newUsername, newBikename, newComment) in
                     return !newUsername.isEmpty &&
                         !newBikename.isEmpty &&
@@ -40,10 +45,15 @@ class ProfileViewModel: ObservableObject {
                             newComment != self.originalData.comment)
                 }
                 .assign(to: &$canSave)
-
     }
 
     func save() {
-        originalData = editData
+        originalData =
+            ProfileData(
+                username: editData.username,
+                bikename: editData.bikename,
+                comment: editData.comment
+            )//変更前の状態を保持
+
     }
 }

@@ -27,7 +27,9 @@ struct CustomTextField: View {
 struct ProfileEditor: View {
     @Binding var editSubject: String
     var text: String
-    
+    @State private var showToast: Bool = false
+    @State private var toastMessage: String = ""
+
     var body: some View {
         VStack {
             HStack {
@@ -40,7 +42,28 @@ struct ProfileEditor: View {
             }
             .padding(.leading, 40)
             CustomTextField(placeholder: Text("\(text)を入力してください"), text: $editSubject)
+                .onChange(of: editSubject) { newValue in
+                    if let errorMessage = validate(newValue) {
+                        self.toastMessage = errorMessage
+                        self.showToast = true
+                    } else {
+                        self.showToast = false
+                    }
+                }
             Spacer().frame(height: 30)
+            if showToast {
+                ToastView(message: toastMessage)
+                    .transition(.move(edge: .bottom))
+            }
+        }
+    }
+
+    func validate(_ newValue: String) -> String? {
+        if newValue.isEmpty {
+            return "入力は必須です"
+        } else {
+            return nil
         }
     }
 }
+

@@ -7,13 +7,14 @@
 
 import SwiftUI
 
+
 struct ProfileView: View {
     @ObservedObject var vm: ProfileViewModel
     @State private var showingActionSheet = false
     
     var body: some View {
         VStack {
-            ProfilePreView()
+            ProfilePreView(profileData: $vm.originalData)
             Spacer().frame(height: 30)
             ProfileEditor(editSubject: $vm.editData.username, text: "ユーザーネーム")
             ProfileEditor(editSubject: $vm.editData.bikename, text: "バイク名")
@@ -35,6 +36,8 @@ struct ProfileView: View {
                 ActionSheet(title: Text("変更を保存しますか？"), buttons: [
                     .default(Text("保存")) {
                         vm.save()
+                        self.showingActionSheet = false
+                        self.vm.canSave = false
                     },
                     .cancel()
                 ])
@@ -42,9 +45,4 @@ struct ProfileView: View {
             Spacer()
         }
     }
-}
-
-
-#Preview {
-    ProfileView()
 }

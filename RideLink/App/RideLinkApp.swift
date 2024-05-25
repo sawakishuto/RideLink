@@ -27,8 +27,12 @@ struct YourApp: App {
   var body: some Scene {
     WindowGroup {
       NavigationView {
-        ContentView()
+          ProfileView(vm: profileViewModel)
       }
     }
   }
 }
+
+var profileData = ProfileData(username: "kaka", bikename: "yzf", comment: "hello")
+
+var profileViewModel = ProfileViewModel(originalData: profileData)
