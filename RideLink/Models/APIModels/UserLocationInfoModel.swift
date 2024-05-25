@@ -10,6 +10,10 @@ import Foundation
 
 struct UserLocationInfoModel: Codable {
     let uid: String
+    let locationInfo: [LocatinInfo]
+}
+
+struct LocatinInfo: Codable {
     let latitude: Double
     let longitude: Double
     var createAt = Date()
