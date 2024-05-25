@@ -12,7 +12,7 @@ let mock1 = UserProfileModel(
     userName: "1",
     bikeName: "バイク名",
     profileIcon: "orangeBike",
-    comment: "コメント"
+    touringcomment: "コメント"
 )
 
 let mock2 = UserProfileModel(
@@ -20,7 +20,7 @@ let mock2 = UserProfileModel(
     userName: "2",
     bikeName: "バイク名",
     profileIcon: "orangeBike",
-    comment: "コメント"
+    touringcomment: "コメント"
 )
 
 let mock3 = UserProfileModel(
@@ -28,7 +28,7 @@ let mock3 = UserProfileModel(
     userName: "3",
     bikeName: "バイク名",
     profileIcon: "orangeBike",
-    comment: "コメント"
+    touringcomment: "コメント"
 )
 
 let mock4 = UserProfileModel(
@@ -36,7 +36,7 @@ let mock4 = UserProfileModel(
     userName: "4",
     bikeName: "バイク名",
     profileIcon: "orangeBike",
-    comment: "コメント"
+    touringcomment: "コメント"
 )
 
 let mock5 = UserProfileModel(
@@ -44,7 +44,7 @@ let mock5 = UserProfileModel(
     userName: "5",
     bikeName: "バイク名",
     profileIcon: "orangeBike",
-    comment: "コメント"
+    touringcomment: "コメント"
 )
 
 let mock6 = UserProfileModel(
@@ -52,16 +52,16 @@ let mock6 = UserProfileModel(
     userName: "6",
     bikeName: "バイク名",
     profileIcon: "orangeBike",
-    comment: "コメント"
+    touringcomment: "コメント"
 )
 
 let friends = [
-    FrendInfoModel(isOnline: true, profile: mock1),
-    FrendInfoModel(isOnline: false, profile: mock2),
-    FrendInfoModel(isOnline: true, profile: mock3),
-    FrendInfoModel(isOnline: false, profile: mock4),
-    FrendInfoModel(isOnline: true, profile: mock5),
-    FrendInfoModel(isOnline: false, profile: mock6)
+    FriendInfoModel(isOnline: true, profile: mock1),
+    FriendInfoModel(isOnline: false, profile: mock2),
+    FriendInfoModel(isOnline: true, profile: mock3),
+    FriendInfoModel(isOnline: false, profile: mock4),
+    FriendInfoModel(isOnline: true, profile: mock5),
+    FriendInfoModel(isOnline: false, profile: mock6)
 ]
 
 struct TabViews: View {

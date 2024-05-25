@@ -206,6 +206,9 @@
 		08809D7A2BE7B23300A2F31D /* Enums */ = {
 			isa = PBXGroup;
 			children = (
+				08582C852BF3E67300B7FEE5 /* APIError.swift */,
+				08582C812BF3D86900B7FEE5 /* HTTPMethods.swift */,
+				08582C832BF3E62000B7FEE5 /* EndPoints.swift */,
 				08809D7B2BE7B24900A2F31D /* Tab.swift */,
 			);
 			path = Enums;
@@ -319,9 +322,6 @@
 			isa = PBXGroup;
 			children = (
 				08C0BCC72BB321AA0088109A /* RideLinkApp.swift */,
-				08582C852BF3E67300B7FEE5 /* APIError.swift */,
-				08582C832BF3E62000B7FEE5 /* EndPoints.swift */,
-				08582C812BF3D86900B7FEE5 /* HTTPMethods.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";

@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct FriendListView: View {
-    let friends: [FrendInfoModel]
+    let friends: [FriendInfoModel]
 
     var body: some View {
         ScrollView {
