@@ -41,7 +41,7 @@ struct UserCard: View {
                     }
                     .padding(.bottom, 5)
                     
-                    Text(userProfile.comment)
+                    Text(userProfile.touringcomment ?? "")
                         .font(.system(size: 20))
                     
                 }

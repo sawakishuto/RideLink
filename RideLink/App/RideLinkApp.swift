@@ -27,6 +27,7 @@ struct YourApp: App {
   var body: some Scene {
     WindowGroup {
       NavigationView {
+        TabViews()
           ProfileView(vm: profileViewModel)
       }
     }

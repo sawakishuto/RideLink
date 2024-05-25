@@ -9,7 +9,6 @@ import Foundation
 
 
 struct TouringInfoModel: Codable {
-    let uid: String
     let destinationName: String?
     let destinationLatitude: Double?
     let destinationLongitude: Double?
