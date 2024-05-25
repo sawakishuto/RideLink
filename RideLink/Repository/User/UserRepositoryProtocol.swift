@@ -10,9 +10,12 @@ import Combine
 
 protocol UserRepositoryProtocol: AnyObject {
 //    uidを使ってUser情報を取得するメソッド
-    func getUserData(uid: String) -> AnyPublisher<UserProfileModel, Error>
 
-    func getFriendData(uid: String) -> AnyPublisher<FriendInfoModel, Error>
+    func getUserData() -> AnyPublisher<UserProfileModel, Error>
+
+    func getFriendData() -> AnyPublisher<FriendInfoModel, Error>
+
+
 
 // それぞれ情報をProfileViewからアップデートできるputメソッドを作成してほしい（もしいけるならデータをジェネリクス(汎用性が高い型)として持って一つのメソッドでいろんな情報のアップデートに使えるととてもベスト！！）
 //    更新が成功したらenvirnomentObjectにも変更が加わるようにしてほしい!
