@@ -19,5 +19,5 @@ protocol EncounterRepositoryProtocol: AnyObject {
 //    誰とすれ違ったかを取得するメソッド
     func getEncountInfo() -> AnyPublisher<[EncountInfoModel], Error>
 //   自分の位置をポストするメソッド
-    func postUserLocation(userLocInfo: UserLocationInfoModel) -> AnyPublisher<Bool, Error>
+    func postUserLocation(userLocInfo: [LocatinInfo]) -> AnyPublisher<Bool, Error>
 }
