@@ -7,32 +7,22 @@
 
 import SwiftUI
 
-//一旦前回作成したモデルの形式で残してる
-class ProfileData: ObservableObject {
-    @Published var username = "Kabu"
-    @Published var bikename =  "YZF-R15"
-    @Published var comment = "アプリ作成中"
-}
-
-
 struct ProfileView: View {
-    @EnvironmentObject var profileData: ProfileData
-    @State var tempUsername: String = ""
-    @State var tempBikename: String = ""
-    @State var tempComment: String = ""
-
+    @ObservedObject var vm: ProfileViewModel
     @State private var showingActionSheet = false
     
     var body: some View {
         VStack {
             ProfilePreView()
             Spacer().frame(height: 30)
-            ProfileEditor(editSubject: $tempUsername, text: "ユーザーネーム")
-            ProfileEditor(editSubject: $tempBikename, text: "バイク名")
-            ProfileEditor(editSubject: $tempComment, text: "コメント")
+            ProfileEditor(editSubject: $vm.editData.username, text: "ユーザーネーム")
+            ProfileEditor(editSubject: $vm.editData.bikename, text: "バイク名")
+            ProfileEditor(editSubject: $vm.editData.comment, text: "コメント")
             Spacer().frame(height: 60)
             Button(action: {
-                self.showingActionSheet = true
+                if vm.canSave {
+                    self.showingActionSheet = true
+                }
             }) {
                 Text("更新")
                     .frame(width: 80, height: 15)
@@ -44,27 +34,17 @@ struct ProfileView: View {
             .actionSheet(isPresented: $showingActionSheet) {
                 ActionSheet(title: Text("変更を保存しますか？"), buttons: [
                     .default(Text("保存")) {
-                        self.profileData.username = self.tempUsername
-                        self.profileData.bikename = self.tempBikename
-                        self.profileData.comment = self.tempComment
+                        vm.save()
                     },
                     .cancel()
                 ])
             }
             Spacer()
-        }.onAppear {
-            tempUsername = profileData.username
-            tempBikename = profileData.bikename
-            tempComment = profileData.comment
         }
     }
 }
 
 
-
-
 #Preview {
-    ProfileView().environmentObject(
-        ProfileData()
-    )
+    ProfileView()
 }
