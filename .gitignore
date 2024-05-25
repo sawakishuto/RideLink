@@ -1,2 +1,8 @@
 .DS_Store
-RideLink.xcodeproj/project.xcworkspace/xcuserdata/kaka.xcuserdatad/UserInterfaceState.xcuserstate
+*.xcodeproj/*.pbxuser
+*.xcodeproj/*.perspectivev3
+*.xcworkspace/xcuserdata/
+xcshareddata
+xcuserdata
+*.xccheckout
+*.moved-aside
