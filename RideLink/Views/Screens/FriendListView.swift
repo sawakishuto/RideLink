@@ -21,7 +21,7 @@ struct FriendListView: View {
                 .padding(.bottom, 10)
                 .padding(.top, -30)
 
-                ForEach(friends.filter { $0.isOnline }, id: \.profile.uid) {
+                ForEach(friends.filter { $0.isOnline }) {
                     friend in UserCard(userProfile: friend.profile)
                 }
 
@@ -33,7 +33,7 @@ struct FriendListView: View {
                 .padding(.top, 10)
                 .padding(.bottom, 10)
 
-                ForEach(friends.filter { !$0.isOnline }, id: \.profile.uid) {
+                ForEach(friends.filter { !$0.isOnline }) {
                     friend in UserCard(userProfile: friend.profile)
                 }
             }
