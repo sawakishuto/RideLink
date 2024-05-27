@@ -45,13 +45,14 @@
 		220293B12BE921E1009BC2A6 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 220293B02BE921E1009BC2A6 /* ProfileView.swift */; };
 		220293B92BE926E1009BC2A6 /* ProfileEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 220293B82BE926E1009BC2A6 /* ProfileEditor.swift */; };
 		220293BD2BE92864009BC2A6 /* ProfilePreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 220293BC2BE92864009BC2A6 /* ProfilePreview.swift */; };
-		E1BCBEEE2C0183D80009E9DB /* SignupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BCBEED2C0183D80009E9DB /* SignupView.swift */; };
 		2203EF272C024FAC00FD7175 /* ToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2203EF262C024FAC00FD7175 /* ToastView.swift */; };
 		224CE15B2BF76D1F00AA201F /* FriendListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224CE15A2BF76D1F00AA201F /* FriendListView.swift */; };
 		224CE15E2BF7715B00AA201F /* OfflineIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224CE15D2BF7715B00AA201F /* OfflineIndicator.swift */; };
 		224CE1622BF771E200AA201F /* OnlineIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224CE1612BF771E200AA201F /* OnlineIndicator.swift */; };
 		224CE1642BF7722100AA201F /* UserCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224CE1632BF7722100AA201F /* UserCard.swift */; };
+		2260FB0B2C04D7EF00C837DB /* CommentEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2260FB0A2C04D7EF00C837DB /* CommentEditor.swift */; };
 		22FCBB642BFED30B0050F411 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22FCBB632BFED30B0050F411 /* ProfileViewModel.swift */; };
+		E1BCBEEE2C0183D80009E9DB /* SignupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BCBEED2C0183D80009E9DB /* SignupView.swift */; };
 		E1E7AF1E2BEC9AD0002F1CFF /* AppTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E7AF1D2BEC9AD0002F1CFF /* AppTextFieldView.swift */; };
 		E1E7AF202BED0256002F1CFF /* AppButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E7AF1F2BED0256002F1CFF /* AppButtonView.swift */; };
 		E1E7AF222BED0308002F1CFF /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E7AF212BED0308002F1CFF /* LoginView.swift */; };
@@ -114,13 +115,14 @@
 		220293B02BE921E1009BC2A6 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		220293B82BE926E1009BC2A6 /* ProfileEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEditor.swift; sourceTree = "<group>"; };
 		220293BC2BE92864009BC2A6 /* ProfilePreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePreview.swift; sourceTree = "<group>"; };
-		E1BCBEED2C0183D80009E9DB /* SignupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupView.swift; sourceTree = "<group>"; };
 		2203EF262C024FAC00FD7175 /* ToastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastView.swift; sourceTree = "<group>"; };
 		224CE15A2BF76D1F00AA201F /* FriendListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendListView.swift; sourceTree = "<group>"; };
 		224CE15D2BF7715B00AA201F /* OfflineIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfflineIndicator.swift; sourceTree = "<group>"; };
 		224CE1612BF771E200AA201F /* OnlineIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnlineIndicator.swift; sourceTree = "<group>"; };
 		224CE1632BF7722100AA201F /* UserCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCard.swift; sourceTree = "<group>"; };
+		2260FB0A2C04D7EF00C837DB /* CommentEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentEditor.swift; sourceTree = "<group>"; };
 		22FCBB632BFED30B0050F411 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		E1BCBEED2C0183D80009E9DB /* SignupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupView.swift; sourceTree = "<group>"; };
 		E1E7AF1D2BEC9AD0002F1CFF /* AppTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTextFieldView.swift; sourceTree = "<group>"; };
 		E1E7AF1F2BED0256002F1CFF /* AppButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppButtonView.swift; sourceTree = "<group>"; };
 		E1E7AF212BED0308002F1CFF /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
@@ -389,6 +391,7 @@
 				220293B82BE926E1009BC2A6 /* ProfileEditor.swift */,
 				2203EF262C024FAC00FD7175 /* ToastView.swift */,
 				220293BC2BE92864009BC2A6 /* ProfilePreview.swift */,
+				2260FB0A2C04D7EF00C837DB /* CommentEditor.swift */,
 			);
 			path = ProfileView;
 			sourceTree = "<group>";
@@ -576,6 +579,7 @@
 				08CB694B2BD81B2400E5940C /* FriendInfoModel.swift in Sources */,
 				08142F682C00F857007CCF1B /* AuthRepository.swift in Sources */,
 				08142F6A2C00F86C007CCF1B /* UserRepositoryProtocol.swift in Sources */,
+				2260FB0B2C04D7EF00C837DB /* CommentEditor.swift in Sources */,
 				08142F662C00F847007CCF1B /* AuthRepositoryProtocol.swift in Sources */,
 				22FCBB642BFED30B0050F411 /* ProfileViewModel.swift in Sources */,
 				08809D792BE7AF6600A2F31D /* CustomTabViewsStyle.swift in Sources */,

@@ -1,13 +1,13 @@
 //
-//  ProfileEditor.swift
+//  CommentEditor.swift
 //  RideLink
 //
-//  Created by 株丹優一郎 on 2024/05/06.
+//  Created by 株丹優一郎 on 2024/05/28.
 //
 
 import SwiftUI
 
-struct CustomTextField: View {
+struct CustomCommentTextField: View {
     var placeholder: Text
     @Binding var text: String
     var editingChanged: (Bool)->() = { _ in }
@@ -24,9 +24,8 @@ struct CustomTextField: View {
     }
 }
 
-struct ProfileEditor: View {
-    @Binding var editSubject: String
-    var text: String
+struct CommentEditor: View {
+    @Binding var editSubject: String?
     
     var body: some View {
         VStack {
@@ -34,15 +33,16 @@ struct ProfileEditor: View {
                 Image("pen")
                     .resizable()
                     .frame(width: 30, height: 30)
-                Text(text)
+                Text("コメント")
                     .font(.subheadline)
                 Spacer()
             }
             .padding(.leading, 40)
-            CustomTextField(placeholder: Text("\(text)を入力してください"), text: $editSubject)
+            CustomCommentTextField(placeholder: Text("コメントを入力してください"), text: Binding(
+                get: { editSubject ?? "" },
+                set: { newValue in editSubject = newValue.isEmpty ? nil : newValue }
+            ))
             Spacer().frame(height: 20)
         }
     }
 }
-
-

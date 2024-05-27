@@ -34,6 +34,15 @@ struct YourApp: App {
   }
 }
 
-var profileData = ProfileData(username: "kaka", bikename: "yzf", comment: "hello")
+let today = Calendar.current.startOfDay(for: Date())
+
+//mock data
+var profileData = UserProfileModel(
+    userName: "kaka",
+    bikeName: "yzf",
+    profileIcon: "kabuBike",
+    touringcomment: "hello",
+    createAt: today
+);
 
 var profileViewModel = ProfileViewModel(originalData: profileData)

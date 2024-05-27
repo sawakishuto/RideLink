@@ -18,7 +18,7 @@ struct ProfileView: View {
             Spacer().frame(height: 30)
             ProfileEditor(editSubject: $vm.editData.username, text: "ユーザーネーム")
             ProfileEditor(editSubject: $vm.editData.bikename, text: "バイク名")
-            ProfileEditor(editSubject: $vm.editData.comment, text: "コメント")
+            CommentEditor(editSubject: $vm.editData.comment)
             Spacer().frame(height: 60)
             Button(action: {
                 if vm.canSave {
@@ -37,7 +37,6 @@ struct ProfileView: View {
                     .default(Text("保存")) {
                         vm.save()
                         self.showingActionSheet = false
-                        self.vm.canSave = false
                     },
                     .cancel()
                 ])

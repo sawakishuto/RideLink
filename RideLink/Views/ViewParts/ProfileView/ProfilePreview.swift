@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ProfilePreView: View {
-    @Binding var profileData: ProfileData
+    @Binding var profileData: UserProfileModel
 
     var body: some View {
         HStack {
@@ -28,18 +28,18 @@ struct ProfilePreView: View {
             }
             .padding(.trailing, 20)
             VStack(alignment: .leading) {
-                Text(profileData.username)
+                Text(profileData.userName)
                     .font(.headline)
                 Spacer().frame(height: 10)
                 HStack {
                     Image("bikeicon")//Todo修正
                         .resizable()
                         .frame(width: 35, height: 21)
-                    Text(profileData.bikename)
+                    Text(profileData.bikeName)
                         .font(.subheadline)
                 }
                 Spacer().frame(height: 10)
-                Text(profileData.comment)
+                Text(profileData.touringcomment ?? "")
                     .font(.caption)
             }
             Spacer()
