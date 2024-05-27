@@ -8,8 +8,19 @@
 import SwiftUI
 
 
+//mock data
+let today = Calendar.current.startOfDay(for: Date())
+
+var profileData = UserProfileModel(
+    userName: "kaka",
+    bikeName: "yzf",
+    profileIcon: "kabuBike",
+    touringcomment: "hello",
+    createAt: today
+);
+
 struct ProfileView: View {
-    @ObservedObject var vm: ProfileViewModel
+    @ObservedObject var vm = ProfileViewModel(originalData: profileData)
     @State private var showingActionSheet = false
     @State private var showingToast = false
     
