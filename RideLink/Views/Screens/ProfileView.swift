@@ -11,6 +11,7 @@ import SwiftUI
 struct ProfileView: View {
     @ObservedObject var vm: ProfileViewModel
     @State private var showingActionSheet = false
+    @State private var showingToast = false
     
     var body: some View {
         VStack {
@@ -19,10 +20,16 @@ struct ProfileView: View {
             ProfileEditor(editSubject: $vm.editData.username, text: "ユーザーネーム")
             ProfileEditor(editSubject: $vm.editData.bikename, text: "バイク名")
             CommentEditor(editSubject: $vm.editData.comment)
-            Spacer().frame(height: 60)
+            Spacer().frame(height: 30)
+            if showingToast {
+                ToastView(message:  "未記入の項目があります")
+            }
+            Spacer().frame(height: 30)
             Button(action: {
                 if vm.canSave {
                     self.showingActionSheet = true
+                } else {
+                    self.showingToast = true
                 }
             }) {
                 Text("更新")
@@ -42,6 +49,11 @@ struct ProfileView: View {
                 ])
             }
             Spacer()
+        }
+        .onChange(of: vm.canSave) { newValue in
+            if newValue {
+                self.showingToast = false
+            }
         }
     }
 }

@@ -16,7 +16,7 @@ struct ToastView: View {
             .background(Color.red)
             .foregroundColor(.white)
             .cornerRadius(10)
-            .frame(width: 200, height: 10)
+            .frame(width: 300, height: 10)
             .padding(15)
     }
 }
