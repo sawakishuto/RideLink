@@ -40,6 +40,7 @@ final class APIClient {
         }
     }
 
+
     // データを取得するメソッド  ジェネリクスで指定してるから柔軟に使えるはずだよ
     func fetchData<T: Decodable>(endPoint: paths.RawValue, params: Parameters?, type: T.Type) -> AnyPublisher<T, Error> {
 
@@ -108,23 +109,35 @@ final class APIClient {
         .eraseToAnyPublisher()
     }
     // 新規でデータを保存するメソッド
-    func postData<T: Decodable>(endPoint: paths.RawValue,  params: Parameters, token: String, type: T.Type) {
-        let headers: HTTPHeaders = [
-            "Token": token
-        ]
-        let path = endPoint
-        let url = baseUrl.appending(path)
-
-        let request = AF.request(url, method: .post, parameters: params, encoding: JSONEncoding.default, headers: headers)
-            .responseDecodable(of: T.self){ response in
-                if let response = response.response { return }
-
-                switch response.result {
-                case .success(let data):
-                    print("リクエスト成功\(data)")
+    func postData<T: Decodable>(endPoint: paths.RawValue,  params: Parameters, type: T.Type) {
+        getUserToken()
+            .sink { response in
+                switch response {
+                case .finished:
+                    return
                 case .failure(let error):
-                    print("リクエスト失敗\(error)")
+                    return
                 }
+            } receiveValue: { token in
+                let token = token
+
+                let headers: HTTPHeaders = [
+                    "Token": token
+                ]
+                let path = endPoint
+                let url = self.baseUrl.appending(path)
+
+                let request = AF.request(url, method: .post, parameters: params, encoding: JSONEncoding.default, headers: headers)
+                    .responseDecodable(of: T.self){ response in
+                        if let response = response.response { return }
+
+                        switch response.result {
+                        case .success(let data):
+                            print("リクエスト成功\(data)")
+                        case .failure(let error):
+                            print("リクエスト失敗\(error)")
+                        }
+                    }
             }
     }
 
