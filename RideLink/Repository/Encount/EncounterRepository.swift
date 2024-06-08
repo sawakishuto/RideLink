@@ -44,3 +44,8 @@ import Alamofire
         .eraseToAnyPublisher()
     }
 
+    func acceptFriendRequest(toUid: String) -> AnyPublisher<Bool, Error> {
+        let subject = CurrentValueSubject<Bool, Error>(true)
+        subject.send(true)
+        return subject.eraseToAnyPublisher()
+    }
