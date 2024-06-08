@@ -22,3 +22,25 @@ import Alamofire
         subject.send((FriendInfoModel(id: "11", isOnline: true, profile: UserProfileModel(userName: "a", bikeName: "a", profileIcon: "x", touringcomment: nil))))
         return subject.eraseToAnyPublisher()
     }
+
+    func getEncountInfo() -> AnyPublisher<[EncountInfoModel], Error> {
+        return Deferred {
+            Future { promise in
+                self.apiClient.fetchData(endPoint: paths.encount.rawValue, params: nil, type: EncountResponse.self)
+                    .receive(on: DispatchQueue.global(qos: .background))
+                    .sink { response in
+                        switch response {
+                        case.failure(let error):
+                            promise(.failure(error))
+                        case .finished:
+                            return
+                        }
+                    } receiveValue: { result in
+                        promise(.success(result.encountInfos))
+                    }
+
+            }
+        }
+        .eraseToAnyPublisher()
+    }
+
