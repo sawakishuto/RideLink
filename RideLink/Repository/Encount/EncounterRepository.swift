@@ -6,3 +6,4 @@
 //
 
 import Foundation
+    let apiClient = APIClient.shared
