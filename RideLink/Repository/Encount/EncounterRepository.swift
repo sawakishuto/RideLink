@@ -9,6 +9,8 @@ import Foundation
 import Combine
 import Alamofire
 
+final class EncounterRepository: EncounterRepositoryProtocol {
+
     let apiClient = APIClient.shared
 
     func sendFriendReqest(toUid: String) -> AnyPublisher<Bool, Error> {
@@ -49,3 +51,27 @@ import Alamofire
         subject.send(true)
         return subject.eraseToAnyPublisher()
     }
+    
+    func postUserLocation(userLocInfo: [LocatinInfo]) -> AnyPublisher<Bool, Error> {
+        var locInfoParam: [String: [[String: Any]]] = ["locInfo": [[:]]]
+
+        var locationInfo: [[String: Any]] = [[:]]
+
+        for info in userLocInfo {
+            locationInfo.append([
+                "latitude": info.latitude,
+                "longitude": info.longitude,
+                "createAt": info.createAt
+            ])
+        }
+        locInfoParam["locInfo"] = locationInfo
+
+        return Deferred {
+            Future { promise in
+                self.apiClient.postData(endPoint: paths.userData.rawValue, params: locInfoParam, type: UserLocationInfoModel.self)
+            }
+        }
+        .eraseToAnyPublisher()
+    }
+
+}
