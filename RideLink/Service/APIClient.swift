@@ -39,54 +39,69 @@ final class APIClient {
             }
         }
     }
+
     // データを取得するメソッド  ジェネリクスで指定してるから柔軟に使えるはずだよ
-    func fetchData<T: Decodable>(endPoint: paths.RawValue, params: Parameters, type: T.Type,headers: HTTPHeaders) -> AnyPublisher<T, Error> {
+    func fetchData<T: Decodable>(endPoint: paths.RawValue, params: Parameters?, type: T.Type) -> AnyPublisher<T, Error> {
+
         return Deferred {
             Future { promise in
+                self.getUserToken()
+                    .sink { response in
+                        switch response {
+                        case .finished:
+                            return
+                        case .failure(let error):
+                            return
+                        }
+                    } receiveValue: { token in
+                        let token = token
+
                 let path = endPoint
                 let url = self.baseUrl.appending(path)
+                        let headers: HTTPHeaders = HTTPHeaders([HTTPHeader(name: "token", value: token)])
 
                 let request = AF.request(url, method: .get, parameters: params, headers: headers)
                     .validate(contentType: ["application/json"])
-                request.response { response in
-                    let statusCode = response.response!.statusCode
+                        request.response { response in
+                            let statusCode = response.response!.statusCode
 
-                    do {
-                        if statusCode <= 300 {
-                            guard let data = response.data else {return}
+                            do {
+                                if statusCode <= 300 {
+                                    guard let data = response.data else {return}
 
-                            let decode = JSONDecoder()
-                            let value = try decode.decode(T.self, from: data)
-                            promise(.success(value))
+                                    let decode = JSONDecoder()
+                                    let value = try decode.decode(T.self, from: data)
+                                    promise(.success(value))
 
+                                }
+                            } catch {
+                                print("デコードに失敗しました😢")
+                                print(response.debugDescription)
+                                promise(.failure(APIError.decodeError))
+                            }
+                            switch statusCode {
+                            case 400:
+                                print(response.description)
+                                promise(.failure(APIError.forbidden))
+                            case 401:
+                                print(response.description)
+                                print("認証失敗😭")
+                                promise(.failure(APIError.auth))
+
+                            case 403:
+                                print(response.description)
+                                print("アクセス権がありません😭")
+                                promise(.failure(APIError.forbidden))
+                            case 404:
+                                print(response.description)
+                                print("URLがあかんよ😭")
+                                promise(.failure(APIError.invalidUrl))
+
+                            default:
+                                print("不明なエラー")
+                                promise(.failure(APIError.unknown))
+                            }
                         }
-                    } catch {
-                        print("デコードに失敗しました😢")
-                        print(response.debugDescription)
-                        promise(.failure(APIError.decodeError))
-                    }
-                    switch statusCode {
-                    case 400:
-                        print(response.description)
-                        promise(.failure(APIError.forbidden))
-                    case 401:
-                        print(response.description)
-                        print("認証失敗😭")
-                        promise(.failure(APIError.auth))
-
-                    case 403:
-                        print(response.description)
-                        print("アクセス権がありません😭")
-                        promise(.failure(APIError.forbidden))
-                    case 404:
-                        print(response.description)
-                        print("URLがあかんよ😭")
-                        promise(.failure(APIError.invalidUrl))
-
-                    default:
-                        print("不明なエラー")
-                        promise(.failure(APIError.unknown))
-                    }
                 }
             }
         }
