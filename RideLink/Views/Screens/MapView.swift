@@ -117,27 +117,32 @@ extension MapViewController {
         annotation.coordinate = location
         self.mapView.addAnnotation(annotation)
     }
+    func createRoot() {
+        let userLocation = mapView.userLocation.coordinate
 
-    func createRoot(location: CLLocationCoordinate2D) {
-        let sourcePlaceMark = MKPlacemark(coordinate: self.mapView.userLocation.coordinate)
-        let distinationPlaceMark = MKPlacemark(coordinate: location)
-        let directionRequest = MKDirections.Request()
-        directionRequest.source = MKMapItem(placemark: sourcePlaceMark)
-        directionRequest.destination = MKMapItem(placemark: distinationPlaceMark)
-        directionRequest.transportType = .automobile
-        let directions = MKDirections(request: directionRequest)
-        directions.calculate { (response, error) in
-            guard let directionResonse = response else {
-                if let error = error {
-                    print("we have error getting directions==\(error.localizedDescription)")
+            print(self.destinationName)
+
+            self.mapViewModel.searchLocationFromName(destinationName: self.destinationName)
+            .sink { response in
+                switch response {
+                case .finished:
+                    print(self.mapViewModel.locationMark)
+                    print("終わり")
+                    return
+                case .failure(let error):
+                    print("\(error)")
+                    return
                 }
-                return
-            }
-            let route = directionResonse.routes[0]
-            self.mapView.addOverlay(route.polyline, level: .aboveRoads)
-            let rect = route.polyline.boundingMapRect
-            self.mapView.setRegion(MKCoordinateRegion(rect), animated: true)
-        }
+            } receiveValue: { [self] location in
+                print(location)
+                self.mapViewModel.createRoute(from: userLocation, to: location) { route in
+                    if let route = route {
+                        self.mapView.addOverlay(route.polyline, level: .aboveRoads)
+
+                        self.mapView.setRegion(MKCoordinateRegion(route.polyline.boundingMapRect), animated: true)
+                    }
+                }
+            }.store(in: &mapViewModel.cancellables) 
     }
 }
 
