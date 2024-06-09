@@ -67,6 +67,23 @@ final class MapViewModel:NSObject, CLLocationManagerDelegate {
     }
     
     
+
+    func searchLocationFromName(destinationName: String) -> Future<CLLocationCoordinate2D, Error> {
+        return Future { promise in
+            self.geocoder.geocodeAddressString(destinationName) { placemarks, error in
+                if let placemark = placemarks?.first, let location = placemark.location {
+                    let coordinate = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
+                    self.locationMark = coordinate // 位置情報を更新
+                    promise(.success(coordinate)) // 成功時にpromiseを呼び出す
+                } else if let error = error {
+                    promise(.failure(error)) // エラーがある場合はfailureを呼び出す
+                } else {
+                    promise(.failure(error!)) // プレースマークが見つからない場合はエラーを呼び出す
+                }
+            }
+        }
+    }
+
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         switch status {
         case .notDetermined:
