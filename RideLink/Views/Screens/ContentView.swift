@@ -8,14 +8,25 @@
 import SwiftUI
 
 struct ContentView: View {
+
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        GeometryReader { geometory in
+
+            ZStack(alignment: .center){
+
+                bannerNotification(encountCount: 10)
+                    .position(
+                        x: geometory.size.width * 0.56,
+                        y: geometory.size.height * 0.6
+                    )
+                    .zIndex(100)
+        
+                MapView()
+            }
+            .ignoresSafeArea()
         }
-        .padding()
+        .onAppear {
+        }
     }
 }
 
