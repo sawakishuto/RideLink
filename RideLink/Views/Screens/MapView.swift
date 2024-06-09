@@ -102,6 +102,16 @@ class MapViewController: UIViewController {
 
 extension MapViewController {
 
+    @objc func focusCurrentLocation() {
+        if let userLocation = mapView.userLocation.location {
+            let region = MKCoordinateRegion(center: userLocation.coordinate, latitudinalMeters: 300, longitudinalMeters: 300)
+            mapView.setRegion(region, animated: true)
+            self.mapView.userTrackingMode = .followWithHeading
+        } else {
+            self.mapView.userTrackingMode = .followWithHeading
+        }
+
+    }
     func createAnnotations(location: CLLocationCoordinate2D) {
         let annotation = MKPointAnnotation()
         annotation.coordinate = location
