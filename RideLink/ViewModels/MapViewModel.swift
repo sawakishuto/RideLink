@@ -97,4 +97,28 @@ final class MapViewModel:NSObject, CLLocationManagerDelegate {
             break
         }
     }
+
+    func createRoute(from sourceLocation: CLLocationCoordinate2D, to destinationLocation: CLLocationCoordinate2D, completion: @escaping (MKRoute?) -> Void) {
+            let sourcePlaceMark = MKPlacemark(coordinate: sourceLocation)
+            let destinationPlaceMark = MKPlacemark(coordinate: destinationLocation)
+
+            let directionRequest = MKDirections.Request()
+            directionRequest.source = MKMapItem(placemark: sourcePlaceMark)
+            directionRequest.destination = MKMapItem(placemark: destinationPlaceMark)
+            directionRequest.transportType = .automobile
+
+            let directions = MKDirections(request: directionRequest)
+            directions.calculate { (response, error) in
+                guard let directionResponse = response else {
+                    if let error = error {
+                        print("Error getting directions: \(error.localizedDescription)")
+                    }
+                    completion(nil)
+                    return
+                }
+
+                let route = directionResponse.routes.first
+                completion(route)
+            }
+        }
 }
