@@ -20,4 +20,8 @@ protocol EncounterRepositoryProtocol: AnyObject {
     func getEncountInfo() -> AnyPublisher<[EncountInfoModel], Error>
 //   自分の位置をポストするメソッド
     func postUserLocation(userLocInfo: [LocatinInfo]) -> AnyPublisher<Bool, Error>
+
+    func postTouringCondition(touringCondition: TouringInfoModel) 
+
+    func postTouringEnd()
 }
