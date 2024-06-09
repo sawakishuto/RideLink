@@ -43,6 +43,10 @@ final class MapViewModel:NSObject, CLLocationManagerDelegate {
         let touringCondition = TouringInfoModel(destinationName: destinationName, touringComment: touringComment)
         encountRepository?.postTouringCondition(touringCondition: touringCondition)
     }
+
+    func postEndTouring() {
+        encountRepository?.postTouringEnd()
+    }
     }
     
     
