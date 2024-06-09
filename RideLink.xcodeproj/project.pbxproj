@@ -13,6 +13,8 @@
 		08142F6C2C00F879007CCF1B /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08142F6B2C00F879007CCF1B /* UserRepository.swift */; };
 		08142F6E2C0102ED007CCF1B /* EncounterRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08142F6D2C0102ED007CCF1B /* EncounterRepositoryProtocol.swift */; };
 		08142F702C0102FB007CCF1B /* EncounterRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08142F6F2C0102FB007CCF1B /* EncounterRepository.swift */; };
+		085003612C11D72500FEA981 /* CustomTabViewsStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 085003602C11D72500FEA981 /* CustomTabViewsStyle.swift */; };
+		085003632C11D7CC00FEA981 /* NSObject + apply.swift in Sources */ = {isa = PBXBuildFile; fileRef = 085003622C11D7CC00FEA981 /* NSObject + apply.swift */; };
 		08515F372BDBDE91009D20D1 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08515F362BDBDE91009D20D1 /* MapView.swift */; };
 		08515F392BDBDE9D009D20D1 /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08515F382BDBDE9D009D20D1 /* MapViewModel.swift */; };
 		08515F3C2BDBE065009D20D1 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 08515F3B2BDBE065009D20D1 /* SnapKit */; };
@@ -23,7 +25,10 @@
 		08582C842BF3E62000B7FEE5 /* EndPoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08582C832BF3E62000B7FEE5 /* EndPoints.swift */; };
 		08582C862BF3E67300B7FEE5 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08582C852BF3E67300B7FEE5 /* APIError.swift */; };
 		08582C892BF4CD2F00B7FEE5 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 08582C882BF4CD2F00B7FEE5 /* Alamofire */; };
-		08809D792BE7AF6600A2F31D /* CustomTabViewsStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08809D782BE7AF6600A2F31D /* CustomTabViewsStyle.swift */; };
+		0861E6662C11F7B50012F49E /* CurrentLocationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0861E6652C11F7B50012F49E /* CurrentLocationButton.swift */; };
+		0861E6682C12097D0012F49E /* bannerNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0861E6672C12097D0012F49E /* bannerNotification.swift */; };
+		0872D1B42C10522100B81F6D /* TouringButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0872D1B32C10522100B81F6D /* TouringButton.swift */; };
+		08742F1B2C15EB5E00C942DB /* ModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08742F1A2C15EB5E00C942DB /* ModalViewController.swift */; };
 		08809D7C2BE7B24900A2F31D /* Tab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08809D7B2BE7B24900A2F31D /* Tab.swift */; };
 		08C0BCC82BB321AA0088109A /* RideLinkApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C0BCC72BB321AA0088109A /* RideLinkApp.swift */; };
 		08C0BCCA2BB321AA0088109A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C0BCC92BB321AA0088109A /* ContentView.swift */; };
@@ -45,11 +50,11 @@
 		220293B12BE921E1009BC2A6 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 220293B02BE921E1009BC2A6 /* ProfileView.swift */; };
 		220293B92BE926E1009BC2A6 /* ProfileEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 220293B82BE926E1009BC2A6 /* ProfileEditor.swift */; };
 		220293BD2BE92864009BC2A6 /* ProfilePreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 220293BC2BE92864009BC2A6 /* ProfilePreview.swift */; };
-		E1BCBEEE2C0183D80009E9DB /* SignupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BCBEED2C0183D80009E9DB /* SignupView.swift */; };
 		224CE15B2BF76D1F00AA201F /* FriendListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224CE15A2BF76D1F00AA201F /* FriendListView.swift */; };
 		224CE15E2BF7715B00AA201F /* OfflineIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224CE15D2BF7715B00AA201F /* OfflineIndicator.swift */; };
 		224CE1622BF771E200AA201F /* OnlineIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224CE1612BF771E200AA201F /* OnlineIndicator.swift */; };
 		224CE1642BF7722100AA201F /* UserCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224CE1632BF7722100AA201F /* UserCard.swift */; };
+		E1BCBEEE2C0183D80009E9DB /* SignupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BCBEED2C0183D80009E9DB /* SignupView.swift */; };
 		E1E7AF1E2BEC9AD0002F1CFF /* AppTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E7AF1D2BEC9AD0002F1CFF /* AppTextFieldView.swift */; };
 		E1E7AF202BED0256002F1CFF /* AppButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E7AF1F2BED0256002F1CFF /* AppButtonView.swift */; };
 		E1E7AF222BED0308002F1CFF /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E7AF212BED0308002F1CFF /* LoginView.swift */; };
@@ -81,6 +86,8 @@
 		08142F6B2C00F879007CCF1B /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
 		08142F6D2C0102ED007CCF1B /* EncounterRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncounterRepositoryProtocol.swift; sourceTree = "<group>"; };
 		08142F6F2C0102FB007CCF1B /* EncounterRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncounterRepository.swift; sourceTree = "<group>"; };
+		085003602C11D72500FEA981 /* CustomTabViewsStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTabViewsStyle.swift; sourceTree = "<group>"; };
+		085003622C11D7CC00FEA981 /* NSObject + apply.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "NSObject + apply.swift"; path = "../../NSObject + apply.swift"; sourceTree = "<group>"; };
 		08515F362BDBDE91009D20D1 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		08515F382BDBDE9D009D20D1 /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
 		08515F3E2BDBE274009D20D1 /* LocationDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDataModel.swift; sourceTree = "<group>"; };
@@ -89,7 +96,10 @@
 		08582C812BF3D86900B7FEE5 /* HTTPMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethods.swift; sourceTree = "<group>"; };
 		08582C832BF3E62000B7FEE5 /* EndPoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoints.swift; sourceTree = "<group>"; };
 		08582C852BF3E67300B7FEE5 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
-		08809D782BE7AF6600A2F31D /* CustomTabViewsStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabViewsStyle.swift; sourceTree = "<group>"; };
+		0861E6652C11F7B50012F49E /* CurrentLocationButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentLocationButton.swift; sourceTree = "<group>"; };
+		0861E6672C12097D0012F49E /* bannerNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bannerNotification.swift; sourceTree = "<group>"; };
+		0872D1B32C10522100B81F6D /* TouringButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouringButton.swift; sourceTree = "<group>"; };
+		08742F1A2C15EB5E00C942DB /* ModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalViewController.swift; sourceTree = "<group>"; };
 		08809D7B2BE7B24900A2F31D /* Tab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tab.swift; sourceTree = "<group>"; };
 		08C0BCC42BB321AA0088109A /* RideLink.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RideLink.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		08C0BCC72BB321AA0088109A /* RideLinkApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideLinkApp.swift; sourceTree = "<group>"; };
@@ -112,11 +122,11 @@
 		220293B02BE921E1009BC2A6 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		220293B82BE926E1009BC2A6 /* ProfileEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEditor.swift; sourceTree = "<group>"; };
 		220293BC2BE92864009BC2A6 /* ProfilePreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePreview.swift; sourceTree = "<group>"; };
-		E1BCBEED2C0183D80009E9DB /* SignupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupView.swift; sourceTree = "<group>"; };
 		224CE15A2BF76D1F00AA201F /* FriendListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendListView.swift; sourceTree = "<group>"; };
 		224CE15D2BF7715B00AA201F /* OfflineIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfflineIndicator.swift; sourceTree = "<group>"; };
 		224CE1612BF771E200AA201F /* OnlineIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnlineIndicator.swift; sourceTree = "<group>"; };
 		224CE1632BF7722100AA201F /* UserCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCard.swift; sourceTree = "<group>"; };
+		E1BCBEED2C0183D80009E9DB /* SignupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupView.swift; sourceTree = "<group>"; };
 		E1E7AF1D2BEC9AD0002F1CFF /* AppTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTextFieldView.swift; sourceTree = "<group>"; };
 		E1E7AF1F2BED0256002F1CFF /* AppButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppButtonView.swift; sourceTree = "<group>"; };
 		E1E7AF212BED0308002F1CFF /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
@@ -181,6 +191,16 @@
 			path = Encount;
 			sourceTree = "<group>";
 		};
+		0850035F2C11D6E900FEA981 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				085003602C11D72500FEA981 /* CustomTabViewsStyle.swift */,
+				085003622C11D7CC00FEA981 /* NSObject + apply.swift */,
+			);
+			name = Extension;
+			path = ../../../../.Trash/Extension;
+			sourceTree = "<group>";
+		};
 		08515EF92BDB8DD1009D20D1 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
@@ -197,12 +217,15 @@
 			path = Bisiness;
 			sourceTree = "<group>";
 		};
-		08809D772BE7AF4200A2F31D /* Extension */ = {
+		0861E6642C11F78C0012F49E /* MapView */ = {
 			isa = PBXGroup;
 			children = (
-				08809D782BE7AF6600A2F31D /* CustomTabViewsStyle.swift */,
+				0872D1B32C10522100B81F6D /* TouringButton.swift */,
+				0861E6652C11F7B50012F49E /* CurrentLocationButton.swift */,
+				0861E6672C12097D0012F49E /* bannerNotification.swift */,
+				08742F1A2C15EB5E00C942DB /* ModalViewController.swift */,
 			);
-			path = Extension;
+			path = MapView;
 			sourceTree = "<group>";
 		};
 		08809D7A2BE7B23300A2F31D /* Enums */ = {
@@ -316,7 +339,7 @@
 		08CB693D2BD7DE3200E5940C /* Utility */ = {
 			isa = PBXGroup;
 			children = (
-				08809D772BE7AF4200A2F31D /* Extension */,
+				0850035F2C11D6E900FEA981 /* Extension */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -370,6 +393,7 @@
 		220293B62BE926C5009BC2A6 /* ViewParts */ = {
 			isa = PBXGroup;
 			children = (
+				0861E6642C11F78C0012F49E /* MapView */,
 				224CE15C2BF76D5300AA201F /* FriendList */,
 				220293B72BE926C5009BC2A6 /* ProfileView */,
 				E1E7AF1D2BEC9AD0002F1CFF /* AppTextFieldView.swift */,
@@ -552,6 +576,7 @@
 				08809D7C2BE7B24900A2F31D /* Tab.swift in Sources */,
 				08C0BCFA2BB323160088109A /* LocalStores.xcdatamodeld in Sources */,
 				224CE15E2BF7715B00AA201F /* OfflineIndicator.swift in Sources */,
+				0861E6682C12097D0012F49E /* bannerNotification.swift in Sources */,
 				08515F392BDBDE9D009D20D1 /* MapViewModel.swift in Sources */,
 				08C0BCCA2BB321AA0088109A /* ContentView.swift in Sources */,
 				220293BD2BE92864009BC2A6 /* ProfilePreview.swift in Sources */,
@@ -561,23 +586,27 @@
 				220293B12BE921E1009BC2A6 /* ProfileView.swift in Sources */,
 				224CE15B2BF76D1F00AA201F /* FriendListView.swift in Sources */,
 				224CE1622BF771E200AA201F /* OnlineIndicator.swift in Sources */,
+				085003632C11D7CC00FEA981 /* NSObject + apply.swift in Sources */,
 				08CB69492BD818AC00E5940C /* EncountInfoModel.swift in Sources */,
+				0872D1B42C10522100B81F6D /* TouringButton.swift in Sources */,
 				08582C802BF32AE800B7FEE5 /* APIClient.swift in Sources */,
 				08142F6E2C0102ED007CCF1B /* EncounterRepositoryProtocol.swift in Sources */,
 				08CB694D2BD81E9400E5940C /* UserLocationInfoModel.swift in Sources */,
 				08582C842BF3E62000B7FEE5 /* EndPoints.swift in Sources */,
+				085003612C11D72500FEA981 /* CustomTabViewsStyle.swift in Sources */,
 				08582C822BF3D86A00B7FEE5 /* HTTPMethods.swift in Sources */,
 				08CB694B2BD81B2400E5940C /* FriendInfoModel.swift in Sources */,
+				08742F1B2C15EB5E00C942DB /* ModalViewController.swift in Sources */,
 				08142F682C00F857007CCF1B /* AuthRepository.swift in Sources */,
 				08142F6A2C00F86C007CCF1B /* UserRepositoryProtocol.swift in Sources */,
 				08142F662C00F847007CCF1B /* AuthRepositoryProtocol.swift in Sources */,
-				08809D792BE7AF6600A2F31D /* CustomTabViewsStyle.swift in Sources */,
 				E1E7AF222BED0308002F1CFF /* LoginView.swift in Sources */,
 				08CB69452BD8162D00E5940C /* UserProfileModel.swift in Sources */,
 				E1E7AF1E2BEC9AD0002F1CFF /* AppTextFieldView.swift in Sources */,
 				08C0BCC82BB321AA0088109A /* RideLinkApp.swift in Sources */,
 				08515F372BDBDE91009D20D1 /* MapView.swift in Sources */,
 				08515F412BE0C6EE009D20D1 /* TabViews.swift in Sources */,
+				0861E6662C11F7B50012F49E /* CurrentLocationButton.swift in Sources */,
 				224CE1642BF7722100AA201F /* UserCard.swift in Sources */,
 				08CB69472BD817EC00E5940C /* TouringInfoModel.swift in Sources */,
 				08582C862BF3E67300B7FEE5 /* APIError.swift in Sources */,
