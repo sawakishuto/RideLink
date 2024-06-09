@@ -102,6 +102,31 @@ class MapViewController: UIViewController {
 
 extension MapViewController {
 
+    @objc private func tapStartButton() {
+        if !mapViewModel.isStartTouring {
+            let vc = ModalViewController { 
+                self.toggleIsStart()
+                self.dismiss(animated: true)
+                self.mapViewModel.postTouringCondition(destinationName: self.destinationName, touringComment: self.touringComment)
+            } destinationNameOnChanged: { destination in
+                print(destination)
+                self.destinationName = destination
+                print(self.destinationName)
+            } touringCommentOnChanged: { comment in
+                print(comment)
+                self.touringComment = comment
+                print(self.touringComment)
+            }
+            if let sheet = vc.sheetPresentationController {
+                // ここで指定したサイズで表示される
+                sheet.detents = [.large()]
+            }
+            present(vc, animated: true, completion: nil)
+        } else {
+            toggleIsStart()
+        }
+    }
+
     @objc func focusCurrentLocation() {
         if let userLocation = mapView.userLocation.location {
             let region = MKCoordinateRegion(center: userLocation.coordinate, latitudinalMeters: 300, longitudinalMeters: 300)
