@@ -1,12 +1,20 @@
 import Foundation
 import CoreLocation
 import Combine
+import MapKit
 
-class MapViewModel: NSObject, CLLocationManagerDelegate {
-    var locationSubject = CurrentValueSubject<LocationData?, Never>(nil)
+@MainActor
+
+final class MapViewModel:NSObject, CLLocationManagerDelegate {
+    var locationMark: CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: 0.00, longitude: 0.00)
+    var cancellables = Set<AnyCancellable>()
     private let locationManager = CLLocationManager()
-    
-    override init() {
+    private var cancellablePipeline: AnyCancellable?
+    var locationSubject = CurrentValueSubject<LocationData?, Never>(nil)
+    var locationData: [LocatinInfo] = []
+    var encountRepository: EncounterRepositoryProtocol?
+    var isStartTouring: Bool = false
+    let geocoder = CLGeocoder()
         super.init()
         locationManager.delegate = self
     }
