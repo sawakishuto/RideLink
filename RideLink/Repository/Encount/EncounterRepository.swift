@@ -74,7 +74,7 @@ final class EncounterRepository: EncounterRepositoryProtocol {
 
         return Deferred {
             Future { promise in
-                self.apiClient.postDatas(endPoint: paths.location.rawValue, params: locInfoParam, type: UserLocationInfoModel.self)
+                self.apiClient.postData(endPoint: paths.location.rawValue, params: locInfoParam, type: UserLocationInfoModel.self)
             }
         }
         .eraseToAnyPublisher()
