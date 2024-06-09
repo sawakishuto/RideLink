@@ -133,14 +133,13 @@ extension MapViewController {
 
 extension MapViewController: MKMapViewDelegate {
     func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
-        if overlay is MKPolyline {
-            let renderer = MKPolylineRenderer(overlay: overlay)
+        if let polyline = overlay as? MKPolyline {
+            let renderer = MKPolylineRenderer(polyline: polyline)
             renderer.strokeColor = .blue
             renderer.lineWidth = 3
             return renderer
         }
-        return MKOverlayRenderer(overlay: overlay)
+        return MKOverlayRenderer()
     }
 }
-
 
