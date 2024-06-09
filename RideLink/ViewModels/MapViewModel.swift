@@ -35,6 +35,10 @@ final class MapViewModel:NSObject, CLLocationManagerDelegate {
     
     func requestLocationAuthorization() {
         locationManager.requestWhenInUseAuthorization()
+        locationManager.delegate = self
+        locationManager.distanceFilter = 40
+    }
+
     }
     
     
