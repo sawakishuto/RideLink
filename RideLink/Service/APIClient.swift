@@ -15,34 +15,45 @@ final class APIClient {
     static let shared = APIClient()
     let auth = Auth.auth()
 
-    private let baseUrl = "https://pokeapi.co/api/v2/pokemon/"
+    private let baseUrl = "http://localhost:8080"
 
 
 
-    func getUserToken() -> Future <String, Error> {
-        return Future { promise in
-            guard let user = Auth.auth().currentUser else {
-                let error = NSError(domain: "com.example.app", code: 0, userInfo: [NSLocalizedDescriptionKey: "No user is signed in"])
-                promise(.failure(error))
-                return
-            }
-
-            user.getIDToken { token, error in
-                if let error = error {
+    func getUserToken() -> AnyPublisher <String, Error> {
+        return Deferred {
+            Future { promise in
+                print(#function)
+                guard let user = Auth.auth().currentUser else {
+                    let error = NSError(domain: "com.example.app", code: 0, userInfo: [NSLocalizedDescriptionKey: "No user is signed in"])
+                    print("エラー")
                     promise(.failure(error))
-                } else if let token = token {
-                    promise(.success(token))
-                } else {
-                    let error = NSError(domain: "com.example.app", code: 0, userInfo: [NSLocalizedDescriptionKey: "Failed to get ID token"])
-                    promise(.failure(error))
+                    return
+                }
+
+                user.getIDToken { token, error in
+                    if let error = error {
+                        print("エラー1")
+
+                        promise(.failure(error))
+                    } else if let token = token {
+                        print("エラー2")
+
+                        promise(.success(token))
+                    } else {
+                        print("エラー3")
+
+                        let error = NSError(domain: "com.example.app", code: 0, userInfo: [NSLocalizedDescriptionKey: "Failed to get ID token"])
+                        promise(.failure(error))
+                    }
                 }
             }
         }
+        .eraseToAnyPublisher()
     }
 
 
     // データを取得するメソッド  ジェネリクスで指定してるから柔軟に使えるはずだよ
-    func fetchData<T: Decodable>(endPoint: paths.RawValue, params: Parameters?, type: T.Type) -> AnyPublisher<T, Error> {
+    func fetchData<T: Decodable>(endPoint: paths.RawValue, params: Parameters?, type: T.Type?) -> AnyPublisher<T, Error> {
 
         return Deferred {
             Future { promise in
@@ -110,15 +121,19 @@ final class APIClient {
     }
     // 新規でデータを保存するメソッド
     func postData<T: Decodable>(endPoint: paths.RawValue,  params: Parameters, type: T.Type) {
+        print(#function)
         getUserToken()
             .sink { response in
                 switch response {
                 case .finished:
+                    print("終わりました")
                     return
                 case .failure(let error):
+                    print("エラー")
                     return
                 }
             } receiveValue: { token in
+                print(token)
                 let token = token
 
                 let headers: HTTPHeaders = [
@@ -126,6 +141,7 @@ final class APIClient {
                 ]
                 let path = endPoint
                 let url = self.baseUrl.appending(path)
+                print("ポストします")
 
                 let request = AF.request(url, method: .post, parameters: params, encoding: JSONEncoding.default, headers: headers)
                     .responseDecodable(of: T.self){ response in
@@ -198,9 +214,4 @@ final class APIClient {
             }
         }
     }
-
-
-
-
-
 }
