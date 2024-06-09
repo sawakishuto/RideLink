@@ -45,19 +45,58 @@ class MapViewController: UIViewController {
         mapViewModel.requestLocationAuthorization()
         mapView.delegate = self
         view.addSubview(mapView)
+        mapView.snp.makeConstraints {
+            if let superview = mapView.superview {
+                $0.edges.equalTo(superview.safeAreaLayoutGuide)
+            }
+        }
+        
+        view.addSubview(touringButton)
+        touringButton.snp.makeConstraints {
+            $0.centerX.equalToSuperview()
+            $0.bottom.equalToSuperview().offset(-40)
+        }
+        
+        view.addSubview(currentLocationButton)
+        currentLocationButton.snp.makeConstraints {
+            $0.right.equalToSuperview().offset(-20)
+            $0.bottom.equalToSuperview().offset(-150)
+        }
+        currentLocationButton.layer.shadowColor = CGColor(gray: 1, alpha: 1)
+        currentLocationButton.layer.shadowOffset = CGSize(width: 10, height: 100)
 
-    lazy var mapView: MKMapView = {
+        view.isUserInteractionEnabled = true
+        
+    }
+    
+    private lazy var mapView: MKMapView = {
         let map = MKMapView()
         var region: MKCoordinateRegion = map.region
         region.center = map.userLocation.coordinate
-        region.span.latitudeDelta = 0.01
-        region.span.longitudeDelta = 0.01
+        region.span.latitudeDelta = 0.001
+        region.span.longitudeDelta = 0.001
         map.setRegion(region, animated: true)
         map.mapType = .standard
-        map.userTrackingMode = .follow
-        map.frame = view.bounds
-
+        map.userTrackingMode = .followWithHeading
+        map.frame = CGRect(x: 10, y: 10, width: 400, height: 300)
         return map
+    }()
+    
+    private lazy var touringButton: TouringButton = {
+        let button = TouringButton(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
+        button.addTarget(self, action: #selector(tapStartButton), for: .touchUpInside)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.isUserInteractionEnabled = true
+        return button
+    }()
+    
+    
+    private var currentLocationButton: CurrentLocationButton = {
+        let button = CurrentLocationButton(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
+        button.addTarget(self, action: #selector(focusCurrentLocation), for: .touchUpInside)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.isUserInteractionEnabled = true
+        return button
     }()
 }
 
