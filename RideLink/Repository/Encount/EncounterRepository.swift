@@ -65,16 +65,16 @@ final class EncounterRepository: EncounterRepositoryProtocol {
 
         for info in userLocInfo {
             locationInfo.append([
-                "latitude": info.latitude,
-                "longitude": info.longitude,
-                "createAt": info.createAt
+                "latitude": "\(info.latitude)",
+                "longitude": "\(info.longitude)",
+                "stayed_at": "\(info.createAt)"
             ])
         }
         locInfoParam["locInfo"] = locationInfo
 
         return Deferred {
             Future { promise in
-                self.apiClient.postData(endPoint: paths.userData.rawValue, params: locInfoParam, type: UserLocationInfoModel.self)
+                self.apiClient.postDatas(endPoint: paths.location.rawValue, params: locInfoParam, type: UserLocationInfoModel.self)
             }
         }
         .eraseToAnyPublisher()
