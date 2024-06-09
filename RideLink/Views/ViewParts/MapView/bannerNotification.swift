@@ -42,9 +42,25 @@ struct bannerNotification: View {
         }
         .offset(y: offset)
     }
+    private func show() {
+        withAnimation(.easeInOut(duration: 0.3)) {
+            offset = 0
+            withAnimation(.easeInOut(duration: 0.45)) {
+                opacity = 0.75
+            }
+        }
+    }
+
+    private func hide() {
+        withAnimation(.easeInOut(duration: 0.3)) {
+            offset = -200
+            withAnimation(.easeInOut(duration: 0.2)) {
+                opacity = 0
+            }
+        }
     }
 }
 
 #Preview {
-    bannerNotification()
+    bannerNotification(encountCount: 10)
 }
