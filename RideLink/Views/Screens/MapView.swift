@@ -112,11 +112,30 @@ extension MapViewController {
         }
 
     }
+    
+     func toggleIsStart() {
+        self.mapViewModel.isStartTouring.toggle()
+        touringButton.isStartTouring.toggle()
+        print(mapViewModel.isStartTouring)
+        if mapViewModel.isStartTouring {
+            createRoot()
+        } else {
+            mapView.overlays.forEach {
+                if let overlay = $0 as? MKPolyline {
+                    mapView.removeOverlay(overlay)
+                }
+            }
+            mapViewModel.postEndTouring()
+        }
+        
+    }
+    
     func createAnnotations(location: CLLocationCoordinate2D) {
         let annotation = MKPointAnnotation()
         annotation.coordinate = location
         self.mapView.addAnnotation(annotation)
     }
+    
     func createRoot() {
         let userLocation = mapView.userLocation.coordinate
 
