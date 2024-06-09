@@ -13,36 +13,38 @@ import SnapKit
 import Combine
 
 struct MapView: UIViewControllerRepresentable {
-
+    
     typealias UIViewControllerType = UIViewController
-
+    
     func makeUIViewController(context: Context) -> UIViewController {
         return MapViewController()
     }
-
+    
     func updateUIViewController(_ uiViewController: UIViewController, context: Context) {
+        
     }
 }
 
 class MapViewController: UIViewController {
     var mapViewModel: MapViewModel!
-
+    
+    
     init() {
         let encountRepo = EncounterRepository()
         mapViewModel = MapViewModel(encountRepository: encountRepo)
         super.init(nibName: nil, bundle: nil)
     }
-
+    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        mapViewModel = MapViewModel()
+        
         mapViewModel.requestLocationAuthorization()
+        mapView.delegate = self
         view.addSubview(mapView)
-    }
 
     lazy var mapView: MKMapView = {
         let map = MKMapView()
