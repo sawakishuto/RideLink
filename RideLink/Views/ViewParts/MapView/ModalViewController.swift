@@ -6,3 +6,7 @@
 //
 
 import Foundation
+    var buttonTapped: (() -> Void)?
+    var destinationNameOnChanged: ((String) -> Void)?
+    var touringCommentOnChanged: ((String) -> Void)?
+
