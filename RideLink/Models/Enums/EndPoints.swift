@@ -8,7 +8,8 @@
 import Foundation
 
 enum paths: String {
-    case userData = "https://userData"
+    case createUser = "/user/create"
+    case userData = "/user"
     case encount = "https://encount"
     case friend = "https://friend"
     case pokemon = "pokemon"
