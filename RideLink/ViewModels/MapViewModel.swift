@@ -47,6 +47,23 @@ final class MapViewModel:NSObject, CLLocationManagerDelegate {
     func postEndTouring() {
         encountRepository?.postTouringEnd()
     }
+
+    func postLocationInfo() {
+        encountRepository?.postUserLocation(userLocInfo: locationData)
+            .sink { completion in
+                switch completion {
+                case .failure(_):
+                    print("print")
+                    return
+                case.finished:
+                    print("print")
+                    return
+                }
+            } receiveValue: { response in
+                print(response)
+            }
+            .store(in: &cancellables)
+
     }
     
     
