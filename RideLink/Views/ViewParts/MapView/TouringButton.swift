@@ -9,16 +9,14 @@ import Foundation
 import UIKit
 
 final class TouringButton: UIButton {
-
-    var handler: ((Bool) -> Void)?
-    var buttonColor: UIColor = UIColor(red: 252.0/255.0, green: 136.0/255.0, blue: 100.0/255.0, alpha: 1.0)
+    var buttonColor: UIColor = UIColor(red: 14/255.0, green: 124/255.0, blue: 100/255.0, alpha: 1.0)
     var shadowColor: CGColor = CGColor(red: 252.0/255.0, green: 136.0/255.0, blue: 100.0/255.0, alpha: 1.0)
 
     var isStartTouring: Bool = false {
         didSet {
             if isStartTouring {
                 UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.5, options: .curveEaseInOut, animations: {
-                    self.customView.backgroundColor = UIColor(red: 214.0/255.0, green: 53.0/255.0, blue: 42.0/255.0, alpha: 1.0)
+                    self.customView.backgroundColor = UIColor(red: 252.0/255.0, green: 136.0/255.0, blue: 100.0/255.0, alpha: 1.0)
                     self.shadowColor = CGColor(red: 252.0/255.0, green: 136.0/255.0, blue: 100.0/255.0, alpha: 1.0)
                     self.customLabel.text = "ツーリングを終了する！"
                     self.customImageView.image = UIImage(named: "home")
@@ -30,7 +28,7 @@ final class TouringButton: UIButton {
                 })
             } else {
                 UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.5, options: .curveEaseInOut, animations: {
-                    self.customView.backgroundColor = UIColor(red: 252.0/255.0, green: 136.0/255.0, blue: 100.0/255.0, alpha: 1.0)
+                    self.customView.backgroundColor = UIColor(red: 14/255.0, green: 124/255.0, blue: 100/255.0, alpha: 1.0)
                     self.shadowColor = CGColor(red: 252.0/255.0, green: 136.0/255.0, blue: 100.0/255.0, alpha: 1.0)
                     self.customLabel.text = "ツーリングを始める！"
                     self.customImageView.image = UIImage(named: "mainBike")
@@ -89,7 +87,7 @@ final class TouringButton: UIButton {
     private lazy var customLabel: UILabel = {
         let label = UILabel()
         label.text = isStartTouring ? "ツーリングを終了する！": "ツーリングを始める！"
-        label.textColor = .black
+        label.textColor = .white
         label.font = .boldSystemFont(ofSize: 17)
         return label
     }()
