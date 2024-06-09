@@ -39,6 +39,10 @@ final class MapViewModel:NSObject, CLLocationManagerDelegate {
         locationManager.distanceFilter = 40
     }
 
+    func postTouringCondition(destinationName: String, touringComment: String) {
+        let touringCondition = TouringInfoModel(destinationName: destinationName, touringComment: touringComment)
+        encountRepository?.postTouringCondition(touringCondition: touringCondition)
+    }
     }
     
     
