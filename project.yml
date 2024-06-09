@@ -1,0 +1,89 @@
+name: RideLink
+
+options:
+  bundleIdPrefix: com.team1
+  deploymentTarget:
+    iOS: '17.0'
+  createIntermediateGroups: true
+
+settings:
+  base:
+    INFOPLIST_FILE: RideLink/Info.plist
+    CODE_SIGN_IDENTITY: "Apple Development"
+    DEVELOPMENT_TEAM: 5285K4Z956
+    CFBundleName: $(PRODUCT_NAME)
+    CFBundleIdentifier: $(PRODUCT_BUNDLE_IDENTIFIER)
+    CFBundleInfoDictionaryVersion: '6.0'
+    NSLocationWhenInUseUsageDescription: "現在地の取得を許可しますか"
+    CFBundleVersion: $(CURRENT_PROJECT_VERSION)
+    NSLocationAlwaysUsageDescription: ""
+    CFBundleExecutable: $(EXECUTABLE_NAME)
+    LSRequiresIPhoneOS: YES
+    UISupportedInterfaceOrientations:
+      - UIInterfaceOrientationPortrait
+    UIRequiresFullScreen: YES
+    CFBundlePackageType: $(PRODUCT_BUNDLE_PACKAGE_TYPE)
+    UILaunchStoryboardName: LaunchScreen
+    CFBundleDevelopmentRegion: $(DEVELOPMENT_LANGUAGE)
+    UISupportedInterfaceOrientations~ipad:
+      - UIInterfaceOrientationPortrait
+      - UIInterfaceOrientationPortraitUpsideDown
+      - UIInterfaceOrientationLandscapeLeft
+      - UIInterfaceOrientationLandscapeRight
+    CFBundleShortVersionString: $(MARKETING_VERSION)
+    UIApplicationSceneManifest:
+      UISceneConfigurations:
+        Application Session Role:
+          Default Configuration:
+            UISceneConfigurationName: Default Configuration
+            UISceneDelegateClassName: $(PRODUCT_MODULE_NAME).SceneDelegate
+
+targets:
+  RideLink:
+    type: application
+    platform: iOS
+    sources:
+      - RideLink/App
+      - RideLink/Models
+      - RideLink/ViewModels
+      - RideLink/Views
+      - RideLink/Service
+      - RideLink/Repository
+      - RideLink/CoreData
+      - RideLink/Utility
+      - RideLink/GoogleService-Info.plist
+    resources: [RideLink/Resources]
+    dependencies:
+      - target: RideLinkFramework
+      - package: SnapKit
+      - package: Firebase
+        product: FirebaseAuth
+        product: FirebaseMessaging
+        product: FirebaseDatabase
+        product: FirebaseDatabaseSwift
+      - package: Alamofire
+    settings:
+      base:
+        SWIFT_VERSION: '5.0'
+        ENABLE_BITCODE: NO
+        OTHER_LDFLAGS: "$(inherited) -ObjC"
+
+schemes:
+  RideLink:
+    build:
+      targets:
+        RideLink:
+          buildTypes: [Debug, Release]
+    run:
+      config: Release
+
+packages:
+  SnapKit:
+    url: https://github.com/SnapKit/SnapKit.git
+    from: 5.0.0
+  Firebase:
+    url: https://github.com/firebase/firebase-ios-sdk
+    from: 8.0.0
+  Alamofire:
+    url: https://github.com/Alamofire/Alamofire.git
+    from: 5.6.1

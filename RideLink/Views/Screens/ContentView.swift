@@ -8,13 +8,28 @@
 import SwiftUI
 
 struct ContentView: View {
+
     var body: some View {
-        Button("Send Notification") {
+        GeometryReader { geometory in
+
+            ZStack(alignment: .center){
+
+                bannerNotification(encountCount: 10)
+                    .position(
+                        x: geometory.size.width * 0.56,
+                        y: geometory.size.height * 0.6
+                    )
+                    .zIndex(100)
+        
+                MapView()
+            }
+            .ignoresSafeArea()
+        }
+        .onAppear {
             sendLocalNotification()
         }
-        .padding()
     }
-    func sendLocalNotification() {
+      func sendLocalNotification() {
         let content = UNMutableNotificationContent()
         content.title = "すれ違いがありました！"
         content.body = "10人とすれ違いました！👍"
@@ -29,8 +44,9 @@ struct ContentView: View {
                 print("通知を送信しました")
             }
         }
-    }
+  
 }
+
 
 #Preview {
     ContentView()

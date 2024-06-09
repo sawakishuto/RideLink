@@ -8,85 +8,152 @@
 import Foundation
 import Combine
 import Alamofire
-
+import FirebaseAuth
 
 final class APIClient {
 
     static let shared = APIClient()
+    let auth = Auth.auth()
 
-    private let baseUrl = "https://pokeapi.co/api/v2/pokemon/"
+    private let baseUrl = "http://localhost:8080"
 
-    // データを取得するメソッド  ジェネリクスで指定してるから柔軟に使えるはずだよ
-    func fetchData<T: Decodable>(endPoint: paths.RawValue, params: Parameters, type: T.Type,headers: HTTPHeaders) -> AnyPublisher<T, Error> {
+
+
+    func getUserToken() -> AnyPublisher <String, Error> {
         return Deferred {
             Future { promise in
-                let path = endPoint
-                let url = self.baseUrl.appending(path)
+                print(#function)
+                guard let user = Auth.auth().currentUser else {
+                    let error = NSError(domain: "com.example.app", code: 0, userInfo: [NSLocalizedDescriptionKey: "No user is signed in"])
+                    print("エラー")
+                    promise(.failure(error))
+                    return
+                }
 
-                let request = AF.request(url, method: .get, parameters: params, headers: headers)
-                    .validate(contentType: ["application/json"])
-                request.response { response in
-                    let statusCode = response.response!.statusCode
+                user.getIDToken { token, error in
+                    if let error = error {
+                        print("エラー1")
 
-                    do {
-                        if statusCode <= 300 {
-                            guard let data = response.data else {return}
+                        promise(.failure(error))
+                    } else if let token = token {
+                        print("エラー2")
 
-                            let decode = JSONDecoder()
-                            let value = try decode.decode(T.self, from: data)
-                            promise(.success(value))
+                        promise(.success(token))
+                    } else {
+                        print("エラー3")
 
-                        }
-                    } catch {
-                        print("デコードに失敗しました😢")
-                        print(response.debugDescription)
-                        promise(.failure(APIError.decodeError))
-                    }
-                    switch statusCode {
-                    case 400:
-                        print(response.description)
-                        promise(.failure(APIError.forbidden))
-                    case 401:
-                        print(response.description)
-                        print("認証失敗😭")
-                        promise(.failure(APIError.auth))
-
-                    case 403:
-                        print(response.description)
-                        print("アクセス権がありません😭")
-                        promise(.failure(APIError.forbidden))
-                    case 404:
-                        print(response.description)
-                        print("URLがあかんよ😭")
-                        promise(.failure(APIError.invalidUrl))
-
-                    default:
-                        print("不明なエラー")
-                        promise(.failure(APIError.unknown))
+                        let error = NSError(domain: "com.example.app", code: 0, userInfo: [NSLocalizedDescriptionKey: "Failed to get ID token"])
+                        promise(.failure(error))
                     }
                 }
             }
         }
         .eraseToAnyPublisher()
     }
-    // 新規でデータを保存するメソッド
-    func postData<T: Decodable>(endPoint: paths.RawValue,  params: Parameters, token: String, type: T.Type) {
-        let headers: HTTPHeaders = [
-            "Token": token
-        ]
-        let path = endPoint
-        let url = baseUrl.appending(path)
 
-        let request = AF.request(url, method: .post, parameters: params, encoding: JSONEncoding.default, headers: headers)
-            .responseDecodable(of: T.self){ response in
-                if let response = response.response { return }
 
-                switch response.result {
-                case .success(let data):
-                    print("リクエスト成功\(data)")
-                case .failure(let error):
-                    print("リクエスト失敗\(error)")
+    // データを取得するメソッド  ジェネリクスで指定してるから柔軟に使えるはずだよ
+    func fetchData<T: Decodable>(endPoint: paths.RawValue, params: Parameters?, type: T.Type?) -> AnyPublisher<T, Error> {
+
+        return Deferred {
+            Future { promise in
+                self.getUserToken()
+                    .sink { response in
+                        switch response {
+                        case .finished:
+                            return
+                        case .failure(let error):
+                            return
+                        }
+                    } receiveValue: { token in
+                        let token = token
+
+                let path = endPoint
+                let url = self.baseUrl.appending(path)
+                        let headers: HTTPHeaders = HTTPHeaders([HTTPHeader(name: "token", value: token)])
+
+                let request = AF.request(url, method: .get, parameters: params, headers: headers)
+                    .validate(contentType: ["application/json"])
+                        request.response { response in
+                            let statusCode = response.response!.statusCode
+
+                            do {
+                                if statusCode <= 300 {
+                                    guard let data = response.data else {return}
+
+                                    let decode = JSONDecoder()
+                                    let value = try decode.decode(T.self, from: data)
+                                    promise(.success(value))
+
+                                }
+                            } catch {
+                                print("デコードに失敗しました😢")
+                                print(response.debugDescription)
+                                promise(.failure(APIError.decodeError))
+                            }
+                            switch statusCode {
+                            case 400:
+                                print(response.description)
+                                promise(.failure(APIError.forbidden))
+                            case 401:
+                                print(response.description)
+                                print("認証失敗😭")
+                                promise(.failure(APIError.auth))
+
+                            case 403:
+                                print(response.description)
+                                print("アクセス権がありません😭")
+                                promise(.failure(APIError.forbidden))
+                            case 404:
+                                print(response.description)
+                                print("URLがあかんよ😭")
+                                promise(.failure(APIError.invalidUrl))
+
+                            default:
+                                print("不明なエラー")
+                                promise(.failure(APIError.unknown))
+                            }
+                        }
                 }
+            }
+        }
+        .eraseToAnyPublisher()
+    }
+    // 新規でデータを保存するメソッド
+    func postData<T: Decodable>(endPoint: paths.RawValue,  params: Parameters, type: T.Type) {
+        print(#function)
+        getUserToken()
+            .sink { response in
+                switch response {
+                case .finished:
+                    print("終わりました")
+                    return
+                case .failure(let error):
+                    print("エラー")
+                    return
+                }
+            } receiveValue: { token in
+                print(token)
+                let token = token
+
+                let headers: HTTPHeaders = [
+                    "Token": token
+                ]
+                let path = endPoint
+                let url = self.baseUrl.appending(path)
+                print("ポストします")
+
+                let request = AF.request(url, method: .post, parameters: params, encoding: JSONEncoding.default, headers: headers)
+                    .responseDecodable(of: T.self){ response in
+                        if let response = response.response { return }
+
+                        switch response.result {
+                        case .success(let data):
+                            print("リクエスト成功\(data)")
+                        case .failure(let error):
+                            print("リクエスト失敗\(error)")
+                        }
+                    }
             }
     }
 
@@ -147,9 +214,4 @@ final class APIClient {
             }
         }
     }
-
-
-
-
-
 }
