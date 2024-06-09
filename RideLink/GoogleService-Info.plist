@@ -15,16 +15,18 @@
 	<key>STORAGE_BUCKET</key>
 	<string>ridelink-7482c.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
-	<false></false>
+	<false/>
 	<key>IS_ANALYTICS_ENABLED</key>
-	<false></false>
+	<false/>
 	<key>IS_APPINVITE_ENABLED</key>
-	<true></true>
+	<true/>
 	<key>IS_GCM_ENABLED</key>
-	<true></true>
+	<false/>
 	<key>IS_SIGNIN_ENABLED</key>
-	<true></true>
+	<true/>
 	<key>GOOGLE_APP_ID</key>
 	<string>1:523689548592:ios:4a2c4cbfeef44ee74546f5</string>
+	<key></key>
+	<string></string>
 </dict>
 </plist>
