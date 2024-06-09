@@ -26,9 +26,9 @@ struct MapView: UIViewControllerRepresentable {
 }
 
 class MapViewController: UIViewController {
+    private var destinationName: String = ""
+    private var touringComment: String = ""
     var mapViewModel: MapViewModel!
-    
-    
     init() {
         let encountRepo = EncounterRepository()
         mapViewModel = MapViewModel(encountRepository: encountRepo)
