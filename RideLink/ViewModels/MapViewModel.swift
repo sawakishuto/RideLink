@@ -15,8 +15,22 @@ final class MapViewModel:NSObject, CLLocationManagerDelegate {
     var encountRepository: EncounterRepositoryProtocol?
     var isStartTouring: Bool = false
     let geocoder = CLGeocoder()
+
+
+    init(encountRepository: EncounterRepositoryProtocol) {
+        self.encountRepository = encountRepository
         super.init()
         locationManager.delegate = self
+
+        cancellablePipeline = Timer
+            .publish(every: 10, on: .main, in: .common)
+            .autoconnect()
+            .sink(receiveValue: { [unowned self] _ in
+                if isStartTouring {
+                    postLocationInfo()
+                }
+
+            })
     }
     
     func requestLocationAuthorization() {
