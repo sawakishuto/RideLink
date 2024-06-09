@@ -29,6 +29,8 @@
 		0861E6682C12097D0012F49E /* bannerNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0861E6672C12097D0012F49E /* bannerNotification.swift */; };
 		0872D1B42C10522100B81F6D /* TouringButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0872D1B32C10522100B81F6D /* TouringButton.swift */; };
 		08742F1B2C15EB5E00C942DB /* ModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08742F1A2C15EB5E00C942DB /* ModalViewController.swift */; };
+		08742F182C15DDBF00C942DB /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 08742F172C15DDBF00C942DB /* FirebaseMessaging */; };
+		08809D792BE7AF6600A2F31D /* CustomTabViewsStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08809D782BE7AF6600A2F31D /* CustomTabViewsStyle.swift */; };
 		08809D7C2BE7B24900A2F31D /* Tab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08809D7B2BE7B24900A2F31D /* Tab.swift */; };
 		08C0BCC82BB321AA0088109A /* RideLinkApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C0BCC72BB321AA0088109A /* RideLinkApp.swift */; };
 		08C0BCCA2BB321AA0088109A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C0BCC92BB321AA0088109A /* ContentView.swift */; };
@@ -100,6 +102,8 @@
 		0861E6672C12097D0012F49E /* bannerNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bannerNotification.swift; sourceTree = "<group>"; };
 		0872D1B32C10522100B81F6D /* TouringButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouringButton.swift; sourceTree = "<group>"; };
 		08742F1A2C15EB5E00C942DB /* ModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalViewController.swift; sourceTree = "<group>"; };
+		08742F192C15DF6400C942DB /* RideLink.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RideLink.entitlements; sourceTree = "<group>"; };
+		08809D782BE7AF6600A2F31D /* CustomTabViewsStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabViewsStyle.swift; sourceTree = "<group>"; };
 		08809D7B2BE7B24900A2F31D /* Tab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tab.swift; sourceTree = "<group>"; };
 		08C0BCC42BB321AA0088109A /* RideLink.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RideLink.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		08C0BCC72BB321AA0088109A /* RideLinkApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideLinkApp.swift; sourceTree = "<group>"; };
@@ -137,6 +141,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				08742F182C15DDBF00C942DB /* FirebaseMessaging in Frameworks */,
 				08582C892BF4CD2F00B7FEE5 /* Alamofire in Frameworks */,
 				08C0BCF72BB322770088109A /* FirebaseDatabaseSwift in Frameworks */,
 				08515F3C2BDBE065009D20D1 /* SnapKit in Frameworks */,
@@ -262,6 +267,7 @@
 		08C0BCC62BB321AA0088109A /* RideLink */ = {
 			isa = PBXGroup;
 			children = (
+				08742F192C15DF6400C942DB /* RideLink.entitlements */,
 				08C0BCFD2BB5B7790088109A /* Info.plist */,
 				08C0BCFB2BB323D20088109A /* GoogleService-Info.plist */,
 				08CB693E2BD7DE7000E5940C /* App */,
@@ -443,6 +449,7 @@
 				08C0BCF62BB322770088109A /* FirebaseDatabaseSwift */,
 				08515F3B2BDBE065009D20D1 /* SnapKit */,
 				08582C882BF4CD2F00B7FEE5 /* Alamofire */,
+				08742F172C15DDBF00C942DB /* FirebaseMessaging */,
 			);
 			productName = RideLink;
 			productReference = 08C0BCC42BB321AA0088109A /* RideLink.app */;
@@ -770,6 +777,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = RideLink/RideLink.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"RideLink/Resources\"";
@@ -801,6 +809,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = RideLink/RideLink.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"RideLink/Resources\"";
@@ -977,6 +986,10 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 08582C872BF4CD2F00B7FEE5 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
+		};
+		08742F172C15DDBF00C942DB /* FirebaseMessaging */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = FirebaseMessaging;
 		};
 		08C0BCF22BB322770088109A /* FirebaseAuth */ = {
 			isa = XCSwiftPackageProductDependency;
