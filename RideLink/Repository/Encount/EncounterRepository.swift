@@ -58,6 +58,7 @@ final class EncounterRepository: EncounterRepositoryProtocol {
     }
     
     func postUserLocation(userLocInfo: [LocatinInfo]) -> AnyPublisher<Bool, Error> {
+        print(#function)
         var locInfoParam: [String: [[String: Any]]] = ["locInfo": [[:]]]
 
         var locationInfo: [[String: Any]] = [[:]]
