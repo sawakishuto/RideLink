@@ -32,7 +32,7 @@ final class MapViewModel:NSObject, CLLocationManagerDelegate {
 
             })
     }
-    
+
     func requestLocationAuthorization() {
         locationManager.requestWhenInUseAuthorization()
         locationManager.delegate = self
@@ -65,8 +65,6 @@ final class MapViewModel:NSObject, CLLocationManagerDelegate {
             .store(in: &cancellables)
 
     }
-    
-    
 
     func searchLocationFromName(destinationName: String) -> Future<CLLocationCoordinate2D, Error> {
         return Future { promise in
