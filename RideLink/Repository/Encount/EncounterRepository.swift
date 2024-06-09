@@ -19,6 +19,11 @@ final class EncounterRepository: EncounterRepositoryProtocol {
         return subject.eraseToAnyPublisher()
     }
 
+    func postTouringEnd() {
+        apiClient.fetchData(endPoint: paths.touringEnd.rawValue, params: nil, type: TouringInfoModel.self)
+    }
+
+
     func receptionFriendReqest() -> AnyPublisher<FriendInfoModel, Error> {
         let subject = CurrentValueSubject<FriendInfoModel, Error>(FriendInfoModel(id: "11", isOnline: true, profile: UserProfileModel(userName: "a", bikeName: "a", profileIcon: "x", touringcomment: nil)))
         subject.send((FriendInfoModel(id: "11", isOnline: true, profile: UserProfileModel(userName: "a", bikeName: "a", profileIcon: "x", touringcomment: nil))))
@@ -74,4 +79,14 @@ final class EncounterRepository: EncounterRepositoryProtocol {
         .eraseToAnyPublisher()
     }
 
+    func postTouringCondition(touringCondition: TouringInfoModel) {
+        print(#function)
+        var param: Parameters = [
+            "destination": "\(touringCondition.destinationName)",
+            "touring_comment": "\(touringCondition.touringComment)"
+        ]
+
+        apiClient.postData(endPoint: paths.touringStart.rawValue, params: param, type: TouringInfoModel.self)
+
+        }
 }
