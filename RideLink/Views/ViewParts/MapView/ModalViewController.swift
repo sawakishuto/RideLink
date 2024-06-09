@@ -123,3 +123,23 @@ final class ModalViewController: UIViewController {
 
     }
 }
+
+extension ModalViewController: UITextFieldDelegate {
+    func textFieldDidChangeSelection(_ textField: UITextField) {
+        if let text = textField.text {
+            destinationNameOnChanged?(text)
+        }
+    }
+}
+extension ModalViewController: UITextViewDelegate {
+    func textViewDidChange(_ textView: UITextView) {
+        if let text = textView.text {
+            touringCommentOnChanged?(text)
+        }
+    }
+}
+extension ModalViewController {
+    @objc func tapButton() {
+        buttonTapped!()
+    }
+}
