@@ -12,7 +12,8 @@ struct bannerNotification: View {
     @State private var offset: CGFloat = -200
     @State private var opacity: CGFloat = 0
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        let asyncHide = DispatchWorkItem() {hide()}
+        let asyncShow = DispatchWorkItem() {show()}
     }
 }
 
