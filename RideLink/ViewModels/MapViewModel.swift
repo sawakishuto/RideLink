@@ -121,4 +121,13 @@ final class MapViewModel:NSObject, CLLocationManagerDelegate {
                 completion(route)
             }
         }
+
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        if isStartTouring {
+            let location = locations.first
+            let latitude = location?.coordinate.latitude ?? 0.0
+            let longitude = location?.coordinate.longitude ?? 0.0
+            locationData.append(LocatinInfo(latitude: latitude, longitude: longitude))
+        }
+    }
 }
