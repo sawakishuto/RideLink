@@ -6,44 +6,63 @@
 //
 
 import SwiftUI
+import Alamofire
 
 struct ProfilePreView: View {
-    @Binding var profileData: UserProfileModel
     @State private var showingImagePicker = false
     @State private var inputImage: UIImage?
+    var userImage: Data?
+    var userName: String
+    var bikeName: String
+    var touringComment: String?
+    
 
     var body: some View {
         HStack {
             Button(action: {
                 self.showingImagePicker = true
             }) {
+                
                 ZStack(alignment: .bottomTrailing) {
                     Image(systemName: "camera.circle.fill")
                         .resizable()
                         .frame(width: 28, height: 28)
                         .foregroundColor(.gray)
                         .offset(x: -75, y: -75)
-                    Image(uiImage: inputImage ?? UIImage(named: profileData.profileIcon)!)
-                        .resizable()
-                        .frame(width: 100, height: 100)
-                        .clipShape(Circle())
+
+                    if let userImage = userImage {
+                        Image(uiImage: UIImage(data: userImage)!)
+                            .resizable()
+                            .frame(width: 100, height: 100)
+                            .clipShape(Circle())
+                    } else {
+                        ProgressView()
+                            .frame(width: 100, height: 100)
+                            .clipShape(Circle())
+                    }
                 }
             }
             .padding(.trailing, 20)
+            
             VStack(alignment: .leading) {
-                Text(profileData.userName)
+                
+                Text(userName)
                     .font(.headline)
+                
                 Spacer().frame(height: 10)
+                
                 HStack {
+                    
                     Image("bikeicon")
                         .resizable()
                         .frame(width: 35, height: 21)
-                    Text(profileData.bikeName)
-                        .font(.subheadline)
+                    
+                        Text(bikeName)
+                            .font(.subheadline)
                 }
                 Spacer().frame(height: 10)
-                Text(profileData.touringcomment ?? "")
-                    .font(.caption)
+                    Text(touringComment ?? "")
+                        .font(.caption)
             }
             Spacer()
         }
@@ -59,6 +78,15 @@ struct ProfilePreView: View {
     
     func loadImage() {
         guard let inputImage = inputImage else { return }
-        // 画像をアップロードするためのAPIを呼び出したり、画像をローカルに保存したりするコードをここに書く
+            // 画像をJPEG形式のデータに変換
+        guard let imageData = inputImage.jpegData(compressionQuality: 0.5) else { return }
+        
+        // AF.upload(multipartFormData: { multipartFormData in
+        //     multipartFormData.append(imageData, withName: "file", fileName: "image.jpg", mimeType: "image/jpeg")
+        // }, to: "https://your-api-url.com/upload")
+        // .response { response in
+        //     // レスポンスを処理
+        //     debugPrint(response)
+        // }
     }
 }

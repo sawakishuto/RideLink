@@ -15,12 +15,23 @@ struct UserCard: View {
             
         }) {
             HStack {
-                Image(userProfile.profileIcon)
-                    .resizable()
-                    .frame(width: 100, height: 100)
-                    .clipShape(Circle())
-                    .padding(.trailing, 10)
-                    .padding(.leading, 5)
+                if let userImage = UIImage(data: userProfile.profileIcon!){
+                    
+                    Image(uiImage: userImage)
+                        .resizable()
+                        .frame(width: 100, height: 100)
+                        .clipShape(Circle())
+                        .padding(.trailing, 10)
+                        .padding(.leading, 5)
+                    
+                } else {
+                    ProgressView()
+                        .frame(width: 100, height: 100)
+                        .clipShape(Circle())
+                        .padding(.trailing, 10)
+                        .padding(.leading, 5)
+                }
+
                 VStack {
                     
                     Text(userProfile.userName)
