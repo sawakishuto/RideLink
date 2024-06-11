@@ -20,7 +20,7 @@ struct ContentView: View {
                         y: geometory.size.height * 0.6
                     )
                     .zIndex(100)
-        
+
                 MapView()
             }
             .ignoresSafeArea()
@@ -29,7 +29,7 @@ struct ContentView: View {
             sendLocalNotification()
         }
     }
-      func sendLocalNotification() {
+    func sendLocalNotification() {
         let content = UNMutableNotificationContent()
         content.title = "すれ違いがありました！"
         content.body = "10人とすれ違いました！👍"
@@ -44,10 +44,10 @@ struct ContentView: View {
                 print("通知を送信しました")
             }
         }
-  
+    }
 }
 
 
-#Preview {
-    ContentView()
-}
+    #Preview {
+        ContentView()
+    }

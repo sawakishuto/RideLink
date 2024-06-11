@@ -33,7 +33,7 @@ final class ModalViewController: UIViewController {
         setUp()
 
         destinationLabel.snp.makeConstraints {
-            $0.top.equalToSuperview().offset(20)
+            $0.top.equalToSuperview().offset(80)
             $0.height.equalTo(60)
             $0.centerX.equalToSuperview()
         }
@@ -75,15 +75,15 @@ final class ModalViewController: UIViewController {
 
     let destinationLabel: UILabel = {
         let label = UILabel()
-        label.text = "目的地"
-        label.font = .systemFont(ofSize: 20, weight: .black)
+        label.text = "目的地を設定"
+        label.font = .systemFont(ofSize: 30, weight: .black)
         return label
     }()
 
     let commentLabel: UILabel = {
         let label = UILabel()
-        label.text = "ツーリングコメント"
-        label.font = .systemFont(ofSize: 20, weight: .black)
+        label.text = "ツーリングコメントを設定"
+        label.font = .systemFont(ofSize: 30, weight: .black)
         return label
     }()
 
