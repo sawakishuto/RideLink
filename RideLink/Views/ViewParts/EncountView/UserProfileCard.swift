@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct UserProfileCard: View {
-    let encounterImage: String
+    let encounterImage: Data?
     let userName: String
     let bikeName: String
     let destinationName: String
@@ -79,5 +79,5 @@ struct UserProfileCard: View {
 }
 
 #Preview {
-    UserProfileCard(encounterImage: "", userName: "", bikeName: "", destinationName: "", comment: "", encountLatitude: 0.00, encountLongitude: 0.00)
+    UserProfileCard(encounterImage: nil, userName: "", bikeName: "", destinationName: "", comment: "", encountLatitude: 0.00, encountLongitude: 0.00)
 }

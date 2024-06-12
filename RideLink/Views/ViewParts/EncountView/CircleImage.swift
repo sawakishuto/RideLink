@@ -8,17 +8,17 @@
 import SwiftUI
 
 struct CircleImage: View {
-    let ImageURL: String
+    let ImageData: Data?
 
     var body: some View {
-        AsyncImage(url: URL(string: ImageURL)!) { image in
-            image
+        if let ImageData = ImageData {
+            Image(uiImage: UIImage(data: ImageData)!)
                 .resizable()
                 .scaledToFit()
                 .frame(width: 250)
                 .cornerRadius(500)
                 .shadow(color: .gray, radius: 4, x: 2, y: 5)
-        } placeholder: {
+        } else {
             ProgressView()
                 .frame(width: 250)
                 .cornerRadius(500)
@@ -28,5 +28,5 @@ struct CircleImage: View {
 }
 
 #Preview {
-    CircleImage(ImageURL: "https://www.irasutoya.com/2013/05/blog-post_7246.html")
+    CircleImage(ImageData: nil)
 }

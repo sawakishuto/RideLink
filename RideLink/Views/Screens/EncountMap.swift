@@ -39,5 +39,5 @@ struct EncountMap: View {
 }
 
 #Preview {
-    EncountMap(latitude: 35.0, longitude: 36.0, encounterImage: "")
+    EncountMap(latitude: 35.0, longitude: 36.0, encounterImage: nil)
 }
