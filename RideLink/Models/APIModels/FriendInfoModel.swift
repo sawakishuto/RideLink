@@ -13,7 +13,3 @@ struct FriendInfoModel: Identifiable, Decodable {
     let isOnline: Bool
     let profile: UserProfileModel
 }
-
-struct FriendResponse: Decodable {
-    let friends: [FriendInfoModel]
-}

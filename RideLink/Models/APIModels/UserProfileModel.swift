@@ -8,10 +8,9 @@
 import Foundation
 
 struct UserProfileModel: Codable {
-    let uid: String
     let userName: String
     let bikeName: String
-    let profileImageUrl: String
-    let comment: String
+    let profileIcon: String
+    let touringcomment: String?
     var createAt = Date()
 }

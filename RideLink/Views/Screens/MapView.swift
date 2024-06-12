@@ -13,82 +13,192 @@ import SnapKit
 import Combine
 
 struct MapView: UIViewControllerRepresentable {
-
+    
     typealias UIViewControllerType = UIViewController
-
+    
     func makeUIViewController(context: Context) -> UIViewController {
         return MapViewController()
     }
-
+    
     func updateUIViewController(_ uiViewController: UIViewController, context: Context) {
+        
     }
 }
 
 class MapViewController: UIViewController {
+    private var destinationName: String = ""
+    private var touringComment: String = ""
     var mapViewModel: MapViewModel!
-
-
+    init() {
+        let encountRepo = EncounterRepository()
+        mapViewModel = MapViewModel(encountRepository: encountRepo)
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        mapViewModel = MapViewModel()
+        
         mapViewModel.requestLocationAuthorization()
+        mapView.delegate = self
         view.addSubview(mapView)
-    }
+        mapView.snp.makeConstraints {
+            if let superview = mapView.superview {
+                $0.edges.equalTo(superview.safeAreaLayoutGuide)
+            }
+        }
+        
+        view.addSubview(touringButton)
+        touringButton.snp.makeConstraints {
+            $0.centerX.equalToSuperview()
+            $0.bottom.equalToSuperview().offset(-40)
+        }
+        
+        view.addSubview(currentLocationButton)
+        currentLocationButton.snp.makeConstraints {
+            $0.right.equalToSuperview().offset(-20)
+            $0.bottom.equalToSuperview().offset(-150)
+        }
+        currentLocationButton.layer.shadowColor = CGColor(gray: 1, alpha: 1)
+        currentLocationButton.layer.shadowOffset = CGSize(width: 10, height: 100)
 
-    lazy var mapView: MKMapView = {
+        view.isUserInteractionEnabled = true
+        
+    }
+    
+    private lazy var mapView: MKMapView = {
         let map = MKMapView()
         var region: MKCoordinateRegion = map.region
         region.center = map.userLocation.coordinate
-        region.span.latitudeDelta = 0.01
-        region.span.longitudeDelta = 0.01
+        region.span.latitudeDelta = 0.001
+        region.span.longitudeDelta = 0.001
         map.setRegion(region, animated: true)
         map.mapType = .standard
-        map.userTrackingMode = .follow
-        map.frame = view.bounds
-
+        map.userTrackingMode = .followWithHeading
+        map.frame = CGRect(x: 10, y: 10, width: 400, height: 300)
         return map
+    }()
+    
+    private lazy var touringButton: TouringButton = {
+        let button = TouringButton(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
+        button.addTarget(self, action: #selector(tapStartButton), for: .touchUpInside)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.isUserInteractionEnabled = true
+        return button
+    }()
+    
+    
+    private var currentLocationButton: CurrentLocationButton = {
+        let button = CurrentLocationButton(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
+        button.addTarget(self, action: #selector(focusCurrentLocation), for: .touchUpInside)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.isUserInteractionEnabled = true
+        return button
     }()
 }
 
 extension MapViewController {
 
+    @objc private func tapStartButton() {
+        if !mapViewModel.isStartTouring {
+            let vc = ModalViewController { 
+                self.toggleIsStart()
+                self.dismiss(animated: true)
+                self.mapViewModel.postTouringCondition(destinationName: self.destinationName, touringComment: self.touringComment)
+            } destinationNameOnChanged: { destination in
+                print(destination)
+                self.destinationName = destination
+                print(self.destinationName)
+            } touringCommentOnChanged: { comment in
+                print(comment)
+                self.touringComment = comment
+                print(self.touringComment)
+            }
+            if let sheet = vc.sheetPresentationController {
+                // ここで指定したサイズで表示される
+                sheet.detents = [.large()]
+            }
+            present(vc, animated: true, completion: nil)
+        } else {
+            toggleIsStart()
+        }
+    }
+
+    @objc func focusCurrentLocation() {
+        if let userLocation = mapView.userLocation.location {
+            let region = MKCoordinateRegion(center: userLocation.coordinate, latitudinalMeters: 300, longitudinalMeters: 300)
+            mapView.setRegion(region, animated: true)
+            self.mapView.userTrackingMode = .followWithHeading
+        } else {
+            self.mapView.userTrackingMode = .followWithHeading
+        }
+
+    }
+    
+     func toggleIsStart() {
+        self.mapViewModel.isStartTouring.toggle()
+        touringButton.isStartTouring.toggle()
+        print(mapViewModel.isStartTouring)
+        if mapViewModel.isStartTouring {
+            createRoot()
+        } else {
+            mapView.overlays.forEach {
+                if let overlay = $0 as? MKPolyline {
+                    mapView.removeOverlay(overlay)
+                }
+            }
+            mapViewModel.postEndTouring()
+        }
+        
+    }
+    
     func createAnnotations(location: CLLocationCoordinate2D) {
         let annotation = MKPointAnnotation()
         annotation.coordinate = location
         self.mapView.addAnnotation(annotation)
     }
+    
+    func createRoot() {
+        let userLocation = mapView.userLocation.coordinate
 
-    func createRoot(location: CLLocationCoordinate2D) {
-        let sourcePlaceMark = MKPlacemark(coordinate: self.mapView.userLocation.coordinate)
-        let distinationPlaceMark = MKPlacemark(coordinate: location)
-        let directionRequest = MKDirections.Request()
-        directionRequest.source = MKMapItem(placemark: sourcePlaceMark)
-        directionRequest.destination = MKMapItem(placemark: distinationPlaceMark)
-        directionRequest.transportType = .automobile
-        let directions = MKDirections(request: directionRequest)
-        directions.calculate { (response, error) in
-            guard let directionResonse = response else {
-                if let error = error {
-                    print("we have error getting directions==\(error.localizedDescription)")
+            print(self.destinationName)
+
+            self.mapViewModel.searchLocationFromName(destinationName: self.destinationName)
+            .sink { response in
+                switch response {
+                case .finished:
+                    print(self.mapViewModel.locationMark)
+                    print("終わり")
+                    return
+                case .failure(let error):
+                    print("\(error)")
+                    return
                 }
-                return
-            }
-            let route = directionResonse.routes[0]
-            self.mapView.addOverlay(route.polyline, level: .aboveRoads)
-            let rect = route.polyline.boundingMapRect
-            self.mapView.setRegion(MKCoordinateRegion(rect), animated: true)
-        }
+            } receiveValue: { [self] location in
+                print(location)
+                self.mapViewModel.createRoute(from: userLocation, to: location) { route in
+                    if let route = route {
+                        self.mapView.addOverlay(route.polyline, level: .aboveRoads)
+
+                        self.mapView.setRegion(MKCoordinateRegion(route.polyline.boundingMapRect), animated: true)
+                    }
+                }
+            }.store(in: &mapViewModel.cancellables) 
     }
 }
 
 extension MapViewController: MKMapViewDelegate {
     func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
-        if overlay is MKPolyline {
-            let renderer = MKPolylineRenderer(overlay: overlay)
+        if let polyline = overlay as? MKPolyline {
+            let renderer = MKPolylineRenderer(polyline: polyline)
             renderer.strokeColor = .blue
             renderer.lineWidth = 3
             return renderer
         }
-        return MKOverlayRenderer(overlay: overlay)
+        return MKOverlayRenderer()
     }
 }
+
