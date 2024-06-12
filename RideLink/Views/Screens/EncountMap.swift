@@ -11,10 +11,29 @@ import MapKit
 struct EncountMap: View {
     let latitude: Double
     let longitude: Double
-    let encounterImage: String
+    let encounterImage: Data?
     var body: some View {
         Map {
-            Marker("ここでですれ違いました！🏍️", image: encounterImage, coordinate: CLLocationCoordinate2D(latitude: latitude, longitude: longitude))
+            Marker(coordinate: CLLocationCoordinate2D(latitude: latitude, longitude: longitude)) {
+                VStack {
+                    if let encounterImage = encounterImage {
+                        Image(uiImage: UIImage(data: encounterImage)!)
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 30, height: 30)
+                            .cornerRadius(90)
+                    } else {
+                        Image(systemName: "music.note")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 30, height: 30)
+                            .cornerRadius(90)
+                    }
+                    Text("ここでですれ違いました！🏍️")
+                        .font(.caption)
+
+                }
+            }
         }
     }
 }
