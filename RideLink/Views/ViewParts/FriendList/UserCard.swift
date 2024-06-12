@@ -15,7 +15,7 @@ struct UserCard: View {
             
         }) {
             HStack {
-                Image(userProfile.profileIcon)
+                Image(uiImage: UIImage(data: userProfile.profileIcon!)!)
                     .resizable()
                     .frame(width: 100, height: 100)
                     .clipShape(Circle())

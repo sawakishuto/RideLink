@@ -24,11 +24,11 @@ final class EncounterRepository: EncounterRepositoryProtocol {
     }
 
 
-//    func receptionFriendReqest() -> AnyPublisher<FriendInfoModel, Error> {
-//        let subject = CurrentValueSubject<FriendInfoModel, Error>(FriendInfoModel(id: "11", isOnline: true, profile: UserProfileModel(userName: "a", bikeName: "a", profileIcon: "x", touringcomment: nil)))
-//        subject.send((FriendInfoModel(id: "11", isOnline: true, profile: UserProfileModel(userName: "a", bikeName: "a", profileIcon: "x", touringcomment: nil))))
-//        return subject.eraseToAnyPublisher()
-//    }
+    func receptionFriendReqest() -> AnyPublisher<FriendInfoModel, Error> {
+        let subject = CurrentValueSubject<FriendInfoModel, Error>(FriendInfoModel(id: "11", isOnline: true, profile: UserProfileModel(userName: "a", bikeName: "a", profileIcon: "x", touringcomment: nil)))
+        subject.send((FriendInfoModel(id: "11", isOnline: true, profile: UserProfileModel(userName: "a", bikeName: "a", profileIcon: "x", touringcomment: nil))))
+        return subject.eraseToAnyPublisher()
+    }
 
     func getEncountInfo() -> AnyPublisher<[EncountInfoModel], Error> {
         return Deferred {
@@ -56,7 +56,7 @@ final class EncounterRepository: EncounterRepositoryProtocol {
         subject.send(true)
         return subject.eraseToAnyPublisher()
     }
-    
+
     func postUserLocation(userLocInfo: [LocatinInfo]) -> AnyPublisher<Bool, Error> {
         print(#function)
         var locInfoParam: [String: [[String: Any]]] = ["locInfo": [[:]]]

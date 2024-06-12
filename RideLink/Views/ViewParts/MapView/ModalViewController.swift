@@ -91,6 +91,10 @@ final class ModalViewController: UIViewController {
         let textfield = UITextField()
         textfield.backgroundColor = .white
         textfield.layer.cornerRadius = 20
+        textfield.placeholder = "東京ディズニーランド"
+        textfield.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 20, height: 0))
+        textfield.leftViewMode = .always
+        textfield.rightView = UIView(frame: CGRect(x: textfield.frame.width, y: 0, width: 20, height: 0))
         return textfield
     }()
 
@@ -98,6 +102,7 @@ final class ModalViewController: UIViewController {
         let textfield = UITextView()
         textfield.backgroundColor = .white
         textfield.layer.cornerRadius = 20
+        textfield.contentInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
         return textfield
     }()
 
@@ -109,6 +114,10 @@ final class ModalViewController: UIViewController {
         button.titleLabel!.font = .systemFont(ofSize: 20, weight: .black)
         button.setTitleColor(.white, for: .normal)
         button.addTarget(self, action: #selector(tapButton), for: .touchUpInside)
+        button.layer.shadowOffset = CGSize(width: 0.0, height: 2.0)
+        button.layer.shadowColor = UIColor.black.cgColor
+        button.layer.shadowOpacity = 0.7
+        button.layer.shadowRadius = 4
 
         return button
     }()
