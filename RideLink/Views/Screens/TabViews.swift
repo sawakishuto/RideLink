@@ -10,42 +10,42 @@ import SwiftUI
 let mock1 = UserProfileModel(
     userName: "1",
     bikeName: "バイク名",
-    profileIcon: "orangeBike",
+    profileIcon: nil,
     touringcomment: "コメント"
 )
 
 let mock2 = UserProfileModel(
     userName: "2",
     bikeName: "バイク名",
-    profileIcon: "orangeBike",
+    profileIcon: nil,
     touringcomment: "コメント"
 )
 
 let mock3 = UserProfileModel(
     userName: "3",
     bikeName: "バイク名",
-    profileIcon: "orangeBike",
+    profileIcon: nil,
     touringcomment: "コメント"
 )
 
 let mock4 = UserProfileModel(
     userName: "4",
     bikeName: "バイク名",
-    profileIcon: "orangeBike",
+    profileIcon: nil,
     touringcomment: "コメント"
 )
 
 let mock5 = UserProfileModel(
     userName: "5",
     bikeName: "バイク名",
-    profileIcon: "orangeBike",
+    profileIcon: nil,
     touringcomment: "コメント"
 )
 
 let mock6 = UserProfileModel(
     userName: "6",
     bikeName: "バイク名",
-    profileIcon: "orangeBike",
+    profileIcon: nil,
     touringcomment: "コメント"
 )
 

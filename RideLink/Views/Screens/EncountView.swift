@@ -26,7 +26,7 @@ struct EncountView: View {
                         ForEach(vm.encountInfos) { vm in
                             EncountBaseView(
                                 encountImage: vm.userInfo.profileIcon,
-                                ImageURL: vm.userInfo.profileIcon,
+                                ImageData: vm.userInfo.profileIcon,
                                 userName: vm.userInfo.userName,
                                 bikeName: vm.userInfo.bikeName,
                                 destinationName: vm.touringInfo.destinationName ?? "",
