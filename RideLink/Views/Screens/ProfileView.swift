@@ -14,11 +14,12 @@ struct ProfileView: View {
     @State private var editedUserName: String = ""
     @State private var editedBikeName: String = ""
     @State private var editedComment: String = ""
-    
+    @State private var inputImage: UIImage?
+
     var body: some View {
         VStack {
-            
             ProfilePreView(
+                inputImage: $inputImage,
                 userImage: vm.originalData.profileIcon,
                 userName: vm.originalData.userName,
                 bikeName: vm.originalData.bikeName,
@@ -76,6 +77,11 @@ struct ProfileView: View {
             self.editedComment = vm.originalData.touringcomment ?? ""
             self.editedBikeName = vm.originalData.bikeName ?? ""
             self.editedUserName = vm.originalData.userName ?? ""
+        }
+        .onChange(of: inputImage) { newImage in
+            if let newImage = newImage {
+                vm.loadImage(inputImage: newImage)
+            }
         }
     }
 }

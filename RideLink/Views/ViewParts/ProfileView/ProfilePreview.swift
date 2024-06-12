@@ -9,21 +9,18 @@ import SwiftUI
 import Alamofire
 
 struct ProfilePreView: View {
-    @StateObject var vm = ProfileViewModel()
     @State private var showingImagePicker = false
-    @State private var inputImage: UIImage?
+    @Binding var inputImage: UIImage?
     var userImage: Data?
     var userName: String
     var bikeName: String
     var touringComment: String?
-    
 
     var body: some View {
         HStack {
             Button(action: {
                 self.showingImagePicker = true
             }) {
-                
                 ZStack(alignment: .bottomTrailing) {
                     Image(systemName: "camera.circle.fill")
                         .resizable()
@@ -46,29 +43,27 @@ struct ProfilePreView: View {
             .padding(.trailing, 20)
             
             VStack(alignment: .leading) {
-                
                 Text(userName)
                     .font(.headline)
                 
                 Spacer().frame(height: 10)
                 
                 HStack {
-                    
                     Image("bikeicon")
                         .resizable()
                         .frame(width: 35, height: 21)
                     
-                        Text(bikeName)
-                            .font(.subheadline)
+                    Text(bikeName)
+                        .font(.subheadline)
                 }
                 Spacer().frame(height: 10)
-                    Text(touringComment ?? "")
-                        .font(.caption)
+                Text(touringComment ?? "")
+                    .font(.caption)
             }
             Spacer()
         }
         .padding([.top, .leading, .trailing])
-        .sheet(isPresented: $showingImagePicker, onDismiss: {vm.loadImage(inputImage: inputImage) }) {
+        .sheet(isPresented: $showingImagePicker) {
             ImagePicker(image: $inputImage)
         }
         Rectangle()
