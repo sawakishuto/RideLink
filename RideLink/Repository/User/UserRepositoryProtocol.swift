@@ -15,11 +15,7 @@ protocol UserRepositoryProtocol: AnyObject {
     
     func postUserData(userData: UserProfileModel) -> AnyPublisher<UserProfileModel, Error>
 
-//    func getFriendData() -> AnyPublisher<FriendInfoModel, Error>
-    
-//    func postUserProfileImage(imageData: Data)
-
-
+//  func getFriendData() -> AnyPublisher<FriendInfoModel, Error>
 
 // それぞれ情報をProfileViewからアップデートできるputメソッドを作成してほしい（もしいけるならデータをジェネリクス(汎用性が高い型)として持って一つのメソッドでいろんな情報のアップデートに使えるととてもベスト！！）
 //    更新が成功したらenvirnomentObjectにも変更が加わるようにしてほしい!
