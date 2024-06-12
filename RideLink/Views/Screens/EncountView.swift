@@ -64,6 +64,8 @@ struct EncountView: View {
                         })
                 )
             }
+            .animation(.interpolatingSpring(mass: 0.6, stiffness: 150, damping: 80, initialVelocity: 0.1))
+
             Text("\(currentIndex + 1)/\(vm.encountInfos.count)")
                 .fontWeight(.black)
                 .font(.system(size: 20))
@@ -82,11 +84,11 @@ struct EncountView: View {
                             .resizable()
                             .foregroundStyle(.black)
                             .frame(width: 28, height: 28)
-
-
                     }
                 })
+                .disabled(currentIndex == 0 ? true: false)
                 .offset(x: bodyView.size.width * 0.1, y: bodyView.size.height * 0.85)
+
             }
             if currentIndex < vm.encountInfos.count - 1 {
                 Button(action: {
@@ -101,12 +103,15 @@ struct EncountView: View {
                     }
                 })
                 .offset(x: bodyView.size.width * 0.8, y: bodyView.size.height * 0.85)
+                .disabled(currentIndex == vm.encountInfos.count ? true: false)
+            } else {
+
             }
+
 
         }
         .background(Color(hex: "F8F8F8"))
         .ignoresSafeArea()
-        .animation(.interpolatingSpring(mass: 0.6, stiffness: 150, damping: 80, initialVelocity: 0.1))
     }
 }
 
