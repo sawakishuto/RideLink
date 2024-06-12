@@ -9,6 +9,7 @@ import SwiftUI
 import Alamofire
 
 struct ProfilePreView: View {
+    @StateObject var vm = ProfileViewModel()
     @State private var showingImagePicker = false
     @State private var inputImage: UIImage?
     var userImage: Data?
@@ -67,26 +68,12 @@ struct ProfilePreView: View {
             Spacer()
         }
         .padding([.top, .leading, .trailing])
-        .sheet(isPresented: $showingImagePicker, onDismiss: loadImage) {
+        .sheet(isPresented: $showingImagePicker, onDismiss: {vm.loadImage(inputImage: inputImage) }) {
             ImagePicker(image: $inputImage)
         }
         Rectangle()
             .fill(Color.gray.opacity(0.5))
             .frame(height: 3)
             .shadow(color: .gray, radius: 5, x: 0, y: 5)
-    }
-    
-    func loadImage() {
-        guard let inputImage = inputImage else { return }
-            // 画像をJPEG形式のデータに変換
-        guard let imageData = inputImage.jpegData(compressionQuality: 0.5) else { return }
-        
-        // AF.upload(multipartFormData: { multipartFormData in
-        //     multipartFormData.append(imageData, withName: "file", fileName: "image.jpg", mimeType: "image/jpeg")
-        // }, to: "https://your-api-url.com/upload")
-        // .response { response in
-        //     // レスポンスを処理
-        //     debugPrint(response)
-        // }
     }
 }

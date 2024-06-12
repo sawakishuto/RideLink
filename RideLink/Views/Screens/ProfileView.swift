@@ -7,12 +7,6 @@
 
 import SwiftUI
 
-
-//mock data
-let today = Calendar.current.startOfDay(for: Date())
-
-
-
 struct ProfileView: View {
     @StateObject var vm = ProfileViewModel()
     @State private var showingActionSheet = false
@@ -68,7 +62,7 @@ struct ProfileView: View {
                 title: Text("変更を保存しますか？"),
                 message: Text("この操作を取り消すことはできません。"),
                 primaryButton: .default(Text("保存")) {
-                    vm.save(userName: editedUserName, bikeName: editedBikeName, userComment: editedComment)
+                    vm.save(userName: editedUserName, bikeName: editedBikeName, profileComment: editedComment)
                 },
                 secondaryButton: .cancel()
             )
