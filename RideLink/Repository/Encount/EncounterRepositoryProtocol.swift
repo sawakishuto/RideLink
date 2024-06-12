@@ -13,7 +13,7 @@ protocol EncounterRepositoryProtocol: AnyObject {
 
     func sendFriendReqest(toUid: String) -> AnyPublisher<Bool, Error>
 
-    func receptionFriendReqest() -> AnyPublisher<FriendInfoModel, Error>
+//    func receptionFriendReqest() -> AnyPublisher<FriendInfoModel, Error>
 
     func acceptFriendRequest(toUid: String) -> AnyPublisher<Bool, Error>
 //    誰とすれ違ったかを取得するメソッド
