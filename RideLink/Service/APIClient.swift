@@ -1,3 +1,4 @@
+
 //
 //  APIClient.swift
 //  RideLink
@@ -10,79 +11,49 @@ import Combine
 import Alamofire
 import FirebaseAuth
 
+
 final class APIClient {
 
     static let shared = APIClient()
-    let auth = Auth.auth()
 
     private let baseUrl = "http://localhost:8080"
+    private var cancellables: Set<AnyCancellable> = []
 
-
-
-    func getUserToken() -> AnyPublisher <String, Error> {
+    // データを取得するメソッド  ジェネリクスで指定してるから柔軟に使えるはずだよ
+    func fetchData<T: Decodable>(endPoint: paths.RawValue, params: Parameters?, type: T.Type) -> AnyPublisher<T, Error> {
         return Deferred {
             Future { promise in
                 print(#function)
-                guard let user = Auth.auth().currentUser else {
-                    let error = NSError(domain: "com.example.app", code: 0, userInfo: [NSLocalizedDescriptionKey: "No user is signed in"])
-                    print("エラー")
-                    promise(.failure(error))
-                    return
-                }
-
-                user.getIDToken { token, error in
-                    if let error = error {
-                        print("エラー1")
-
-                        promise(.failure(error))
-                    } else if let token = token {
-                        print("エラー2")
-
-                        promise(.success(token))
-                    } else {
-                        print("エラー3")
-
-                        let error = NSError(domain: "com.example.app", code: 0, userInfo: [NSLocalizedDescriptionKey: "Failed to get ID token"])
-                        promise(.failure(error))
-                    }
-                }
-            }
-        }
-        .eraseToAnyPublisher()
-    }
-
-
-    // データを取得するメソッド  ジェネリクスで指定してるから柔軟に使えるはずだよ
-    func fetchData<T: Decodable>(endPoint: paths.RawValue, params: Parameters?, type: T.Type?) -> AnyPublisher<T, Error> {
-
-        return Deferred {
-            Future { promise in
                 self.getUserToken()
                     .sink { response in
                         switch response {
-                        case .finished:
-                            return
                         case .failure(let error):
+                            print("🎉トークン取得できない")
+                            promise(.failure(error))
+                        case .finished:
+                            print("終了")
                             return
                         }
                     } receiveValue: { token in
-                        let token = token
+                        print("🎉トークン取得できた")
+                        let path = endPoint
+                        let url = self.baseUrl.appending(path)
+                        let headers: HTTPHeaders = [
+                            "Authorization": token
+                        ]
 
-                let path = endPoint
-                let url = self.baseUrl.appending(path)
-                        let headers: HTTPHeaders = HTTPHeaders([HTTPHeader(name: "token", value: token)])
-
-                let request = AF.request(url, method: .get, parameters: params, headers: headers)
-                    .validate(contentType: ["application/json"])
+                        let request = AF.request(url, method: .get, parameters: params, headers: headers)
+                            .validate(contentType: ["application/json"])
                         request.response { response in
                             let statusCode = response.response!.statusCode
 
                             do {
                                 if statusCode <= 300 {
                                     guard let data = response.data else {return}
-
+                                    print("デコードします")
                                     let decode = JSONDecoder()
                                     let value = try decode.decode(T.self, from: data)
+                                    print("デコード成功")
                                     promise(.success(value))
 
                                 }
@@ -114,53 +85,63 @@ final class APIClient {
                                 promise(.failure(APIError.unknown))
                             }
                         }
-                }
+                    }
+                    .store(in: &self.cancellables)
             }
         }
         .eraseToAnyPublisher()
     }
     // 新規でデータを保存するメソッド
-    func postData<T: Decodable>(endPoint: paths.RawValue,  params: Parameters, type: T.Type) {
-        print(#function)
-        getUserToken()
-            .sink { response in
-                switch response {
-                case .finished:
-                    print("終わりました")
-                    return
-                case .failure(let error):
-                    print("エラー")
-                    return
-                }
-            } receiveValue: { token in
-                print(token)
-                let token = token
+    func postData<T: Codable>(endPoint: paths.RawValue,  params: Parameters, type: T.Type) -> AnyPublisher<T, Error> {
 
-                let headers: HTTPHeaders = [
-                    "Token": token
-                ]
-                let path = endPoint
-                let url = self.baseUrl.appending(path)
-                print("ポストします")
-
-                let request = AF.request(url, method: .post, parameters: params, encoding: JSONEncoding.default, headers: headers)
-                    .responseDecodable(of: T.self){ response in
-                        if let response = response.response { return }
-
-                        switch response.result {
-                        case .success(let data):
-                            print("リクエスト成功\(data)")
+        return Deferred {
+           Future { promise in
+               self.getUserToken()
+                    .sink { response in
+                        switch response {
+                        case .finished:
+                            print("終了しました")
+                            break
                         case .failure(let error):
-                            print("リクエスト失敗\(error)")
+                            print("トークン失敗")
+
+                            return promise(.failure(error))
                         }
+                    } receiveValue: { token in
+                        print("トークンを使ってヘッダーを作ります")
+                        let headers: HTTPHeaders = [
+                            "Authorization": token
+                        ]
+                        let path = endPoint
+                        let url = self.baseUrl.appending(path)
+                        print("リクエストを送ります")
+                        let request = AF.request(url, method: .post, parameters: params, encoding: JSONEncoding.default, headers: headers)
+                            .responseDecodable(of: T.self){ response in
+                                if let response = response.response { print("レスポンスがnilです")
+                                    return
+                                }
+                                print("結果をデコードします")
+                                switch response.result {
+                                case .success(let data):
+                                    print("リクエスト成功\(data)")
+                                    return promise(.success(data as! T))
+                                case .failure(let error):
+                                    print("リクエスト失敗\(error)")
+                                    return
+                                }
+                            }
                     }
+                    .store(in: &self.cancellables)
+
             }
+        }
+        .eraseToAnyPublisher()
     }
 
     // 差分があるときにデータを更新するメソッド（プロフィール欄とか, コメントとか, 位置情報とか？）
     func patchData(endPoint: paths.RawValue,  params: Parameters, token: String) {
         let headers: HTTPHeaders = [
-            "Token": token
+            "Authorization": token
         ]
         let path = endPoint
         let url = baseUrl.appending(path)
@@ -168,7 +149,7 @@ final class APIClient {
         let request = AF.request(url, method: .patch, parameters: params, encoding: JSONEncoding.default, headers: headers)
             .responseJSON { response in
                 if let response = response.response { return }
-                
+
                 switch response.result {
                 case .success(let data):
                     print("リクエスト成功\(data)")
@@ -214,4 +195,35 @@ final class APIClient {
             }
         }
     }
+
+
+    func getUserToken() -> Future <String, Error> {
+        return Future { promise in
+            guard let user = Auth.auth().currentUser else {
+                print("🎉トークン取得してます")
+                let error = NSError(domain: "com.example.app", code: 0, userInfo: [NSLocalizedDescriptionKey: "No user is signed in"])
+                return promise(.failure(error))
+                return
+            }
+
+            user.getIDToken { token, error in
+                if let error = error {
+                    print("🎉トークン取得失敗")
+                    promise(.failure(error))
+                } else if let token = token {
+                    print("🎉トークン取得成功")
+                    print(token)
+                    return promise(.success(token))
+                } else {
+                    let error = NSError(domain: "com.example.app", code: 0, userInfo: [NSLocalizedDescriptionKey: "Failed to get ID token"])
+                    return promise(.failure(error))
+                }
+            }
+        }
+    }
+
+
+
+
+
 }

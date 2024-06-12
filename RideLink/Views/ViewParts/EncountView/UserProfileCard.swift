@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct UserProfileCard: View {
+    let encounterImage: String
     let userName: String
     let bikeName: String
     let destinationName: String
@@ -21,9 +22,9 @@ struct UserProfileCard: View {
                     .font(.system(size: 35))
                     .fontWeight(.black)
 
-                Button(action: {
-                    // mapViewへ遷移するロジック
-                }, label: {
+                NavigationLink {
+                    EncountMap(latitude: encountLatitude, longitude: encountLongitude, encounterImage: encounterImage)
+                } label: {
                     ZStack {
                         Circle()
                             .frame(width: 55, alignment: .center)
@@ -36,9 +37,9 @@ struct UserProfileCard: View {
                             .frame(width: 30)
                             .foregroundStyle(.white)
                     }
-                })
+                }
             }
-            
+
             HStack(alignment: .center , spacing: 30) {
 
                 VStack(alignment: .center, spacing: 10) {
@@ -78,5 +79,5 @@ struct UserProfileCard: View {
 }
 
 #Preview {
-    UserProfileCard(userName: "", bikeName: "", destinationName: "", comment: "", encountLatitude: 0.00, encountLongitude: 0.00)
+    UserProfileCard(encounterImage: "", userName: "", bikeName: "", destinationName: "", comment: "", encountLatitude: 0.00, encountLongitude: 0.00)
 }

@@ -59,9 +59,11 @@ let friends = [
 ]
 
 struct TabViews: View {
+    let encountRepository = EncounterRepository()
     init() {
         UITabBar.appearance().isHidden = true
     }
+
     @State var currentTab: Tab =  .map
     var body: some View {
         VStack(spacing: 0) {
@@ -69,9 +71,10 @@ struct TabViews: View {
                 ContentView()
                     .tag(Tab.map)
 
-                ContentView()
+
+                EncountView(repository: encountRepository)
                     .tag(Tab.encounts)
-                
+
                 FriendListView(friends: friends)
                     .tag(Tab.friends)
                 

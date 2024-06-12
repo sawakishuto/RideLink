@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct EncountBaseView: View {
+    let encountImage: String
     let ImageURL: String
     let userName: String
     let bikeName: String
@@ -18,7 +19,15 @@ struct EncountBaseView: View {
     var body: some View {
         VStack(spacing: 20) {
             CircleImage(ImageURL: ImageURL)
-            UserProfileCard(userName: userName, bikeName: bikeName, destinationName: destinationName, comment: comment, encountLatitude: encountLatitude, encountLongitude: encountLogitude)
+            UserProfileCard(
+                encounterImage: encountImage,
+                userName: userName,
+                bikeName: bikeName,
+                destinationName: destinationName,
+                comment: comment,
+                encountLatitude: encountLatitude,
+                encountLongitude: encountLogitude
+            )
                     .scaleEffect(0.9)
         }
         .padding(.top, 20)
@@ -28,5 +37,5 @@ struct EncountBaseView: View {
 }
 
 #Preview {
-    EncountBaseView(ImageURL: "", userName: "", bikeName: "", destinationName: "", comment: "", encountLatitude: 0.0, encountLogitude: 0.0)
+    EncountBaseView(encountImage: "", ImageURL: "", userName: "", bikeName: "", destinationName: "", comment: "", encountLatitude: 0.0, encountLogitude: 0.0)
 }
