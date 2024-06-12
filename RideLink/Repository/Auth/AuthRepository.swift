@@ -9,4 +9,14 @@ import Foundation
 import FirebaseAuth
 import Combine
 
-
+//
+//final class AuthRepository: AuthRepositoryProtocol {
+//    private let auth = Auth.auth()
+//    func signIn(mailAdress: String, password: String) -> AnyPublisher<UserProfileModel, Error> {
+//        <#code#>
+//    }
+//
+//    func signUp(mailAdress: String, password: String, user: UserProfileModel) {
+//        <#code#>
+//    }
+//}

@@ -15,9 +15,7 @@ protocol AuthRepositoryProtocol: AnyObject {
 //    signinに成功したらuidまたはUser情報をenvirnomentObject(すべてのViewからアクセスできるデータ)として設定してほしい
 //    func signIn(mailAdress: String, password: String) -> AnyPublisher<UserProfileModel, Error>
 //    signUpが成功した時はRepositoryでそのままUserProfileを取得するメソッドを呼び出して取得したユーザー情報をViewModelで返す
-//    func signUp(mailAdress: String, password: String, user: UserProfileModel)
-
-    func getUserToken() -> Future<String, Error>
+    func signUp(mailAdress: String, password: String, user: UserProfileModel)
 //    追加でできれば
 //    func deleteAccount()を調査して実装してみてほしい
 }

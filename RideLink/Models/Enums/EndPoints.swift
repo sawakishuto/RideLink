@@ -8,9 +8,12 @@
 import Foundation
 
 enum paths: String {
-    case createUser = "/user/create"
-    case userData = "/user"
-    case encount = "https://encount"
-    case friend = "https://friend"
-    case pokemon = "pokemon"
+    case createUser = "/user/create" //SignUp時User情報作成
+    case userData = "/user" //User情報を取得(Get), 更新(Put)
+    case getFriend = "/user/friend/list" //　フレンド情報取得
+    case sendFriendReq = "/user/friend/request/:uuid"
+    case touringStart = "/touring/start" //ツーリングスタート
+    case touringEnd = "/touring/end" //終了
+    case encount = "/user/passings" //すれ違い情報取得
+    case location = "/user/location" //位置情報送信
 }

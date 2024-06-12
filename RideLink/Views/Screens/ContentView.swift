@@ -8,17 +8,46 @@
 import SwiftUI
 
 struct ContentView: View {
+
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        GeometryReader { geometory in
+
+            ZStack(alignment: .center){
+
+                bannerNotification(encountCount: 10)
+                    .position(
+                        x: geometory.size.width * 0.56,
+                        y: geometory.size.height * 0.6
+                    )
+                    .zIndex(100)
+
+                MapView()
+            }
+            .ignoresSafeArea()
         }
-        .padding()
+        .onAppear {
+            sendLocalNotification()
+        }
+    }
+    func sendLocalNotification() {
+        let content = UNMutableNotificationContent()
+        content.title = "すれ違いがありました！"
+        content.body = "10人とすれ違いました！👍"
+
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
+        let request = UNNotificationRequest(identifier: "localNotification", content: content, trigger: trigger)
+
+        UNUserNotificationCenter.current().add(request) { (error) in
+            if let error = error {
+                print("通知の送信に失敗しました: \(error.localizedDescription)")
+            } else {
+                print("通知を送信しました")
+            }
+        }
     }
 }
 
-#Preview {
-    ContentView()
-}
+
+    #Preview {
+        ContentView()
+    }
