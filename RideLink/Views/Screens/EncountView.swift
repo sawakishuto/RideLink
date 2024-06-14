@@ -19,6 +19,7 @@ struct EncountView: View {
 
     var body: some View {
         NavigationStack {
+            if !vm.encountInfos.isEmpty {
             GeometryReader { bodyView in
                 VStack {
 
@@ -117,8 +118,19 @@ struct EncountView: View {
 
 
             }
+            } else {
+                VStack(alignment: .center, spacing: 30){
+                    Text("すれ違った人はいません・・・")
+                        .font(.title2)
+                        .fontWeight(.black)
+                    Text("今すぐツーリングに出よう！🏍️")
+                        .font(.title2)
+                        .fontWeight(.black)
+
+                }
+            }
         }
-        .background(Color(hex: "F8F8F8"))
+        .background(Color(hex: "F7F7F7"))
         .ignoresSafeArea()
         .onAppear {
             vm.getEncounter()
