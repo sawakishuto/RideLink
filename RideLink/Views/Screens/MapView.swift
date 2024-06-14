@@ -62,8 +62,6 @@ class MapViewController: UIViewController {
             $0.right.equalToSuperview().offset(-20)
             $0.bottom.equalToSuperview().offset(-150)
         }
-        currentLocationButton.layer.shadowColor = CGColor(gray: 1, alpha: 1)
-        currentLocationButton.layer.shadowOffset = CGSize(width: 10, height: 100)
 
         view.isUserInteractionEnabled = true
         
@@ -87,6 +85,10 @@ class MapViewController: UIViewController {
         button.addTarget(self, action: #selector(tapStartButton), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.isUserInteractionEnabled = true
+        button.layer.shadowOffset = CGSize(width: 0.0, height: 2.0)
+        button.layer.shadowColor = UIColor.black.cgColor
+        button.layer.shadowOpacity = 0.9
+        button.layer.shadowRadius = 4
         return button
     }()
     
@@ -96,6 +98,10 @@ class MapViewController: UIViewController {
         button.addTarget(self, action: #selector(focusCurrentLocation), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.isUserInteractionEnabled = true
+        button.layer.shadowOffset = CGSize(width: 0.0, height: 2.0)
+        button.layer.shadowColor = UIColor.black.cgColor
+        button.layer.shadowOpacity = 0.7
+        button.layer.shadowRadius = 4
         return button
     }()
 }
@@ -144,10 +150,12 @@ extension MapViewController {
         print(mapViewModel.isStartTouring)
         if mapViewModel.isStartTouring {
             createRoot()
+            self.mapView.tintColor = UIColor(red: 14/255.0, green: 124/255.0, blue: 100/255.0, alpha: 1.0)
         } else {
             mapView.overlays.forEach {
                 if let overlay = $0 as? MKPolyline {
                     mapView.removeOverlay(overlay)
+                    mapView.tintColor = .blue
                 }
             }
             mapViewModel.postEndTouring()
@@ -182,7 +190,6 @@ extension MapViewController {
                 self.mapViewModel.createRoute(from: userLocation, to: location) { route in
                     if let route = route {
                         self.mapView.addOverlay(route.polyline, level: .aboveRoads)
-
                         self.mapView.setRegion(MKCoordinateRegion(route.polyline.boundingMapRect), animated: true)
                     }
                 }

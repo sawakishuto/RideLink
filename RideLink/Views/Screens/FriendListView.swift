@@ -22,7 +22,14 @@ struct FriendListView: View {
                 .padding(.top, -30)
 
                 ForEach(friends.filter { $0.isOnline }) {
-                    friend in UserCard(userProfile: friend.profile)
+                    friend in UserCard(
+                        userIcon: nil,
+                        userName: "カブタン",
+                        bikeName: "YZF-R15",
+                        comment: "ディズニー行く"
+                    )
+                    .padding(.bottom, 25)
+
                 }
 
                 HStack {
@@ -34,12 +41,19 @@ struct FriendListView: View {
                 .padding(.bottom, 10)
 
                 ForEach(friends.filter { !$0.isOnline }) {
-                    friend in UserCard(userProfile: friend.profile)
+                    friend in UserCard(
+                        userIcon: nil,
+                        userName: "ブタン",
+                        bikeName: "DSC400",
+                        comment: "ご飯食べたい"
+                    )
+                    .padding(.bottom, 25)
                 }
             }
             .padding(.top, 25)
             .padding(.bottom, 10)
         }
+        .background(Color(hex: "F8F8F8"))
     }
 }
 

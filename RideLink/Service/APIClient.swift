@@ -1,3 +1,4 @@
+
 //
 //  APIClient.swift
 //  RideLink
@@ -40,7 +41,6 @@ final class APIClient {
                         let headers: HTTPHeaders = [
                             "Authorization": token
                         ]
-                        
                         let request = AF.request(url, method: .get, parameters: params, headers: headers)
                             .validate(contentType: ["application/json"])
                         request.response { response in
@@ -92,7 +92,6 @@ final class APIClient {
     }
     // 新規でデータを保存するメソッド
     func postData<T: Codable>(endPoint: paths.RawValue,  params: Parameters, type: T.Type) -> AnyPublisher<T, Error> {
-        
         return Deferred {
            Future { promise in
                self.getUserToken()
@@ -103,7 +102,6 @@ final class APIClient {
                             break
                         case .failure(let error):
                             print("トークン失敗")
-                            
                             return promise(.failure(error))
                         }
                     } receiveValue: { token in
@@ -148,7 +146,7 @@ final class APIClient {
         let request = AF.request(url, method: .patch, parameters: params, encoding: JSONEncoding.default, headers: headers)
             .responseJSON { response in
                 if let response = response.response { return }
-                
+
                 switch response.result {
                 case .success(let data):
                     print("リクエスト成功\(data)")
@@ -194,8 +192,7 @@ final class APIClient {
             }
         }
     }
-    
-    
+  
     func getUserToken() -> Future <String, Error> {
         return Future { promise in
             guard let user = Auth.auth().currentUser else {
@@ -204,7 +201,6 @@ final class APIClient {
                 return promise(.failure(error))
                 return
             }
-            
             user.getIDToken { token, error in
                 if let error = error {
                     print("🎉トークン取得失敗")
