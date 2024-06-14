@@ -41,12 +41,11 @@ final class APIClient {
                         let headers: HTTPHeaders = [
                             "Authorization": token
                         ]
-
                         let request = AF.request(url, method: .get, parameters: params, headers: headers)
                             .validate(contentType: ["application/json"])
                         request.response { response in
                             let statusCode = response.response!.statusCode
-
+                            
                             do {
                                 if statusCode <= 300 {
                                     guard let data = response.data else {return}
@@ -55,7 +54,7 @@ final class APIClient {
                                     let value = try decode.decode(T.self, from: data)
                                     print("デコード成功")
                                     promise(.success(value))
-
+                                    
                                 }
                             } catch {
                                 print("デコードに失敗しました😢")
@@ -70,7 +69,7 @@ final class APIClient {
                                 print(response.description)
                                 print("認証失敗😭")
                                 promise(.failure(APIError.auth))
-
+                                
                             case 403:
                                 print(response.description)
                                 print("アクセス権がありません😭")
@@ -79,7 +78,7 @@ final class APIClient {
                                 print(response.description)
                                 print("URLがあかんよ😭")
                                 promise(.failure(APIError.invalidUrl))
-
+                                
                             default:
                                 print("不明なエラー")
                                 promise(.failure(APIError.unknown))
@@ -93,7 +92,6 @@ final class APIClient {
     }
     // 新規でデータを保存するメソッド
     func postData<T: Codable>(endPoint: paths.RawValue,  params: Parameters, type: T.Type) -> AnyPublisher<T, Error> {
-
         return Deferred {
            Future { promise in
                self.getUserToken()
@@ -104,7 +102,6 @@ final class APIClient {
                             break
                         case .failure(let error):
                             print("トークン失敗")
-
                             return promise(.failure(error))
                         }
                     } receiveValue: { token in
@@ -195,8 +192,7 @@ final class APIClient {
             }
         }
     }
-
-
+  
     func getUserToken() -> Future <String, Error> {
         return Future { promise in
             guard let user = Auth.auth().currentUser else {
@@ -205,7 +201,6 @@ final class APIClient {
                 return promise(.failure(error))
                 return
             }
-
             user.getIDToken { token, error in
                 if let error = error {
                     print("🎉トークン取得失敗")

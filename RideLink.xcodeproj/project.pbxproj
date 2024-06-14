@@ -58,10 +58,14 @@
 		220293B12BE921E1009BC2A6 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 220293B02BE921E1009BC2A6 /* ProfileView.swift */; };
 		220293B92BE926E1009BC2A6 /* ProfileEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 220293B82BE926E1009BC2A6 /* ProfileEditor.swift */; };
 		220293BD2BE92864009BC2A6 /* ProfilePreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 220293BC2BE92864009BC2A6 /* ProfilePreview.swift */; };
+		2203EF272C024FAC00FD7175 /* ToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2203EF262C024FAC00FD7175 /* ToastView.swift */; };
 		224CE15B2BF76D1F00AA201F /* FriendListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224CE15A2BF76D1F00AA201F /* FriendListView.swift */; };
 		224CE15E2BF7715B00AA201F /* OfflineIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224CE15D2BF7715B00AA201F /* OfflineIndicator.swift */; };
 		224CE1622BF771E200AA201F /* OnlineIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224CE1612BF771E200AA201F /* OnlineIndicator.swift */; };
 		224CE1642BF7722100AA201F /* UserCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224CE1632BF7722100AA201F /* UserCard.swift */; };
+		2255129A2C19F9960004EF5B /* CustomTabViewsStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225512992C19F9960004EF5B /* CustomTabViewsStyle.swift */; };
+		2260FB0B2C04D7EF00C837DB /* CommentEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2260FB0A2C04D7EF00C837DB /* CommentEditor.swift */; };
+		22FCBB642BFED30B0050F411 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22FCBB632BFED30B0050F411 /* ProfileViewModel.swift */; };
 		E1BCBEEE2C0183D80009E9DB /* SignupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BCBEED2C0183D80009E9DB /* SignupView.swift */; };
 		E1E7AF1E2BEC9AD0002F1CFF /* AppTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E7AF1D2BEC9AD0002F1CFF /* AppTextFieldView.swift */; };
 		E1E7AF202BED0256002F1CFF /* AppButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E7AF1F2BED0256002F1CFF /* AppButtonView.swift */; };
@@ -138,10 +142,14 @@
 		220293B02BE921E1009BC2A6 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		220293B82BE926E1009BC2A6 /* ProfileEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEditor.swift; sourceTree = "<group>"; };
 		220293BC2BE92864009BC2A6 /* ProfilePreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePreview.swift; sourceTree = "<group>"; };
+		2203EF262C024FAC00FD7175 /* ToastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastView.swift; sourceTree = "<group>"; };
 		224CE15A2BF76D1F00AA201F /* FriendListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendListView.swift; sourceTree = "<group>"; };
 		224CE15D2BF7715B00AA201F /* OfflineIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfflineIndicator.swift; sourceTree = "<group>"; };
 		224CE1612BF771E200AA201F /* OnlineIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnlineIndicator.swift; sourceTree = "<group>"; };
 		224CE1632BF7722100AA201F /* UserCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCard.swift; sourceTree = "<group>"; };
+		225512992C19F9960004EF5B /* CustomTabViewsStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabViewsStyle.swift; sourceTree = "<group>"; };
+		2260FB0A2C04D7EF00C837DB /* CommentEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentEditor.swift; sourceTree = "<group>"; };
+		22FCBB632BFED30B0050F411 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		E1BCBEED2C0183D80009E9DB /* SignupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupView.swift; sourceTree = "<group>"; };
 		E1E7AF1D2BEC9AD0002F1CFF /* AppTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTextFieldView.swift; sourceTree = "<group>"; };
 		E1E7AF1F2BED0256002F1CFF /* AppButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppButtonView.swift; sourceTree = "<group>"; };
@@ -208,20 +216,11 @@
 			path = Encount;
 			sourceTree = "<group>";
 		};
-		0850035F2C11D6E900FEA981 /* Extension */ = {
-			isa = PBXGroup;
-			children = (
-				085003602C11D72500FEA981 /* CustomTabViewsStyle.swift */,
-				085003622C11D7CC00FEA981 /* NSObject + apply.swift */,
-			);
-			name = Extension;
-			path = ../../../../.Trash/Extension;
-			sourceTree = "<group>";
-		};
 		08515EF92BDB8DD1009D20D1 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
 				08515F382BDBDE9D009D20D1 /* MapViewModel.swift */,
+				22FCBB632BFED30B0050F411 /* ProfileViewModel.swift */,
 				087C22B02BED2174003434BC /* EncountViewModel.swift */,
 			);
 			path = ViewModels;
@@ -378,6 +377,7 @@
 		08CB693D2BD7DE3200E5940C /* Utility */ = {
 			isa = PBXGroup;
 			children = (
+				225512992C19F9960004EF5B /* CustomTabViewsStyle.swift */,
 				08809D832BE7CE5B00A2F31D /* Color.swift */,
 				0850035F2C11D6E900FEA981 /* Extension */,
 			);
@@ -447,7 +447,9 @@
 			isa = PBXGroup;
 			children = (
 				220293B82BE926E1009BC2A6 /* ProfileEditor.swift */,
+				2203EF262C024FAC00FD7175 /* ToastView.swift */,
 				220293BC2BE92864009BC2A6 /* ProfilePreview.swift */,
+				2260FB0A2C04D7EF00C837DB /* CommentEditor.swift */,
 			);
 			path = ProfileView;
 			sourceTree = "<group>";
@@ -633,23 +635,27 @@
 				08654BB52C1983CC00A88CFF /* EncountInfoModel.swift in Sources */,
 				224CE15B2BF76D1F00AA201F /* FriendListView.swift in Sources */,
 				224CE1622BF771E200AA201F /* OnlineIndicator.swift in Sources */,
+				08CB69492BD818AC00E5940C /* EncountInfoModel.swift in Sources */,
 				088081962C19886E00F87C6A /* EncountMap.swift in Sources */,
 				085003632C11D7CC00FEA981 /* NSObject + apply.swift in Sources */,
 				0872D1B42C10522100B81F6D /* TouringButton.swift in Sources */,
 				08582C802BF32AE800B7FEE5 /* APIClient.swift in Sources */,
 				08142F6E2C0102ED007CCF1B /* EncounterRepositoryProtocol.swift in Sources */,
 				08CB694D2BD81E9400E5940C /* UserLocationInfoModel.swift in Sources */,
+				2255129A2C19F9960004EF5B /* CustomTabViewsStyle.swift in Sources */,
 				08582C842BF3E62000B7FEE5 /* EndPoints.swift in Sources */,
-				085003612C11D72500FEA981 /* CustomTabViewsStyle.swift in Sources */,
 				08582C822BF3D86A00B7FEE5 /* HTTPMethods.swift in Sources */,
 				08CB694B2BD81B2400E5940C /* FriendInfoModel.swift in Sources */,
 				08742F1B2C15EB5E00C942DB /* ModalViewController.swift in Sources */,
 				08142F682C00F857007CCF1B /* AuthRepository.swift in Sources */,
 				08142F6A2C00F86C007CCF1B /* UserRepositoryProtocol.swift in Sources */,
+				2260FB0B2C04D7EF00C837DB /* CommentEditor.swift in Sources */,
 				08142F662C00F847007CCF1B /* AuthRepositoryProtocol.swift in Sources */,
+				22FCBB642BFED30B0050F411 /* ProfileViewModel.swift in Sources */,
 				E1E7AF222BED0308002F1CFF /* LoginView.swift in Sources */,
 				08CB69452BD8162D00E5940C /* UserProfileModel.swift in Sources */,
 				E1E7AF1E2BEC9AD0002F1CFF /* AppTextFieldView.swift in Sources */,
+				2203EF272C024FAC00FD7175 /* ToastView.swift in Sources */,
 				08654BBA2C19850300A88CFF /* CircleImage.swift in Sources */,
 				08C0BCC82BB321AA0088109A /* RideLinkApp.swift in Sources */,
 				08809D822BE7CDA300A2F31D /* EncountBaseView.swift in Sources */,

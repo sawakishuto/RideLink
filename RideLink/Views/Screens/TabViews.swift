@@ -78,7 +78,7 @@ struct TabViews: View {
                 FriendListView(friends: friends)
                     .tag(Tab.friends)
                 
-                ProfileView(profileData: ProfileData())
+                ProfileView()
                     .tag(Tab.settings)
             }
             Divider()
