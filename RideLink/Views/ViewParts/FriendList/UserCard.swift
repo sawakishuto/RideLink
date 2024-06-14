@@ -8,22 +8,33 @@
 import SwiftUI
 
 struct UserCard: View {
-    let userProfile: UserProfileModel
+    let userIcon: Data?
+    let userName: String
+    let bikeName: String
+    let comment: String
 
     var body: some View {
         Button(action: {
             
         }) {
             HStack {
-                Image(uiImage: UIImage(data: userProfile.profileIcon!)!)
-                    .resizable()
-                    .frame(width: 100, height: 100)
-                    .clipShape(Circle())
-                    .padding(.trailing, 10)
-                    .padding(.leading, 5)
+                if let profileIcon = userIcon {
+                    Image(uiImage: UIImage(data: userIcon!)!)
+                        .resizable()
+                        .frame(width: 100, height: 100)
+                        .clipShape(Circle())
+                        .padding(.trailing, 10)
+                        .padding(.leading, 5)
+                } else {
+                    ProgressView()
+                        .frame(width: 100, height: 100)
+                        .clipShape(Circle())
+                        .padding(.trailing, 10)
+                        .padding(.leading, 5)
+                }
                 VStack {
                     
-                    Text(userProfile.userName)
+                    Text(userName)
                         .bold()
                         .font(.system(size: 20))
                     
@@ -35,13 +46,13 @@ struct UserCard: View {
                             .padding(.leading, 25)
                             .padding(.trailing, -5)
                         
-                        Text(userProfile.bikeName)
+                        Text(bikeName)
                             .font(.system(size: 20))
                         
                     }
                     .padding(.bottom, 5)
                     
-                    Text(userProfile.touringcomment ?? "")
+                    Text(comment)
                         .font(.system(size: 20))
                     
                 }
@@ -51,7 +62,7 @@ struct UserCard: View {
             .frame(height: 120)
             .background(Color.white)
             .cornerRadius(20)
-            .shadow(radius: 10)
+            .shadow(color: .black.opacity(0.25), radius: 4, x: 0, y: 4)
         .padding(.horizontal)
         }
         .foregroundColor(.black)
