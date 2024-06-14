@@ -7,7 +7,7 @@
 	<key>UILaunchScreen</key>
 	<dict>
 		<key>UIImageName</key>
-		<string></string>
+		<string>Logo</string>
 	</dict>
 </dict>
 </plist>
