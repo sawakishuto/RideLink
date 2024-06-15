@@ -39,7 +39,9 @@ class ProfileViewModel: ObservableObject {
     }
     
     func validationData(userName: String, bikeName: String, userComment: String) -> Result<Bool, Error> {
-        if userName.isEmpty || bikeName.isEmpty {
+        if userName != originalData.userName ||
+           bikeName != originalData.bikeName ||
+           userComment != originalData.touringcomment {
             return .success(false)
         }
         return .success(true)
@@ -61,11 +63,18 @@ class ProfileViewModel: ObservableObject {
             )
             
         }
+        print("保存します")
     }
     
     func loadImage(inputImage: UIImage?) {
-        guard let inputImage = inputImage else { return }
-        guard let imageData = inputImage.jpegData(compressionQuality: 0.7) else { return }
+        guard let inputImage = inputImage else {
+            print("UIImageじゃない")
+            return }
+        guard let imageData = inputImage.jpegData(compressionQuality: 0.7) else { 
+            print("データ変換します")
+            return }
+        print("データを保存します")
+        originalData.profileIcon = imageData
         userRepository.postUserData(userData: UserProfileModel(
             userName: "",
                 bikeName: "",
