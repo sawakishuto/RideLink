@@ -1,0 +1,24 @@
+//
+//  Production.xcconfig
+//  RideLink
+//
+//  Created by 澤木柊斗 on 2024/06/16.
+//
+
+MYAPP_APP_VERSION = 1.0.0
+MYAPP_BUILD_VERSION = 1
+
+MYAPP_APP_NAME = RideLink
+MYAPP_APP_ICON = AppIcon
+MYAPP_BUNDLE_IDENTIFIER = com.team1.ridelink
+
+MYAPP_CODE_SIGN_ENTITLEMENTS = RideLink/Configs/Entitlements/RideLink.entitlements
+
+//// Firebase Configuration
+
+GOOGLESERVICE_PLIST_NAME = GoogleService-Info
+GOOGLESERVICE_INFO_PLIST_DIR = ${SRCROOT}/RideLink/Configs/GoogleService-Info.plist
+
+//// Notification content
+
+MYAPP_NOTIFICATION_BUNDLE_SERVICE_ID = com.team1.ridelink.notification

@@ -1,0 +1,14 @@
+
+packages:
+
+  Alamofire:
+    url: https://github.com/Alamofire/Alamofire.git
+    minorVersion: 5.9.1
+
+  Firebase:
+    url: https://github.com/firebase/firebase-ios-sdk.git
+    minorVersion: 10.23.0
+
+  SnapKit:
+    url: https://github.com/SnapKit/SnapKit.git
+    minorVersion: 5.7.1

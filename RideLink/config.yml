@@ -1,0 +1,59 @@
+RideLink:
+
+    type: application
+    platform: iOS
+    deploymentTarget: 17.0
+
+    sources:
+        - path: Sources
+        group: RideLink
+        - path: Resources
+        group: RideLink
+        - path: Configs/XCconfig
+        group: RideLink/Configs
+        - path: Configs/Entitlements
+        group: RideLink/Configs
+        - path: Configs/Google
+        group: RideLink/Configs
+        - path: Info.plist
+        group: RideLink
+
+settings:
+    base:
+        INFOPLIST_FILE: RideLink/Info.plist
+        PRODUCT_NAME: $(TARGET_NAME)
+        PRODUCT_BUNDLE_IDENTIFIER: $(PRODUCT_BUNDLE_IDENTIFIER)
+        CURRENT_PROJECT_VERSION: 6.0
+        EXECUTABLE_NAME: $(EXECUTABLE_NAME)
+        INFOPLIST_KEY_LOCATION_WHEN_IN_USE_USAGE_DESCRIPTION: 現在地の取得を許可しますか
+        INFOPLIST_KEY_LOCATION_ALWAYS_USAGE_DESCRIPTION: 常に位置情報を使用しますか
+        UIRequiredDeviceCapabilities: ["armv7"]
+        UISupportedInterfaceOrientations: ["UIInterfaceOrientationPortrait"]
+        UIAppSupportsIndirectInputEvents: YES
+        FirebaseAppDelegateProxyEnabled: NO
+        LSRequiresIPhoneOS: YES
+        CFBundlePackageType: $(PRODUCT_BUNDLE_PACKAGE_TYPE)
+        CFBundleVersion: $(CURRENT_PROJECT_VERSION)
+        CFBundleShortVersionString: $(MARKETING_VERSION)
+        UILaunchStoryboardName: LaunchScreen
+        CFBundleDevelopmentRegion: $(DEVELOPMENT_LANGUAGE)
+
+
+    settings:
+        base: # (4)
+
+    dependencies: # (5)
+        # App Extensions
+        - target: NotificationExtension
+        embed: true
+
+        # SPM dependencies
+        - package: Firebase
+        product: FirebaseAuth
+        - package: Firebase
+        product: FirebaseCore
+        - package: Firebase
+        product: FirebaseStorage
+        - package: Firebase
+        product: Firebase
+
