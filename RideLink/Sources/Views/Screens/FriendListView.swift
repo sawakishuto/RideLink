@@ -53,7 +53,7 @@ struct FriendListView: View {
             .padding(.top, 25)
             .padding(.bottom, 10)
         }
-        .background(Color(hex: "F8F8F8"))
+        .background(Color("F8F8F8"))
     }
 }
 

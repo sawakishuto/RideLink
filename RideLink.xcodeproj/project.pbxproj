@@ -14,8 +14,11 @@
 		08142F6E2C0102ED007CCF1B /* EncounterRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08142F6D2C0102ED007CCF1B /* EncounterRepositoryProtocol.swift */; };
 		08142F702C0102FB007CCF1B /* EncounterRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08142F6F2C0102FB007CCF1B /* EncounterRepository.swift */; };
 		083AE4ED2BE7D9E8002D933F /* EncountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083AE4EC2BE7D9E8002D933F /* EncountView.swift */; };
-		085003612C11D72500FEA981 /* CustomTabViewsStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 085003602C11D72500FEA981 /* CustomTabViewsStyle.swift */; };
-		085003632C11D7CC00FEA981 /* NSObject + apply.swift in Sources */ = {isa = PBXBuildFile; fileRef = 085003622C11D7CC00FEA981 /* NSObject + apply.swift */; };
+		084ED86D2C1DF7AB00E74F56 /* Production.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 084ED86C2C1DF7AB00E74F56 /* Production.xcconfig */; };
+		084ED8712C1DFC0500E74F56 /* NSObject + apply.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084ED8702C1DFC0500E74F56 /* NSObject + apply.swift */; };
+		084ED8732C1DFC9E00E74F56 /* config.yml in Resources */ = {isa = PBXBuildFile; fileRef = 084ED8722C1DFC9E00E74F56 /* config.yml */; };
+		084ED8772C1E042900E74F56 /* pakages.yml in Resources */ = {isa = PBXBuildFile; fileRef = 084ED8762C1E042900E74F56 /* pakages.yml */; };
+		084ED87A2C1E0E1E00E74F56 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084ED8792C1E0E1E00E74F56 /* Color.swift */; };
 		08515F372BDBDE91009D20D1 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08515F362BDBDE91009D20D1 /* MapView.swift */; };
 		08515F392BDBDE9D009D20D1 /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08515F382BDBDE9D009D20D1 /* MapViewModel.swift */; };
 		08515F3C2BDBE065009D20D1 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 08515F3B2BDBE065009D20D1 /* SnapKit */; };
@@ -38,7 +41,6 @@
 		088081962C19886E00F87C6A /* EncountMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 088081952C19886E00F87C6A /* EncountMap.swift */; };
 		08809D7C2BE7B24900A2F31D /* Tab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08809D7B2BE7B24900A2F31D /* Tab.swift */; };
 		08809D822BE7CDA300A2F31D /* EncountBaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08809D812BE7CDA300A2F31D /* EncountBaseView.swift */; };
-		08809D842BE7CE5B00A2F31D /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08809D832BE7CE5B00A2F31D /* Color.swift */; };
 		08C0BCC82BB321AA0088109A /* RideLinkApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C0BCC72BB321AA0088109A /* RideLinkApp.swift */; };
 		08C0BCCA2BB321AA0088109A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C0BCC92BB321AA0088109A /* ContentView.swift */; };
 		08C0BCCC2BB321AC0088109A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 08C0BCCB2BB321AC0088109A /* Assets.xcassets */; };
@@ -99,8 +101,11 @@
 		08142F6D2C0102ED007CCF1B /* EncounterRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncounterRepositoryProtocol.swift; sourceTree = "<group>"; };
 		08142F6F2C0102FB007CCF1B /* EncounterRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncounterRepository.swift; sourceTree = "<group>"; };
 		083AE4EC2BE7D9E8002D933F /* EncountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncountView.swift; sourceTree = "<group>"; };
-		085003602C11D72500FEA981 /* CustomTabViewsStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTabViewsStyle.swift; sourceTree = "<group>"; };
-		085003622C11D7CC00FEA981 /* NSObject + apply.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "NSObject + apply.swift"; path = "../../NSObject + apply.swift"; sourceTree = "<group>"; };
+		084ED86C2C1DF7AB00E74F56 /* Production.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Production.xcconfig; sourceTree = "<group>"; };
+		084ED8702C1DFC0500E74F56 /* NSObject + apply.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject + apply.swift"; sourceTree = "<group>"; };
+		084ED8722C1DFC9E00E74F56 /* config.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = config.yml; sourceTree = "<group>"; };
+		084ED8762C1E042900E74F56 /* pakages.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = pakages.yml; sourceTree = "<group>"; };
+		084ED8792C1E0E1E00E74F56 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		08515F362BDBDE91009D20D1 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		08515F382BDBDE9D009D20D1 /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
 		08515F3E2BDBE274009D20D1 /* LocationDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDataModel.swift; sourceTree = "<group>"; };
@@ -121,7 +126,6 @@
 		088081952C19886E00F87C6A /* EncountMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncountMap.swift; sourceTree = "<group>"; };
 		08809D7B2BE7B24900A2F31D /* Tab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tab.swift; sourceTree = "<group>"; };
 		08809D812BE7CDA300A2F31D /* EncountBaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncountBaseView.swift; sourceTree = "<group>"; };
-		08809D832BE7CE5B00A2F31D /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Color.swift; path = RideLink/Views/Screens/Color.swift; sourceTree = SOURCE_ROOT; };
 		08C0BCC42BB321AA0088109A /* RideLink.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RideLink.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		08C0BCC72BB321AA0088109A /* RideLinkApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideLinkApp.swift; sourceTree = "<group>"; };
 		08C0BCC92BB321AA0088109A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -216,6 +220,53 @@
 			path = Encount;
 			sourceTree = "<group>";
 		};
+		084ED86E2C1DF83C00E74F56 /* Configs */ = {
+			isa = PBXGroup;
+			children = (
+				084ED8752C1DFEFC00E74F56 /* XCconfig */,
+				084ED8742C1DFED400E74F56 /* Google */,
+				084ED86F2C1DFAB100E74F56 /* Entitlements */,
+			);
+			path = Configs;
+			sourceTree = "<group>";
+		};
+		084ED86F2C1DFAB100E74F56 /* Entitlements */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Entitlements;
+			sourceTree = "<group>";
+		};
+		084ED8742C1DFED400E74F56 /* Google */ = {
+			isa = PBXGroup;
+			children = (
+				08C0BCFB2BB323D20088109A /* GoogleService-Info.plist */,
+			);
+			path = Google;
+			sourceTree = "<group>";
+		};
+		084ED8752C1DFEFC00E74F56 /* XCconfig */ = {
+			isa = PBXGroup;
+			children = (
+				084ED86C2C1DF7AB00E74F56 /* Production.xcconfig */,
+			);
+			path = XCconfig;
+			sourceTree = "<group>";
+		};
+		084ED8782C1E069D00E74F56 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				08CB693E2BD7DE7000E5940C /* App */,
+				08CB69372BD7D9FD00E5940C /* Models */,
+				08515EF92BDB8DD1009D20D1 /* ViewModels */,
+				08CB69402BD7E1C100E5940C /* Service */,
+				08CB69382BD7DA0C00E5940C /* Views */,
+				08CB69412BD7E1E200E5940C /* Repository */,
+				08CB693D2BD7DE3200E5940C /* Utility */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
 		08515EF92BDB8DD1009D20D1 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
@@ -296,17 +347,12 @@
 		08C0BCC62BB321AA0088109A /* RideLink */ = {
 			isa = PBXGroup;
 			children = (
-				08742F192C15DF6400C942DB /* RideLink.entitlements */,
 				08C0BCFD2BB5B7790088109A /* Info.plist */,
-				08C0BCFB2BB323D20088109A /* GoogleService-Info.plist */,
-				08CB693E2BD7DE7000E5940C /* App */,
-				08CB69372BD7D9FD00E5940C /* Models */,
-				08515EF92BDB8DD1009D20D1 /* ViewModels */,
-				08CB69382BD7DA0C00E5940C /* Views */,
-				08CB69402BD7E1C100E5940C /* Service */,
-				08CB69412BD7E1E200E5940C /* Repository */,
-				08CB693F2BD7DEF400E5940C /* CoreData */,
-				08CB693D2BD7DE3200E5940C /* Utility */,
+				084ED8722C1DFC9E00E74F56 /* config.yml */,
+				084ED8762C1E042900E74F56 /* pakages.yml */,
+				08742F192C15DF6400C942DB /* RideLink.entitlements */,
+				084ED8782C1E069D00E74F56 /* Sources */,
+				084ED86E2C1DF83C00E74F56 /* Configs */,
 				08CB693C2BD7DDED00E5940C /* Resources */,
 			);
 			path = RideLink;
@@ -342,6 +388,7 @@
 		08CB69382BD7DA0C00E5940C /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				08CB693F2BD7DEF400E5940C /* CoreData */,
 				220293B62BE926C5009BC2A6 /* ViewParts */,
 				08CB693A2BD7DA1F00E5940C /* Screens */,
 			);
@@ -378,8 +425,8 @@
 			isa = PBXGroup;
 			children = (
 				225512992C19F9960004EF5B /* CustomTabViewsStyle.swift */,
-				08809D832BE7CE5B00A2F31D /* Color.swift */,
-				0850035F2C11D6E900FEA981 /* Extension */,
+				084ED8792C1E0E1E00E74F56 /* Color.swift */,
+				084ED8702C1DFC0500E74F56 /* NSObject + apply.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -588,8 +635,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				08C0BCCF2BB321AC0088109A /* Preview Assets.xcassets in Resources */,
+				084ED86D2C1DF7AB00E74F56 /* Production.xcconfig in Resources */,
 				08C0BCFC2BB323D20088109A /* GoogleService-Info.plist in Resources */,
 				08C0BCCC2BB321AC0088109A /* Assets.xcassets in Resources */,
+				084ED8732C1DFC9E00E74F56 /* config.yml in Resources */,
+				084ED8772C1E042900E74F56 /* pakages.yml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -616,6 +666,7 @@
 			files = (
 				E1BCBEEE2C0183D80009E9DB /* SignupView.swift in Sources */,
 				08142F6C2C00F879007CCF1B /* UserRepository.swift in Sources */,
+				084ED8712C1DFC0500E74F56 /* NSObject + apply.swift in Sources */,
 				08515F3F2BDBE274009D20D1 /* LocationDataModel.swift in Sources */,
 				08809D7C2BE7B24900A2F31D /* Tab.swift in Sources */,
 				08C0BCFA2BB323160088109A /* LocalStores.xcdatamodeld in Sources */,
@@ -626,18 +677,16 @@
 				083AE4ED2BE7D9E8002D933F /* EncountView.swift in Sources */,
 				087C22B12BED2174003434BC /* EncountViewModel.swift in Sources */,
 				08CB69452BD8162D00E5940C /* UserProfileModel.swift in Sources */,
-				08809D842BE7CE5B00A2F31D /* Color.swift in Sources */,
 				220293BD2BE92864009BC2A6 /* ProfilePreview.swift in Sources */,
 				220293B92BE926E1009BC2A6 /* ProfileEditor.swift in Sources */,
 				08142F702C0102FB007CCF1B /* EncounterRepository.swift in Sources */,
+				084ED87A2C1E0E1E00E74F56 /* Color.swift in Sources */,
 				E1E7AF202BED0256002F1CFF /* AppButtonView.swift in Sources */,
 				220293B12BE921E1009BC2A6 /* ProfileView.swift in Sources */,
 				08654BB52C1983CC00A88CFF /* EncountInfoModel.swift in Sources */,
 				224CE15B2BF76D1F00AA201F /* FriendListView.swift in Sources */,
 				224CE1622BF771E200AA201F /* OnlineIndicator.swift in Sources */,
-				08CB69492BD818AC00E5940C /* EncountInfoModel.swift in Sources */,
 				088081962C19886E00F87C6A /* EncountMap.swift in Sources */,
-				085003632C11D7CC00FEA981 /* NSObject + apply.swift in Sources */,
 				0872D1B42C10522100B81F6D /* TouringButton.swift in Sources */,
 				08582C802BF32AE800B7FEE5 /* APIClient.swift in Sources */,
 				08142F6E2C0102ED007CCF1B /* EncounterRepositoryProtocol.swift in Sources */,
@@ -767,6 +816,7 @@
 		};
 		08C0BCE72BB321AC0088109A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 084ED86C2C1DF7AB00E74F56 /* Production.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -827,10 +877,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = RideLink/RideLink.entitlements;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"RideLink/Resources\"";
-				DEVELOPMENT_TEAM = 5285K4Z956;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 5285K4Z956;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RideLink/Info.plist;
@@ -847,6 +900,8 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.team1.ridelink;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "SAWAKI Shuto";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -855,6 +910,7 @@
 		};
 		08C0BCEA2BB321AC0088109A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 084ED86C2C1DF7AB00E74F56 /* Production.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

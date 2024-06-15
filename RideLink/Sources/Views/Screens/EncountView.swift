@@ -130,7 +130,7 @@ struct EncountView: View {
                 }
             }
         }
-        .background(Color(hex: "F7F7F7"))
+        .background(Color("F7F7F7"))
         .ignoresSafeArea()
         .onAppear {
             vm.getEncounter()
