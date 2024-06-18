@@ -75,7 +75,7 @@ struct TabViews: View {
                 EncountView(repository: encountRepository)
                     .tag(Tab.encounts)
 
-                FriendListView(friends: friends)
+                FriendListView()
                     .tag(Tab.friends)
                 
                 ProfileView()
