@@ -49,7 +49,7 @@ struct ProfilePreView: View {
                 Spacer().frame(height: 10)
                 
                 HStack {
-                    Image("bikeicon")
+                    Image("BikeIcon")
                         .resizable()
                         .frame(width: 35, height: 21)
                     
