@@ -4,6 +4,7 @@ import UserNotifications
 
 
 class AppDelegate: NSObject, UIApplicationDelegate, UNUserNotificationCenterDelegate {
+    let encountRepository = EncounterRepository()
     func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
         // Firebaseの初期化
@@ -45,16 +46,36 @@ class AppDelegate: NSObject, UIApplicationDelegate, UNUserNotificationCenterDele
     }
 
     func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
-        completionHandler([.alert, .sound, .badge])
+    }
+
+    func handleNotification(userInfo: [AnyHashable: Any]) {
+        NotificationCenter.default.post(name: Notification.Name("RecieveNotification"), object: nil, userInfo: userInfo)
     }
 }
+extension AppDelegate {
+
+    // backgroundでpaylaodを受け取った時
+
+    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+
+        let aps = userInfo["aps"] as! [String: Any]
+        let contentAvailable  = aps["content-available"] as!  Int
+        if contentAvailable == 1 {
+            print("サイレントプッシュ")
+            if userInfo["title"] as! String == "テスト" {
+                handleNotification(userInfo: userInfo)
+            }
+        } else {
+            print("失敗")
+        }
+    }
+}
+
 
 @main
 struct RideLinkApp: App {
   // register app delegate for Firebase setup
   @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
-
-
 
     var body: some Scene {
         WindowGroup {

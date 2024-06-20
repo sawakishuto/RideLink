@@ -54,6 +54,7 @@
 		08CB694B2BD81B2400E5940C /* FriendInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CB694A2BD81B2400E5940C /* FriendInfoModel.swift */; };
 		08CB694D2BD81E9400E5940C /* UserLocationInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CB694C2BD81E9400E5940C /* UserLocationInfoModel.swift */; };
 		220102702C2181F900908A85 /* NSObject + apply.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2201026F2C2181F900908A85 /* NSObject + apply.swift */; };
+		08D41FFE2C2499E300B6D0C1 /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08D41FFD2C2499E300B6D0C1 /* ContentViewModel.swift */; };
 		220293B12BE921E1009BC2A6 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 220293B02BE921E1009BC2A6 /* ProfileView.swift */; };
 		220293B92BE926E1009BC2A6 /* ProfileEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 220293B82BE926E1009BC2A6 /* ProfileEditor.swift */; };
 		220293BD2BE92864009BC2A6 /* ProfilePreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 220293BC2BE92864009BC2A6 /* ProfilePreview.swift */; };
@@ -140,6 +141,7 @@
 		08CB694A2BD81B2400E5940C /* FriendInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendInfoModel.swift; sourceTree = "<group>"; };
 		08CB694C2BD81E9400E5940C /* UserLocationInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLocationInfoModel.swift; sourceTree = "<group>"; };
 		2201026F2C2181F900908A85 /* NSObject + apply.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject + apply.swift"; sourceTree = "<group>"; };
+		08D41FFD2C2499E300B6D0C1 /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
 		220293B02BE921E1009BC2A6 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		220293B82BE926E1009BC2A6 /* ProfileEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEditor.swift; sourceTree = "<group>"; };
 		220293BC2BE92864009BC2A6 /* ProfilePreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePreview.swift; sourceTree = "<group>"; };
@@ -227,6 +229,7 @@
 				22FCBB632BFED30B0050F411 /* ProfileViewModel.swift */,
 				087C22B02BED2174003434BC /* EncountViewModel.swift */,
 				22BD6D482C1DFC2800453BD9 /* FriendListViewModel.swift */,
+				08D41FFD2C2499E300B6D0C1 /* ContentViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -650,6 +653,7 @@
 				220293B12BE921E1009BC2A6 /* ProfileView.swift in Sources */,
 				08654BB52C1983CC00A88CFF /* EncountInfoModel.swift in Sources */,
 				224CE15B2BF76D1F00AA201F /* FriendListView.swift in Sources */,
+				08D41FFE2C2499E300B6D0C1 /* ContentViewModel.swift in Sources */,
 				224CE1622BF771E200AA201F /* OnlineIndicator.swift in Sources */,
 				088081962C19886E00F87C6A /* EncountMap.swift in Sources */,
 				0872D1B42C10522100B81F6D /* TouringButton.swift in Sources */,
