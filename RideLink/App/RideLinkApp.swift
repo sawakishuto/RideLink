@@ -46,7 +46,10 @@ class AppDelegate: NSObject, UIApplicationDelegate, UNUserNotificationCenterDele
     }
 
     func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+    }
 
+    func handleNotification(userInfo: [AnyHashable: Any]) {
+        NotificationCenter.default.post(name: Notification.Name("RecieveNotification"), object: nil, userInfo: userInfo)
     }
     }
 }
