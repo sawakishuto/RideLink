@@ -11,6 +11,7 @@ struct bannerNotification: View {
     let encountCount: Int
     @State private var offset: CGFloat = -200
     @State private var opacity: CGFloat = 0
+    @Binding var isRecieveNotification: Bool
     var body: some View {
         let asyncHide = DispatchWorkItem() {hide()}
         let asyncShow = DispatchWorkItem() {show()}
