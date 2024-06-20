@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct FriendListView: View {
-    let friends: [FriendInfoModel]
+    @StateObject var vm = FriendListViewModel()
 
     var body: some View {
         ScrollView {
@@ -21,12 +21,9 @@ struct FriendListView: View {
                 .padding(.bottom, 10)
                 .padding(.top, -30)
 
-                ForEach(friends.filter { $0.isOnline }) {
+                ForEach(vm.friendList.filter { $0.isOnline }) {
                     friend in UserCard(
-                        userIcon: nil,
-                        userName: "カブタン",
-                        bikeName: "YZF-R15",
-                        comment: "ディズニー行く"
+                        userProfile: friend.profile
                     )
                     .padding(.bottom, 25)
 
@@ -40,12 +37,9 @@ struct FriendListView: View {
                 .padding(.top, 10)
                 .padding(.bottom, 10)
 
-                ForEach(friends.filter { !$0.isOnline }) {
+                ForEach(vm.friendList.filter { !$0.isOnline }) {
                     friend in UserCard(
-                        userIcon: nil,
-                        userName: "ブタン",
-                        bikeName: "DSC400",
-                        comment: "ご飯食べたい"
+                        userProfile: friend.profile
                     )
                     .padding(.bottom, 25)
                 }
@@ -55,8 +49,4 @@ struct FriendListView: View {
         }
         .background(Color(hex: "F8F8F8"))
     }
-}
-
-#Preview {
-    FriendListView(friends: friends)
 }
