@@ -51,15 +51,31 @@ class AppDelegate: NSObject, UIApplicationDelegate, UNUserNotificationCenterDele
     func handleNotification(userInfo: [AnyHashable: Any]) {
         NotificationCenter.default.post(name: Notification.Name("RecieveNotification"), object: nil, userInfo: userInfo)
     }
+}
+extension AppDelegate {
+
+    // backgroundでpaylaodを受け取った時
+
+    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+
+        let aps = userInfo["aps"] as! [String: Any]
+        let contentAvailable  = aps["content-available"] as!  Int
+        if contentAvailable == 1 {
+            print("サイレントプッシュ")
+            if userInfo["title"] as! String == "テスト" {
+                handleNotification(userInfo: userInfo)
+            }
+        } else {
+            print("失敗")
+        }
     }
 }
+
 
 @main
 struct RideLinkApp: App {
   // register app delegate for Firebase setup
   @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
-
-
 
     var body: some Scene {
         WindowGroup {
