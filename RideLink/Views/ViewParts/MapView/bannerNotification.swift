@@ -35,11 +35,15 @@ struct bannerNotification: View {
         .onTapGesture {
             asyncHide.cancel()
             hide()
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2.5, execute: {isRecieveNotification = false})
         }
         .onAppear {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: asyncShow)
+            DispatchQueue.main.asyncAfter(deadline: .now(), execute: asyncShow)
 
-            DispatchQueue.main.asyncAfter(deadline: .now() + 7, execute: asyncHide)
+            DispatchQueue.main.asyncAfter(deadline: .now() + 4, execute: asyncHide)
+            DispatchQueue.main.asyncAfter(deadline: .now() + 4.5, execute: {isRecieveNotification = false})
+
+
         }
         .offset(y: offset)
     }
@@ -63,5 +67,5 @@ struct bannerNotification: View {
 }
 
 #Preview {
-    bannerNotification(encountCount: 10)
+    bannerNotification(encountCount: 10, isRecieveNotification: .constant(false))
 }
