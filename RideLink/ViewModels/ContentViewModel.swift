@@ -19,3 +19,11 @@ final class ContentViewModel: ObservableObject {
         NotificationCenter.default.removeObserver(self)
     }
 
+    @objc func handleNotification(_ notification: Notification) {
+        guard let userInfo = notification.userInfo else {return}
+        print(userInfo)
+        let encounter = userInfo["encounter"] as! Int
+        isRecieveNotification = true
+        count = encounter
+        sendLocalNotification(count: encounter)
+    }
