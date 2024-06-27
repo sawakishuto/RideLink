@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct ContentView: View {
+struct RouterView: View {
     @StateObject private var routerState = RouterViewModel()
     
     var body: some View {

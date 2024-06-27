@@ -8,14 +8,17 @@
 import SwiftUI
 
 struct UserCard: View {
-    let userProfile: UserProfileModel
+    let profileIcon: UIImage
+    let userName: String
+    let bikeName: String
+    let touringComment: String
 
     var body: some View {
         Button(action: {
             
         }) {
             HStack {
-                Image(userProfile.profileIcon)
+                Image(uiImage: profileIcon)
                     .resizable()
                     .frame(width: 100, height: 100)
                     .clipShape(Circle())
@@ -23,7 +26,7 @@ struct UserCard: View {
                     .padding(.leading, 5)
                 VStack {
                     
-                    Text(userProfile.userName)
+                    Text(userName)
                         .bold()
                         .font(.system(size: 20))
                     
@@ -35,13 +38,13 @@ struct UserCard: View {
                             .padding(.leading, 25)
                             .padding(.trailing, -5)
                         
-                        Text(userProfile.bikeName)
+                        Text(bikeName)
                             .font(.system(size: 20))
                         
                     }
                     .padding(.bottom, 5)
                     
-                    Text(userProfile.touringcomment ?? "")
+                    Text(touringComment)
                         .font(.system(size: 20))
                     
                 }

@@ -1,38 +1,54 @@
-//
-//  SignInViewModel.swift
-//  RideLink
-//
-//  Created by 澤木柊斗 on 2024/05/23.
-//
-
-import Foundation
 import Combine
+import Foundation
+import UIKit
 
-final class SignInViewModel: ObservableObject {
-    private let authRepository: AuthRepository
-    private var cancellables = Set<AnyCancellable>()
-
-    init(authRepository: AuthRepository) {
-        self.authRepository = authRepository
-    }
-
-    func signUp(mailAdress: String, password: String) {
+final class SignupViewModel: ObservableObject {
+    private let authRepository = AuthRepository()
+    private let userRepository = UserRepository()
+    private var imageData: Data?
+    private  var cancellables: Set<AnyCancellable> = []
+    @Published var userProfile: UserProfileModel? = nil
+    
+    
+    func signup(mailAdress: String, password: String, user: UserProfileModel) {
         authRepository.signUp(mailAdress: mailAdress, password: password)
             .receive(on: DispatchQueue.main)
-            .sink { completion in
-                switch completion {
-                case .failure(let error):
-                    return
+            .sink { response in
+                switch response {
                 case .finished:
-                    break
+                    return
+                case .failure(let error):
+                    print(error)
+                    return
                 }
+            } receiveValue: { response in
+                //TODO: uiimageをdataに変更
+                print("💎")
+                self.userRepository.postUserData(userData: user)
+                    .sink { response in
+                        switch response {
+                        case .finished:
+                            print("終わり")
+                            return
+                        case .failure(let error):
+                            print(#function)
+                            print("でエラ-")
+                        }
+                    } receiveValue: { user in
+                        self.userProfile = user
+                    }
 
-            } receiveValue: { uid in
-                // getUserData(uid: uid)
-                print(uid)
+                print("💎2")
             }
-            .store(in: &cancellables)
-
+            .store(in: &self.cancellables)
     }
-
+    
+    func convertImageToData(image: UIImage) -> Data? {
+        guard let imageData = image.jpegData(compressionQuality: 1.0) else {
+            // JPEG形式への変換に失敗した場合はnilを返す
+            print("🔥")
+            return nil
+        }
+        return imageData
+    }
 }

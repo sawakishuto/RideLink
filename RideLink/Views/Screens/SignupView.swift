@@ -1,13 +1,10 @@
-//
-//  SignupView.swift
-//  RideLink
-//
-//  Created by 拓実 on 2024/05/20.
-//
-
 import SwiftUI
 
+
 struct SignupView: View {
+
+    @StateObject var viewModel = SignupViewModel()
+    @EnvironmentObject var routerState: RouterViewModel
     @State private var email = ""
     @State private var password = ""
     @State private var username = ""
@@ -23,13 +20,16 @@ struct SignupView: View {
                 .frame(height: 150)
                 .padding(.horizontal)
             ZStack {
+                
                 if let selectedImage = selectedImage {
                     Image(uiImage: selectedImage)
                         .resizable()
                         .scaledToFit()
                         .frame(width: 130, height: 130)
                         .clipShape(Circle())
+                    
                 } else {
+                    
                     Circle()
                         .fill(Color.gray.opacity(0.5))
                         .frame(width: 150, height: 150)
@@ -37,6 +37,7 @@ struct SignupView: View {
                             Image(systemName: "camera")
                                 .font(.largeTitle)
                                 .foregroundColor(.white)
+                            
                         )
                 }
             }
@@ -81,12 +82,20 @@ struct SignupView: View {
             }
             .padding(.horizontal)
             .padding(.vertical, 5)
-            //TODO: 新規登録を実行する
-            AppButtonView(title: "新規登録", color: .green) {}.padding(.top, 20)
-            Button(action: {}) {
-                Text("ログインはこちら")
-                    .foregroundColor(.blue)
-                    .padding(.top, 10)
+            
+            AppButtonView(title: "新規登録", color: .green) {
+                if let image = selectedImage {
+                    let imageData = viewModel.convertImageToData(image: image)
+                    let newUser: UserProfileModel = UserProfileModel(
+                        userName: username,
+                        bikeName: vehicleType,
+                        profileIcon:  imageData,
+                        touringcomment: "nil")
+                    viewModel.signup(mailAdress: email, password: password, user: newUser)
+                }
+            }.padding(.top, 20)
+            Button("登録済みの方") {
+                routerState.currentScreen = .logIn
             }
             
             Spacer()
@@ -95,48 +104,49 @@ struct SignupView: View {
             ImagePicker(image: $selectedImage)
         })
         .padding()
+        .onReceive(viewModel.$userProfile) { user in
+            if user != nil {
+                routerState.userProfile = user
+                routerState.navigateToMain()
+            }
+        }
     }
 }
 
 struct ImagePicker: UIViewControllerRepresentable {
     @Binding var image: UIImage?
     @Environment(\.presentationMode) var presentationMode
-
+    
     class Coordinator: NSObject, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
         let parent: ImagePicker
-
+        
         init(parent: ImagePicker) {
             self.parent = parent
         }
-
+        
         func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
             if let uiImage = info[.originalImage] as? UIImage {
                 parent.image = uiImage
             }
-
+            
             parent.presentationMode.wrappedValue.dismiss()
         }
-
+        
         func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
             parent.presentationMode.wrappedValue.dismiss()
         }
     }
-
+    
     func makeCoordinator() -> Coordinator {
         Coordinator(parent: self)
     }
-
+    
     func makeUIViewController(context: Context) -> UIImagePickerController {
         let picker = UIImagePickerController()
         picker.delegate = context.coordinator
         return picker
     }
-
+    
     func updateUIViewController(_ uiViewController: UIImagePickerController, context: Context) {}
 }
 
-struct SignupView_Previews: PreviewProvider {
-    static var previews: some View {
-        SignupView()
-    }
-}

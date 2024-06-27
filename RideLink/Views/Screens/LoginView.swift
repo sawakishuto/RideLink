@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct LoginView: View {
+    @StateObject private var viewModel = LoginViewModel()
+    @EnvironmentObject var routerState: RouterViewModel
     @State private var emailAddress = ""
     @State private var password = ""
 
@@ -31,8 +33,15 @@ struct LoginView: View {
                     .autocapitalization(.none)
                 }
                 .padding(.horizontal)
-            AppButtonView(title: "ログイン", color: .green) {}.padding(.top, 20)
-            Button(action: {}) {
+            AppButtonView(title: "ログイン", color: .green) {
+                self.viewModel.signin(
+                    mailAdress: emailAddress,
+                    password: password
+                )
+            }.padding(.top, 20)
+            Button(action: {
+                routerState.currentScreen = .signUp
+            }) {
                 Text("初めての方はこちら")
                     .foregroundColor(.blue)
                     .padding(.top, 10)
@@ -40,6 +49,12 @@ struct LoginView: View {
             Spacer()
         }
         .padding()
+        .onReceive(viewModel.$userProfile) { user in
+            if user != nil {
+                routerState.userProfile = user
+                routerState.navigateToMain()
+            }
+        }
     }
 }
 
