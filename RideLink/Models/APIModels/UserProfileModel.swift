@@ -10,7 +10,7 @@ import Foundation
 struct UserProfileModel: Codable {
     let userName: String
     let bikeName: String
-    let profileIcon: String
+    var profileIcon: Data?
     let touringcomment: String?
     var createAt = Date()
 }

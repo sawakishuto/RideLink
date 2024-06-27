@@ -7,33 +7,48 @@
 
 import SwiftUI
 
-//一旦前回作成したモデルの形式で残してる
-class ProfileData: ObservableObject {
-    @Published var username = "Kabu"
-    @Published var bikename =  "YZF-R15"
-    @Published var comment = "アプリ作成中"
-}
-
-
 struct ProfileView: View {
-    @ObservedObject var profileData: ProfileData
-    @State var tempUsername: String = ""
-    @State var tempBikename: String = ""
-    @State var tempComment: String = ""
-
+    @StateObject var vm = ProfileViewModel()
     @State private var showingActionSheet = false
-    
+    @State private var showingToast = false
+    @State private var editedUserName: String = ""
+    @State private var editedBikeName: String = ""
+    @State private var editedComment: String = ""
+    @State private var inputImage: UIImage?
+
     var body: some View {
         VStack {
-            ProfilePreView(profileData: profileData)
+            ProfilePreView(
+                inputImage: $inputImage,
+                userImage: vm.originalData.profileIcon,
+                userName: vm.originalData.userName,
+                bikeName: vm.originalData.bikeName,
+                touringComment: vm.originalData.touringcomment
+            )
             Spacer().frame(height: 30)
-            ProfileEditor(editSubject: $tempUsername, text: "ユーザーネーム")
-            ProfileEditor(editSubject: $tempBikename, text: "バイク名")
-            ProfileEditor(editSubject: $tempComment, text: "コメント")
-            Spacer().frame(height: 60)
+            CustomCommentTextField(placeholder: "ユーザー名",  text: $editedUserName)
+            CustomCommentTextField(placeholder: "バイク名", text: $editedBikeName)
+            CustomCommentTextField(placeholder: "ツーリングコメント", text: $editedComment)
+            
+            Spacer().frame(height: 30)
+            if showingToast {
+                ToastView(message:  "未記入の項目があります")
+            }
+            
+            Spacer().frame(height: 30)
+            
             Button(action: {
-                self.showingActionSheet = true
+                let  result = vm.validationData(userName: editedUserName, bikeName: editedBikeName, userComment: editedComment)
+                switch result {
+                case .success(true):
+                    showingActionSheet = true
+                case .success(false):
+                    showingToast = true
+                case .failure(let error):
+                    return
+                }
             }) {
+                
                 Text("更新")
                     .frame(width: 80, height: 15)
                     .padding()
@@ -41,28 +56,32 @@ struct ProfileView: View {
                     .foregroundColor(.black)
                     .cornerRadius(40)
             }
-            .actionSheet(isPresented: $showingActionSheet) {
-                ActionSheet(title: Text("変更を保存しますか？"), buttons: [
-                    .default(Text("保存")) {
-                        self.profileData.username = self.tempUsername
-                        self.profileData.bikename = self.tempBikename
-                        self.profileData.comment = self.tempComment
-                    },
-                    .cancel()
-                ])
-            }
             Spacer()
-        }.onAppear {
-            tempUsername = profileData.username
-            tempBikename = profileData.bikename
-            tempComment = profileData.comment
+        }
+        .alert(isPresented: $showingActionSheet) {
+            Alert(
+                title: Text("変更を保存しますか？"),
+                message: Text("この操作を取り消すことはできません。"),
+                primaryButton: .default(Text("保存")) {
+                    vm.save(userName: editedUserName, bikeName: editedBikeName, profileComment: editedComment)
+                },
+                secondaryButton: .cancel()
+            )
+        }
+        .onChange(of: vm.canSave) { newValue in
+            if newValue {
+                self.showingToast = false
+            }
+        }
+        .onAppear {
+            self.editedComment = vm.originalData.touringcomment ?? ""
+            self.editedBikeName = vm.originalData.bikeName ?? ""
+            self.editedUserName = vm.originalData.userName ?? ""
+        }
+        .onChange(of: inputImage) { newImage in
+            if let newImage = newImage {
+                vm.loadImage(inputImage: newImage)
+            }
         }
     }
-}
-
-
-
-
-#Preview {
-    ProfileView(profileData: ProfileData())
 }

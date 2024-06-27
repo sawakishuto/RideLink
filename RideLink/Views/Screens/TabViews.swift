@@ -59,27 +59,26 @@ let friends = [
 ]
 
 struct TabViews: View {
+    let encountRepository = EncounterRepository()
     init() {
         UITabBar.appearance().isHidden = true
     }
+
     @State var currentTab: Tab =  .map
     @EnvironmentObject var routerState: RouterViewModel
     
     var body: some View {
         VStack(spacing: 0) {
             TabView(selection: $currentTab) {
-                MapView()
+                ContentView()
                     .tag(Tab.map)
+                EncountView(repository: encountRepository)
+                    .tag(Tab.encounts)
 
-                SignupView()
-                    .tag(Tab.encounts)
+                FriendListView()
+                    .tag(Tab.friends)
                 
-//                LoginView()
-//                    .tag(Tab.encounts)
-                LoginView()
-                    .tag(Tab.encounts)
-                
-                ProfileView(profileData: ProfileData())
+                ProfileView()
                     .tag(Tab.settings)
             }
             Divider()

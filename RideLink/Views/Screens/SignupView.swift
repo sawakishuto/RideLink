@@ -126,9 +126,17 @@ struct ImagePicker: UIViewControllerRepresentable {
         
         func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
             if let uiImage = info[.originalImage] as? UIImage {
-                parent.image = uiImage
+                let alert = UIAlertController(title: "確認", message: "本当にプロフィール画像を変更しますか？", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "はい", style: .default, handler: { _ in
+                    self.parent.image = uiImage
+                    self.parent.presentationMode.wrappedValue.dismiss()
+                }))
+                alert.addAction(UIAlertAction(title: "いいえ", style: .cancel, handler: { _ in
+                    self.parent.presentationMode.wrappedValue.dismiss()
+                }))
+                picker.present(alert, animated: true)
             }
-            
+     
             parent.presentationMode.wrappedValue.dismiss()
         }
         

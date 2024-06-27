@@ -1,19 +1,32 @@
 import SwiftUI
 
 struct ContentView: View {
-    @StateObject private var routerState = RouterViewModel()
-    
+    @State private var notificationPayload: [AnyHashable: Any]?
+    @ObservedObject var vm = ContentViewModel()
+
+
     var body: some View {
-        Group {
-            switch routerState.currentScreen {
-            case .logIn:
-                LoginView()
-            case .signUp:
-                SignupView()
-            case .tabView:
-                TabViews()
+        GeometryReader { geometory in
+
+            ZStack(alignment: .center){
+
+                if vm.isRecieveNotification {
+                    bannerNotification(encountCount: vm.count, isRecieveNotification: $vm.isRecieveNotification)
+                        .position(
+                            x: geometory.size.width * 0.56,
+                            y: geometory.size.height * 0.6
+                        )
+                        .zIndex(100)
+                }
+
+                MapView()
             }
+            .ignoresSafeArea()
         }
-        .environmentObject(routerState)
     }
-}
+    }
+
+
+    #Preview {
+        ContentView()
+    }
