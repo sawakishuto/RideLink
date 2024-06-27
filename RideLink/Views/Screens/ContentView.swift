@@ -1,10 +1,3 @@
-//
-//  ContentView.swift
-//  RideLink
-//
-//  Created by 澤木柊斗 on 2024/03/27.
-//
-
 import SwiftUI
 import FirebaseCore
 import FirebaseAuth

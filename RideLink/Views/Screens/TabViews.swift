@@ -65,13 +65,13 @@ struct TabViews: View {
     }
 
     @State var currentTab: Tab =  .map
+    @EnvironmentObject var routerState: RouterViewModel
+    
     var body: some View {
         VStack(spacing: 0) {
             TabView(selection: $currentTab) {
                 ContentView()
                     .tag(Tab.map)
-
-
                 EncountView(repository: encountRepository)
                     .tag(Tab.encounts)
 

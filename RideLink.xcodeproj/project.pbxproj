@@ -63,6 +63,11 @@
 		224CE15E2BF7715B00AA201F /* OfflineIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224CE15D2BF7715B00AA201F /* OfflineIndicator.swift */; };
 		224CE1622BF771E200AA201F /* OnlineIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224CE1612BF771E200AA201F /* OnlineIndicator.swift */; };
 		224CE1642BF7722100AA201F /* UserCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224CE1632BF7722100AA201F /* UserCard.swift */; };
+		E10633302C155F6A003CB79B /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E106332F2C155F6A003CB79B /* LoginViewModel.swift */; };
+		E10633322C15BDC1003CB79B /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10633312C15BDC1003CB79B /* Router.swift */; };
+		E10633342C2AFBE3003CB79B /* RouterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10633332C2AFBE3003CB79B /* RouterViewModel.swift */; };
+		E10633362C2B057B003CB79B /* RouterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10633352C2B057B003CB79B /* RouterView.swift */; };
+		E13761C72C02543800D9AF9F /* SignupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13761C62C02543800D9AF9F /* SignupViewModel.swift */; };
 		2255129A2C19F9960004EF5B /* CustomTabViewsStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225512992C19F9960004EF5B /* CustomTabViewsStyle.swift */; };
 		2260FB0B2C04D7EF00C837DB /* CommentEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2260FB0A2C04D7EF00C837DB /* CommentEditor.swift */; };
 		22BD6D492C1DFC2800453BD9 /* FriendListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BD6D482C1DFC2800453BD9 /* FriendListViewModel.swift */; };
@@ -150,6 +155,11 @@
 		224CE15D2BF7715B00AA201F /* OfflineIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfflineIndicator.swift; sourceTree = "<group>"; };
 		224CE1612BF771E200AA201F /* OnlineIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnlineIndicator.swift; sourceTree = "<group>"; };
 		224CE1632BF7722100AA201F /* UserCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCard.swift; sourceTree = "<group>"; };
+		E106332F2C155F6A003CB79B /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		E10633312C15BDC1003CB79B /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		E10633332C2AFBE3003CB79B /* RouterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterViewModel.swift; sourceTree = "<group>"; };
+		E10633352C2B057B003CB79B /* RouterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterView.swift; sourceTree = "<group>"; };
+		E13761C62C02543800D9AF9F /* SignupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewModel.swift; sourceTree = "<group>"; };
 		225512992C19F9960004EF5B /* CustomTabViewsStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabViewsStyle.swift; sourceTree = "<group>"; };
 		2260FB0A2C04D7EF00C837DB /* CommentEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentEditor.swift; sourceTree = "<group>"; };
 		22BD6D482C1DFC2800453BD9 /* FriendListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendListViewModel.swift; sourceTree = "<group>"; };
@@ -226,6 +236,9 @@
 			isa = PBXGroup;
 			children = (
 				08515F382BDBDE9D009D20D1 /* MapViewModel.swift */,
+				E13761C62C02543800D9AF9F /* SignupViewModel.swift */,
+				E106332F2C155F6A003CB79B /* LoginViewModel.swift */,
+				E10633332C2AFBE3003CB79B /* RouterViewModel.swift */,
 				22FCBB632BFED30B0050F411 /* ProfileViewModel.swift */,
 				087C22B02BED2174003434BC /* EncountViewModel.swift */,
 				22BD6D482C1DFC2800453BD9 /* FriendListViewModel.swift */,
@@ -276,6 +289,7 @@
 				08582C812BF3D86900B7FEE5 /* HTTPMethods.swift */,
 				08582C832BF3E62000B7FEE5 /* EndPoints.swift */,
 				08809D7B2BE7B24900A2F31D /* Tab.swift */,
+				E10633312C15BDC1003CB79B /* Router.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -368,6 +382,7 @@
 				E1E7AF212BED0308002F1CFF /* LoginView.swift */,
 				E1BCBEED2C0183D80009E9DB /* SignupView.swift */,
 				224CE15A2BF76D1F00AA201F /* FriendListView.swift */,
+				E10633352C2B057B003CB79B /* RouterView.swift */,
 				088081952C19886E00F87C6A /* EncountMap.swift */,
 			);
 			path = Screens;
@@ -659,7 +674,9 @@
 				0872D1B42C10522100B81F6D /* TouringButton.swift in Sources */,
 				08582C802BF32AE800B7FEE5 /* APIClient.swift in Sources */,
 				08142F6E2C0102ED007CCF1B /* EncounterRepositoryProtocol.swift in Sources */,
+				E13761C72C02543800D9AF9F /* SignupViewModel.swift in Sources */,
 				08CB694D2BD81E9400E5940C /* UserLocationInfoModel.swift in Sources */,
+				E10633342C2AFBE3003CB79B /* RouterViewModel.swift in Sources */,
 				2255129A2C19F9960004EF5B /* CustomTabViewsStyle.swift in Sources */,
 				22BD6D4E2C1DFEC400453BD9 /* FriendListRepositoryProtocol.swift in Sources */,
 				08582C842BF3E62000B7FEE5 /* EndPoints.swift in Sources */,
@@ -669,6 +686,8 @@
 				08142F682C00F857007CCF1B /* AuthRepository.swift in Sources */,
 				22BD6D4C2C1DFE9600453BD9 /* FriendListRepository.swift in Sources */,
 				08142F6A2C00F86C007CCF1B /* UserRepositoryProtocol.swift in Sources */,
+				E10633362C2B057B003CB79B /* RouterView.swift in Sources */,
+				E10633322C15BDC1003CB79B /* Router.swift in Sources */,
 				2260FB0B2C04D7EF00C837DB /* CommentEditor.swift in Sources */,
 				08142F662C00F847007CCF1B /* AuthRepositoryProtocol.swift in Sources */,
 				22FCBB642BFED30B0050F411 /* ProfileViewModel.swift in Sources */,
@@ -686,6 +705,7 @@
 				0861E6662C11F7B50012F49E /* CurrentLocationButton.swift in Sources */,
 				224CE1642BF7722100AA201F /* UserCard.swift in Sources */,
 				08CB69472BD817EC00E5940C /* TouringInfoModel.swift in Sources */,
+				E10633302C155F6A003CB79B /* LoginViewModel.swift in Sources */,
 				08582C862BF3E67300B7FEE5 /* APIError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -851,7 +871,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"RideLink/Resources\"";
-				DEVELOPMENT_TEAM = 5285K4Z956;
+				DEVELOPMENT_TEAM = 77TFA268F3;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RideLink/Info.plist;
@@ -883,7 +903,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"RideLink/Resources\"";
-				DEVELOPMENT_TEAM = 5285K4Z956;
+				DEVELOPMENT_TEAM = 77TFA268F3;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RideLink/Info.plist;
