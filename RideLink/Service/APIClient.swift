@@ -36,6 +36,7 @@ final class APIClient {
                         }
                     } receiveValue: { token in
                         print("🎉トークン取得できた")
+                        print(token)
                         let path = endPoint
                         let url = self.baseUrl.appending(path)
                         let headers: HTTPHeaders = [
@@ -44,8 +45,8 @@ final class APIClient {
                         let request = AF.request(url, method: .get, parameters: params, headers: headers)
                             .validate(contentType: ["application/json"])
                         request.response { response in
-                            let statusCode = response.response!.statusCode
-                            
+                            guard let statusCode = response.response?.statusCode else {return}
+
                             do {
                                 if statusCode <= 300 {
                                     guard let data = response.data else {return}
@@ -133,6 +134,34 @@ final class APIClient {
             }
         }
         .eraseToAnyPublisher()
+    }
+
+
+    func postDeviceToken(endPoint: paths.RawValue,  params: Parameters) {
+               self.getUserToken()
+                    .sink { response in
+                        switch response {
+                        case .finished:
+                            print("終了しました")
+                            break
+                        case .failure(let error):
+                            print("トークン失敗")
+                            return
+                        }
+                    } receiveValue: { token in
+                        print("トークンを使ってヘッダーを作ります")
+                        let headers: HTTPHeaders = [
+                            "Authorization": token
+                        ]
+                        let path = endPoint
+                        let url = self.baseUrl.appending(path)
+                        print("リクエストを送ります")
+                        print("デバイストークンを送信します")
+                        let request = AF.request(url, method: .post, parameters: params, encoding: JSONEncoding.default, headers: headers)
+                            .response
+                        print("\(token)")
+                    }
+                    .store(in: &self.cancellables)
     }
 
     // 差分があるときにデータを更新するメソッド（プロフィール欄とか, コメントとか, 位置情報とか？）

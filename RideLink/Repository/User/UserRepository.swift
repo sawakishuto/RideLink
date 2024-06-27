@@ -41,12 +41,11 @@ final class UserRepository: UserRepositoryProtocol {
         }
         .eraseToAnyPublisher()
     }
-    func postUserData(userData userProfile: UserProfileModel) -> AnyPublisher<UserProfileModel, Error> {
+    func postUserData(userData userProfile: UserProfileModel) -> AnyPublisher<UserProfileModel?, Error> {
         let parameter: Parameters = [
-            "userName": "\(userProfile.userName)",
-            "profileIcon": "\(userProfile.profileIcon)",
-            "bikeName": "\(userProfile.bikeName)",
-            "touringcomment": "\(userProfile.touringcomment)"
+            "name": "しゅうと",
+            "bike": "DSC400",
+            "icon_base64": "iVBORw0KGgoAAAANSUhEUgAAACUAAAAjCAIAAACcpVRJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAE7SURBVFhH5Zc9EoIwEEa9/2E8ARdInYKCOmUaCtr1g6BmN1lINNEZfbONzsJjl/xxoc/yv755IefITGs4v/7UWDP9M+b97yw53+xoMHRNw9Lo95wAHiibOUyaNfGNVl4sYr/XQuYs04U7MrjPTfKafFilASJsWmXsW8ruUhODrDHylRZXGdwY+UyS2iQMG2IPn5d5rYK3tL/vOu2GjbsPc07mtQo2Sr/l69jPT/uy7w90mg/K+CxYOV+LkW0ska9LS1kzQezrUCIvDnBf2yU7WayB8AHfSCk7GUh94O0qsScrZH2gYPvWgm8IAs23Ub0jWnL6sWrj0Afm4tepn5FiznyB03kizm06ZT6gbiCZQ9EBxT6A3kpZUQ9janyAKesqC1T6wKOxmdXjnHofwAfDwefEIS/53uC3fUQ3aVbgpAsXEskAAAAASUVORK5CYII="
         ]
         return Deferred {
             

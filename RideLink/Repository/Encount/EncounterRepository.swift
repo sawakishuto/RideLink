@@ -66,8 +66,8 @@ final class EncounterRepository: EncounterRepositoryProtocol {
 
         for info in userLocInfo {
             locationInfo.append([
-                "latitude": "\(info.latitude)",
-                "longitude": "\(info.longitude)",
+                "latitude": "35.000",
+                "longitude": "35.000",
                 "stayed_at": "\(info.createAt)"
             ])
         }
@@ -84,11 +84,22 @@ final class EncounterRepository: EncounterRepositoryProtocol {
     func postTouringCondition(touringCondition: TouringInfoModel) {
         print(#function)
         var param: Parameters = [
-            "destination": "\(touringCondition.destinationName)",
+            "destination": "\(String(describing: touringCondition.destinationName))",
             "touring_comment": "\(touringCondition.touringComment)"
         ]
-
+        print("\(param)")
         apiClient.postData(endPoint: paths.touringStart.rawValue, params: param, type: TouringInfoModel.self)
+            .sink { result in
+                switch result {
+                case .finished:
+                    return
+                case .failure(let error):
+                    print(error)
+                }
+            } receiveValue: { info in
+                print(info)
+            }
+
 
         }
 }

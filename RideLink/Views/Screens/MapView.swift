@@ -113,6 +113,7 @@ extension MapViewController {
             let vc = ModalViewController { 
                 self.toggleIsStart()
                 self.dismiss(animated: true)
+                print("投げました")
                 self.mapViewModel.postTouringCondition(destinationName: self.destinationName, touringComment: self.touringComment)
             } destinationNameOnChanged: { destination in
                 print(destination)
