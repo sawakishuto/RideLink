@@ -41,11 +41,13 @@ final class UserRepository: UserRepositoryProtocol {
         }
         .eraseToAnyPublisher()
     }
-    func postUserData(userData userProfile: UserProfileModel) -> AnyPublisher<UserProfileModel, Error> {
+    func postUserData(userData userProfile: UserProfileModel) -> AnyPublisher<UserProfileModel?, Error> {
         let parameter: Parameters = [
+
             "name": "\(String(describing: userProfile.userName))",
             "bike": "\(String(describing: userProfile.bikeName))",
             "icon_base64": "\(String(describing: userProfile.profileIcon))"
+
         ]
         return Deferred {
             
@@ -72,4 +74,3 @@ final class UserRepository: UserRepositoryProtocol {
         .eraseToAnyPublisher()
     }
 }
-

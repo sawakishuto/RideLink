@@ -13,7 +13,7 @@ protocol UserRepositoryProtocol: AnyObject {
 
     func getUser() -> AnyPublisher<UserProfileModel, Error>
     
-    func postUserData(userData: UserProfileModel) -> AnyPublisher<UserProfileModel, Error>
+    func postUserData(userData: UserProfileModel) -> AnyPublisher<UserProfileModel?, Error>
 
 //    func getFriendData() -> AnyPublisher<FriendInfoModel, Error>
     

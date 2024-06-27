@@ -9,6 +9,8 @@ class AppDelegate: NSObject, UIApplicationDelegate, UNUserNotificationCenterDele
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
         // Firebaseの初期化
         FirebaseApp.configure()
+        // 画面に自動ロックがかからないよに設定
+        UIApplication.shared.isIdleTimerDisabled = true
         // 通知の許可をリクエスト
         print("通知の許可をリクエスト")
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { (granted, error) in
@@ -38,7 +40,7 @@ class AppDelegate: NSObject, UIApplicationDelegate, UNUserNotificationCenterDele
         print(#function)
         let token = deviceToken.map { String(format: "%02.2hhx", $0) }.joined()
         print("Device Token: \(token)")
-        // ここで取得したトークンをサーバーに送信するなどの処理を行います
+        APIClient.shared.postDeviceToken(endPoint: paths.token.rawValue, params: ["device_token": "\(token)"])
     }
 
     func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {

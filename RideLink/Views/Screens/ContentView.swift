@@ -1,9 +1,13 @@
 import SwiftUI
+import FirebaseCore
+import FirebaseAuth
+import Combine
 
 struct ContentView: View {
     @State private var notificationPayload: [AnyHashable: Any]?
     @ObservedObject var vm = ContentViewModel()
-
+    var cancellables = Set<AnyCancellable>()
+    let repository = UserRepository()
 
     var body: some View {
         GeometryReader { geometory in
@@ -22,6 +26,16 @@ struct ContentView: View {
                 MapView()
             }
             .ignoresSafeArea()
+        }
+        .onAppear {
+            signIn()
+        }
+    }
+
+     func signIn() {
+        let auth = Auth.auth()
+        auth.signIn(withEmail: "shuto@g.com", password: "111111") { result, error in
+            print(result)
         }
     }
     }
