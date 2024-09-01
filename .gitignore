@@ -1,0 +1,8 @@
+.DS_Store
+*.xcodeproj/*.pbxuser
+*.xcodeproj/*.perspectivev3
+*.xcworkspace/xcuserdata/
+xcshareddata
+xcuserdata
+*.xccheckout
+*.moved-aside
