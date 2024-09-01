@@ -8,8 +8,21 @@
 import Foundation
 
 
-struct FriendInfoModel: Identifiable, Decodable {
-    var id = UUID().uuidString
-    let isOnline: Bool
-    let profile: UserProfileModel
+struct FriendInfoModel: Codable, Identifiable {
+    let id = UUID().uuidString
+    let uuid: String
+    let name: String
+    let bike: String
+    let comment: String?
+    let iconBase64: String
+    let isTouring: Bool?
+
+    enum CodingKeys: String, CodingKey {
+        case uuid
+        case name
+        case bike
+        case comment
+        case iconBase64 = "icon_base64"
+        case isTouring = "is_touring"
+    }
 }

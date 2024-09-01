@@ -11,7 +11,7 @@ struct SignupView: View {
     @State private var vehicleType = ""
     @State private var selectedImage: UIImage?
     @State private var isShowingImagePicker = false
-    
+
     var body: some View {
         VStack(spacing: 10) {
             Image("Logo")
@@ -20,16 +20,16 @@ struct SignupView: View {
                 .frame(height: 150)
                 .padding(.horizontal)
             ZStack {
-                
+
                 if let selectedImage = selectedImage {
                     Image(uiImage: selectedImage)
                         .resizable()
                         .scaledToFit()
                         .frame(width: 130, height: 130)
                         .clipShape(Circle())
-                    
+
                 } else {
-                    
+
                     Circle()
                         .fill(Color.gray.opacity(0.5))
                         .frame(width: 150, height: 150)
@@ -37,7 +37,7 @@ struct SignupView: View {
                             Image(systemName: "camera")
                                 .font(.largeTitle)
                                 .foregroundColor(.white)
-                            
+
                         )
                 }
             }
@@ -45,7 +45,7 @@ struct SignupView: View {
                 isShowingImagePicker = true
             }
             .padding(.top, 0)
-            
+
             // Text fields
             VStack(alignment: .leading, spacing: 10) {
                 Text("メールアドレス")
@@ -82,31 +82,31 @@ struct SignupView: View {
             }
             .padding(.horizontal)
             .padding(.vertical, 5)
-            
+
             AppButtonView(title: "新規登録", color: .green) {
                 if let image = selectedImage {
                     let imageData = viewModel.convertImageToData(image: image)
-                    let newUser: UserProfileModel = UserProfileModel(
-                        userName: username,
-                        bikeName: vehicleType,
-                        profileIcon:  imageData,
-                        touringcomment: "nil")
+                    let newUser: UserProfileModel = UserProfileModel(uuid: nil,
+                                                                     name: username,
+                                                                     bike: vehicleType,
+                                                                     profileComment: nil,
+                                                                     iconBase64: imageData ?? "",
+                                                                     isTouring: false
+                    )
                     viewModel.signup(mailAdress: email, password: password, user: newUser)
                 }
             }.padding(.top, 20)
             Button("登録済みの方") {
                 routerState.currentScreen = .logIn
             }
-            
             Spacer()
         }
         .sheet(isPresented: $isShowingImagePicker, content: {
             ImagePicker(image: $selectedImage)
         })
         .padding()
-        .onReceive(viewModel.$userProfile) { user in
-            if user != nil {
-                routerState.userProfile = user
+        .onReceive(viewModel.$isSignInSuccess) { state in
+            if viewModel.isSignInSuccess {
                 routerState.navigateToMain()
             }
         }
@@ -116,14 +116,14 @@ struct SignupView: View {
 struct ImagePicker: UIViewControllerRepresentable {
     @Binding var image: UIImage?
     @Environment(\.presentationMode) var presentationMode
-    
+
     class Coordinator: NSObject, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
         let parent: ImagePicker
-        
+
         init(parent: ImagePicker) {
             self.parent = parent
         }
-        
+
         func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
             if let uiImage = info[.originalImage] as? UIImage {
                 let alert = UIAlertController(title: "確認", message: "本当にプロフィール画像を変更しますか？", preferredStyle: .alert)
@@ -136,25 +136,23 @@ struct ImagePicker: UIViewControllerRepresentable {
                 }))
                 picker.present(alert, animated: true)
             }
-     
-            parent.presentationMode.wrappedValue.dismiss()
         }
-        
+
         func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
             parent.presentationMode.wrappedValue.dismiss()
         }
     }
-    
+
     func makeCoordinator() -> Coordinator {
         Coordinator(parent: self)
     }
-    
+
     func makeUIViewController(context: Context) -> UIImagePickerController {
         let picker = UIImagePickerController()
         picker.delegate = context.coordinator
         return picker
     }
-    
+
     func updateUIViewController(_ uiViewController: UIImagePickerController, context: Context) {}
 }
 

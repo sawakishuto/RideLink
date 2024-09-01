@@ -15,8 +15,8 @@ struct UserCard: View {
             
         }) {
             HStack {
-                if let userIcon = userProfile?.profileIcon {
-                    Image(uiImage: UIImage(data: (userProfile?.profileIcon)!)!)
+                if let userIcon = userProfile?.iconImage {
+                    Image(uiImage: UIImage(data: (userProfile?.iconImage)!)!)
                         .resizable()
                         .frame(width: 100, height: 100)
                         .clipShape(Circle())
@@ -31,7 +31,7 @@ struct UserCard: View {
                 }
                 VStack(alignment: .leading) {
                     
-                    Text(userProfile?.userName ?? "")
+                    Text(userProfile?.name ?? "")
                         .bold()
                         .font(.system(size: 20))
                     
@@ -43,14 +43,14 @@ struct UserCard: View {
                             .padding(.leading, 25)
                             .padding(.trailing, -5)
                         
-                        Text(userProfile?.bikeName ?? "")
+                        Text(userProfile?.bike ?? "")
                             .font(.system(size: 20))
                         
                     }
                     .padding(.bottom, 5)
                     .padding(.leading, -20)
                     
-                    Text(userProfile?.touringcomment ?? "")
+                    Text(userProfile?.profileComment ?? "")
                         .font(.system(size: 20))
                     
                 }

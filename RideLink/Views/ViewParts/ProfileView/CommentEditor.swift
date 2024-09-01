@@ -7,8 +7,15 @@
 
 import SwiftUI
 
+enum inputType: String {
+    case name = "ユーザー名"
+    case bike = "バイク名"
+    case comment = "一言コメント"
+}
+
 struct CustomCommentTextField: View {
     let placeholder: String
+    let inputType: inputType
     @Binding var text: String
     var commit: ()->() = { }
     
@@ -19,8 +26,8 @@ struct CustomCommentTextField: View {
             HStack {
                 Image("pen")
                     .resizable()
-                    .frame(width: 30, height: 30)
-                Text("\(placeholder)")
+                    .frame(width: 10, height: 10)
+                Text(inputType.rawValue)
                     .font(.subheadline)
                 Spacer()
             }
@@ -35,10 +42,10 @@ struct CustomCommentTextField: View {
 extension  CustomCommentTextField {
     var textField: some View {
         ZStack {
-            TextField("\(placeholder)を入力してください", text: $text)
+            TextField("\(placeholder)", text: $text)
                 .padding()
                 .frame(width: 350)
         }
-        .overlay(RoundedRectangle(cornerRadius: 20).stroke(Color.black, lineWidth: 0.5))
+        .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.black, lineWidth: 0.5))
     }
 }

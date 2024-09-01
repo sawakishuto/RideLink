@@ -24,23 +24,14 @@ struct ContentView: View {
                 }
 
                 MapView()
+                    .ignoresSafeArea()
             }
             .ignoresSafeArea()
         }
-        .onAppear {
-            signIn()
-        }
     }
-
-     func signIn() {
-        let auth = Auth.auth()
-        auth.signIn(withEmail: "shuto@g.com", password: "111111") { result, error in
-            print(result)
-        }
-    }
-    }
+}
 
 
-    #Preview {
-        ContentView()
-    }
+#Preview {
+    ContentView()
+}

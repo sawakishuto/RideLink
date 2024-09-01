@@ -7,86 +7,45 @@
 
 import SwiftUI
 
-let mock1 = UserProfileModel(
-    userName: "1",
-    bikeName: "バイク名",
-    profileIcon: nil,
-    touringcomment: "コメント"
-)
-
-let mock2 = UserProfileModel(
-    userName: "2",
-    bikeName: "バイク名",
-    profileIcon: nil,
-    touringcomment: "コメント"
-)
-
-let mock3 = UserProfileModel(
-    userName: "3",
-    bikeName: "バイク名",
-    profileIcon: nil,
-    touringcomment: "コメント"
-)
-
-let mock4 = UserProfileModel(
-    userName: "4",
-    bikeName: "バイク名",
-    profileIcon: nil,
-    touringcomment: "コメント"
-)
-
-let mock5 = UserProfileModel(
-    userName: "5",
-    bikeName: "バイク名",
-    profileIcon: nil,
-    touringcomment: "コメント"
-)
-
-let mock6 = UserProfileModel(
-    userName: "6",
-    bikeName: "バイク名",
-    profileIcon: nil,
-    touringcomment: "コメント"
-)
-
-let friends = [
-    FriendInfoModel(isOnline: true, profile: mock1),
-    FriendInfoModel(isOnline: false, profile: mock2),
-    FriendInfoModel(isOnline: true, profile: mock3),
-    FriendInfoModel(isOnline: false, profile: mock4),
-    FriendInfoModel(isOnline: true, profile: mock5),
-    FriendInfoModel(isOnline: false, profile: mock6)
-]
-
 struct TabViews: View {
     let encountRepository = EncounterRepository()
     init() {
         UITabBar.appearance().isHidden = true
     }
 
-    @State var currentTab: Tab =  .map
+    @State var currentTab: Tab = .map
     @EnvironmentObject var routerState: RouterViewModel
-    
-    var body: some View {
-        VStack(spacing: 0) {
-            TabView(selection: $currentTab) {
-                ContentView()
-                    .tag(Tab.map)
-                EncountView(repository: encountRepository)
-                    .tag(Tab.encounts)
 
-                FriendListView()
-                    .tag(Tab.friends)
-                
-                ProfileView()
-                    .tag(Tab.settings)
+    var body: some View {
+        GeometryReader { geometry in
+            VStack(spacing: 0) {
+                TabView(selection: $currentTab) {
+                    ContentView()
+                        .tag(Tab.map)
+                    EncountView(repository: encountRepository)
+                        .tag(Tab.encounts)
+
+                    FriendListView()
+                        .tag(Tab.friends)
+
+                    ProfileView()
+                        .tag(Tab.settings)
+                }
+                .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never)) // タブの動きをなくすスタイルを適用
+
+                Divider()
+                CustomTabViewsStyle(currentTab: $currentTab)
+                    .frame(width: geometry.size.width, height: 80) // カスタムタブの高さを設定
+                    .background(Color.white) // タブバーの背景色を設定
+                    .clipShape(Rectangle()) // 角丸を設定
             }
-            Divider()
-            CustomTabViewsStyle(currentTab: $currentTab)
+            .edgesIgnoringSafeArea(.bottom) // 下部の安全エリアを無視して全画面表示
         }
     }
 }
 
-#Preview {
-    TabViews()
+struct TabViews_Previews: PreviewProvider {
+    static var previews: some View {
+        TabViews()
+    }
 }

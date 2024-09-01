@@ -53,8 +53,8 @@
 		08CB69472BD817EC00E5940C /* TouringInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CB69462BD817EC00E5940C /* TouringInfoModel.swift */; };
 		08CB694B2BD81B2400E5940C /* FriendInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CB694A2BD81B2400E5940C /* FriendInfoModel.swift */; };
 		08CB694D2BD81E9400E5940C /* UserLocationInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CB694C2BD81E9400E5940C /* UserLocationInfoModel.swift */; };
-		220102702C2181F900908A85 /* NSObject + apply.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2201026F2C2181F900908A85 /* NSObject + apply.swift */; };
 		08D41FFE2C2499E300B6D0C1 /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08D41FFD2C2499E300B6D0C1 /* ContentViewModel.swift */; };
+		220102702C2181F900908A85 /* NSObject + apply.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2201026F2C2181F900908A85 /* NSObject + apply.swift */; };
 		220293B12BE921E1009BC2A6 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 220293B02BE921E1009BC2A6 /* ProfileView.swift */; };
 		220293B92BE926E1009BC2A6 /* ProfileEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 220293B82BE926E1009BC2A6 /* ProfileEditor.swift */; };
 		220293BD2BE92864009BC2A6 /* ProfilePreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 220293BC2BE92864009BC2A6 /* ProfilePreview.swift */; };
@@ -63,17 +63,17 @@
 		224CE15E2BF7715B00AA201F /* OfflineIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224CE15D2BF7715B00AA201F /* OfflineIndicator.swift */; };
 		224CE1622BF771E200AA201F /* OnlineIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224CE1612BF771E200AA201F /* OnlineIndicator.swift */; };
 		224CE1642BF7722100AA201F /* UserCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224CE1632BF7722100AA201F /* UserCard.swift */; };
-		E10633302C155F6A003CB79B /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E106332F2C155F6A003CB79B /* LoginViewModel.swift */; };
-		E10633322C15BDC1003CB79B /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10633312C15BDC1003CB79B /* Router.swift */; };
-		E10633342C2AFBE3003CB79B /* RouterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10633332C2AFBE3003CB79B /* RouterViewModel.swift */; };
-		E10633362C2B057B003CB79B /* RouterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10633352C2B057B003CB79B /* RouterView.swift */; };
-		E13761C72C02543800D9AF9F /* SignupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13761C62C02543800D9AF9F /* SignupViewModel.swift */; };
 		2255129A2C19F9960004EF5B /* CustomTabViewsStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225512992C19F9960004EF5B /* CustomTabViewsStyle.swift */; };
 		2260FB0B2C04D7EF00C837DB /* CommentEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2260FB0A2C04D7EF00C837DB /* CommentEditor.swift */; };
 		22BD6D492C1DFC2800453BD9 /* FriendListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BD6D482C1DFC2800453BD9 /* FriendListViewModel.swift */; };
 		22BD6D4C2C1DFE9600453BD9 /* FriendListRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BD6D4B2C1DFE9600453BD9 /* FriendListRepository.swift */; };
 		22BD6D4E2C1DFEC400453BD9 /* FriendListRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BD6D4D2C1DFEC400453BD9 /* FriendListRepositoryProtocol.swift */; };
 		22FCBB642BFED30B0050F411 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22FCBB632BFED30B0050F411 /* ProfileViewModel.swift */; };
+		E10633302C155F6A003CB79B /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E106332F2C155F6A003CB79B /* LoginViewModel.swift */; };
+		E10633322C15BDC1003CB79B /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10633312C15BDC1003CB79B /* Router.swift */; };
+		E10633342C2AFBE3003CB79B /* RouterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10633332C2AFBE3003CB79B /* RouterViewModel.swift */; };
+		E10633362C2B057B003CB79B /* RouterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10633352C2B057B003CB79B /* RouterView.swift */; };
+		E13761C72C02543800D9AF9F /* SignupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13761C62C02543800D9AF9F /* SignupViewModel.swift */; };
 		E1BCBEEE2C0183D80009E9DB /* SignupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BCBEED2C0183D80009E9DB /* SignupView.swift */; };
 		E1E7AF1E2BEC9AD0002F1CFF /* AppTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E7AF1D2BEC9AD0002F1CFF /* AppTextFieldView.swift */; };
 		E1E7AF202BED0256002F1CFF /* AppButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E7AF1F2BED0256002F1CFF /* AppButtonView.swift */; };
@@ -145,8 +145,8 @@
 		08CB69462BD817EC00E5940C /* TouringInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouringInfoModel.swift; sourceTree = "<group>"; };
 		08CB694A2BD81B2400E5940C /* FriendInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendInfoModel.swift; sourceTree = "<group>"; };
 		08CB694C2BD81E9400E5940C /* UserLocationInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLocationInfoModel.swift; sourceTree = "<group>"; };
-		2201026F2C2181F900908A85 /* NSObject + apply.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject + apply.swift"; sourceTree = "<group>"; };
 		08D41FFD2C2499E300B6D0C1 /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
+		2201026F2C2181F900908A85 /* NSObject + apply.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject + apply.swift"; sourceTree = "<group>"; };
 		220293B02BE921E1009BC2A6 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		220293B82BE926E1009BC2A6 /* ProfileEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEditor.swift; sourceTree = "<group>"; };
 		220293BC2BE92864009BC2A6 /* ProfilePreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePreview.swift; sourceTree = "<group>"; };
@@ -155,17 +155,17 @@
 		224CE15D2BF7715B00AA201F /* OfflineIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfflineIndicator.swift; sourceTree = "<group>"; };
 		224CE1612BF771E200AA201F /* OnlineIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnlineIndicator.swift; sourceTree = "<group>"; };
 		224CE1632BF7722100AA201F /* UserCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCard.swift; sourceTree = "<group>"; };
-		E106332F2C155F6A003CB79B /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
-		E10633312C15BDC1003CB79B /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
-		E10633332C2AFBE3003CB79B /* RouterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterViewModel.swift; sourceTree = "<group>"; };
-		E10633352C2B057B003CB79B /* RouterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterView.swift; sourceTree = "<group>"; };
-		E13761C62C02543800D9AF9F /* SignupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewModel.swift; sourceTree = "<group>"; };
 		225512992C19F9960004EF5B /* CustomTabViewsStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabViewsStyle.swift; sourceTree = "<group>"; };
 		2260FB0A2C04D7EF00C837DB /* CommentEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentEditor.swift; sourceTree = "<group>"; };
 		22BD6D482C1DFC2800453BD9 /* FriendListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendListViewModel.swift; sourceTree = "<group>"; };
 		22BD6D4B2C1DFE9600453BD9 /* FriendListRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendListRepository.swift; sourceTree = "<group>"; };
 		22BD6D4D2C1DFEC400453BD9 /* FriendListRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendListRepositoryProtocol.swift; sourceTree = "<group>"; };
 		22FCBB632BFED30B0050F411 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		E106332F2C155F6A003CB79B /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		E10633312C15BDC1003CB79B /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		E10633332C2AFBE3003CB79B /* RouterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterViewModel.swift; sourceTree = "<group>"; };
+		E10633352C2B057B003CB79B /* RouterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterView.swift; sourceTree = "<group>"; };
+		E13761C62C02543800D9AF9F /* SignupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewModel.swift; sourceTree = "<group>"; };
 		E1BCBEED2C0183D80009E9DB /* SignupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupView.swift; sourceTree = "<group>"; };
 		E1E7AF1D2BEC9AD0002F1CFF /* AppTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTextFieldView.swift; sourceTree = "<group>"; };
 		E1E7AF1F2BED0256002F1CFF /* AppButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppButtonView.swift; sourceTree = "<group>"; };
@@ -871,16 +871,19 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"RideLink/Resources\"";
-				DEVELOPMENT_TEAM = 77TFA268F3;
+				DEVELOPMENT_TEAM = 5285K4Z956;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RideLink/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "";
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "現在地の取得を許可しますか";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -903,16 +906,19 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"RideLink/Resources\"";
-				DEVELOPMENT_TEAM = 77TFA268F3;
+				DEVELOPMENT_TEAM = 5285K4Z956;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RideLink/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "";
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "現在地の取得を許可しますか";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

@@ -35,64 +35,7 @@ final class EncountViewModel: ObservableObject {
 
     }
 
-    @Published var encountInfos: [EncountInfoModel] = [
-        EncountInfoModel(
-            userInfo: UserProfileModel(
-                userName: "しゅうと",
-                bikeName: "DSC400",
-                profileIcon: nil,
-                touringcomment: "みんなよろしくね"
-            ),
-            touringInfo: TouringInfoModel(
-                destinationName: "サン春日丘",
-                touringComment: nil
-            ),
-            encountLocationLatitude: 34.9154073,
-            encountLocationLongitude: 135.6485139
-        ),
-        EncountInfoModel(
-            userInfo: UserProfileModel(
-                userName: "しゅうと",
-                bikeName: "DSC400",
-                profileIcon: nil,
-                touringcomment: "みんなよろしくね"
-            ),
-            touringInfo: TouringInfoModel(
-                destinationName: "サン春日丘",
-                touringComment: nil
-            ),
-            encountLocationLatitude: 34.1154073,
-            encountLocationLongitude: 135.3485139
-        ),
-        EncountInfoModel(
-            userInfo: UserProfileModel(
-                userName: "しゅうと",
-                bikeName: "DSC400",
-                profileIcon: nil,
-                touringcomment: "みんなよろしくね"
-            ),
-            touringInfo: TouringInfoModel(
-                destinationName: "サン春日丘",
-                touringComment: nil
-            ),
-            encountLocationLatitude: 34.8154073,
-            encountLocationLongitude: 135.5485139
-        ),
-        EncountInfoModel(
-            userInfo: UserProfileModel(
-                userName: "しゅうと",
-                bikeName: "DSC400",
-                profileIcon: nil,
-                touringcomment: "みんなよろしくね"
-            ),
-            touringInfo: TouringInfoModel(
-                destinationName: "サン春日丘",
-                touringComment: nil
-            ),
-            encountLocationLatitude: 34.7154073,
-            encountLocationLongitude: 135.4485139
-        )
-    ]
+    @Published var encountInfos: [EncountInfoModel] = []
 
     func getEncounter() {
         encountRepository.getEncountInfo()

@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct UserProfileCard: View {
-    let encounterImage: Data?
     let userName: String
     let bikeName: String
     let destinationName: String
@@ -21,16 +20,16 @@ struct UserProfileCard: View {
                 Text(userName)
                     .font(.system(size: 35))
                     .fontWeight(.black)
-
+                
                 NavigationLink {
-                    EncountMap(latitude: encountLatitude, longitude: encountLongitude, encounterImage: encounterImage)
+                    EncountMap(latitude: encountLatitude, longitude: encountLongitude)
                 } label: {
                     ZStack {
                         Circle()
                             .frame(width: 55, alignment: .center)
                             .foregroundStyle(.green)
                             .shadow(color: .gray, radius: 4, x: 5, y: 2)
-
+                        
                         Image(systemName: "mappin.and.ellipse")
                             .resizable()
                             .scaledToFit()
@@ -39,32 +38,32 @@ struct UserProfileCard: View {
                     }
                 }
             }
-
+            
             HStack(alignment: .center , spacing: 30) {
-
+                
                 VStack(alignment: .center, spacing: 10) {
                     Image("BikeIcon")
                         .resizable()
                         .scaledToFit()
                         .frame(width: 40)
-
+                    
                     Image(systemName: "mappin.circle.fill")
                         .resizable()
                         .scaledToFit()
                         .frame(width: 30)
-
-
+                    
+                    
                 }
                 VStack(alignment: .leading, spacing: 10) {
-
+                    
                     Text(bikeName)
                         .font(.system(size: 20))
                         .foregroundStyle( Color(red: 0.4, green: 0.4, blue: 0.4, opacity: 1))
-
+                    
                     Text(destinationName)
                         .fontWeight(.bold)
                         .foregroundStyle(.green)
-
+                    
                 }
             }
             Text(comment)
@@ -76,8 +75,4 @@ struct UserProfileCard: View {
         .cornerRadius(20)
         .shadow(color: .gray, radius: 4, x: 2, y: 5)
     }
-}
-
-#Preview {
-    UserProfileCard(encounterImage: nil, userName: "", bikeName: "", destinationName: "", comment: "", encountLatitude: 0.00, encountLongitude: 0.00)
 }

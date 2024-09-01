@@ -13,18 +13,13 @@ let today = Calendar.current.startOfDay(for: Date())
 
 class ProfileViewModel: ObservableObject {
     //認証ができていないのでmockデータを入れている
-    @Published var originalData: UserProfileModel = UserProfileModel(
-        userName: "kaka",
-        bikeName: "yzf",
-        profileIcon: nil,
-        touringcomment: "hello",
-        createAt: today
-    )
+    @Published var originalData: UserProfileModel = UserProfileModel(uuid: nil, name: "", bike: "", iconBase64: "", isTouring: false)
     @Published var canSave: Bool = false
+    @Published var iconImageData: Data? = nil
     let userRepository = UserRepository()
     private var cancellables: Set<AnyCancellable> = []
-    
-    init() {originalData
+
+    func getUserProfile() {
         userRepository.getUser()
             .sink { response  in
                 switch response {
@@ -34,34 +29,45 @@ class ProfileViewModel: ObservableObject {
                     return
                 }
             } receiveValue: { [weak self] userProfile in
-                self?.originalData = userProfile
-            }.store(in: &cancellables)
+                guard let self = self else {return}
+                originalData = userProfile
+                iconImageData = userProfile.iconImage
+            }
+            .store(in: &cancellables)
     }
+
+
     
-    func validationData(userName: String, bikeName: String, userComment: String) -> Result<Bool, Error> {
-        if userName != originalData.userName ||
-           bikeName != originalData.bikeName ||
-           userComment != originalData.touringcomment {
-            return .success(false)
-        }
-        return .success(true)
-    }
-    
-    func save(userName: String, bikeName: String, profileComment: String) {
-        if userName != originalData.userName ||
-           bikeName != originalData.bikeName ||
-           profileComment != originalData.touringcomment {
-            
-            userRepository.postUserData(
+    func save(userName: String, bikeName: String, profileComment: String, completion: @escaping() -> Void) {
+        if userName != originalData.name ||
+            bikeName != originalData.bike ||
+            profileComment != originalData.profileComment {
+            print(originalData.iconBase64)
+            userRepository.putUserData(
                 userData: UserProfileModel(
-                    userName: userName,
-                    bikeName: bikeName,
-                    profileIcon: originalData.profileIcon,
-                    touringcomment: profileComment,
-                    createAt: originalData.createAt
+                    uuid: originalData.uuid ?? "0",
+                    name: userName,
+                    bike: bikeName,
+                    profileComment: profileComment,
+                    iconBase64: originalData.iconBase64,
+                    isTouring: originalData.isTouring ?? false
                 )
             )
-            
+            .sink { result in
+                switch result {
+                case .finished:
+                    completion()
+                    print("UserData Post End")
+                    return
+                case .failure(let error):
+                    print("UserData Post Failure")
+                    return
+                }
+            } receiveValue: { user in
+                completion()
+            }
+            .store(in: &cancellables)
+
         }
         print("保存します")
     }
@@ -70,17 +76,32 @@ class ProfileViewModel: ObservableObject {
         guard let inputImage = inputImage else {
             print("UIImageじゃない")
             return }
-        guard let imageData = inputImage.jpegData(compressionQuality: 0.7) else { 
-            print("データ変換します")
-            return }
+        guard let imageData = inputImage.jpegData(compressionQuality: 0.7) else { return }
+        let base64String = imageData.base64EncodedString(options: .lineLength64Characters)
         print("データを保存します")
-        originalData.profileIcon = imageData
-        userRepository.postUserData(userData: UserProfileModel(
-            userName: "",
-                bikeName: "",
-                profileIcon: imageData,
-                touringcomment: ""
-            ))
+        originalData.iconBase64 = base64String
+        userRepository.putUserData(userData: UserProfileModel(
+            uuid: originalData.uuid ?? "",
+            name: originalData.name ?? "" ,
+            bike: originalData.bike ?? "",
+            profileComment: originalData.profileComment ?? "",
+            iconBase64: base64String,
+            isTouring: originalData.isTouring ?? false)
+        )
+        .sink { result in
+            switch result {
+            case .finished:
+                print("UserData Post End")
+                return
+            case .failure(let error):
+                print("UserData Post Failure")
+                return
+            }
+        } receiveValue: { user in
+            self.iconImageData = user?.iconImage
+        }
+        .store(in: &cancellables)
+
     }
 }
 

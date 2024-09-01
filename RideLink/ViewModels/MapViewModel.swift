@@ -23,7 +23,7 @@ final class MapViewModel:NSObject, CLLocationManagerDelegate {
         locationManager.delegate = self
 
         cancellablePipeline = Timer
-            .publish(every: 10, on: .main, in: .common)
+            .publish(every: 30, on: .main, in: .common)
             .autoconnect()
             .sink(receiveValue: { [unowned self] _ in
                 if isStartTouring {
@@ -36,7 +36,7 @@ final class MapViewModel:NSObject, CLLocationManagerDelegate {
     func requestLocationAuthorization() {
         locationManager.requestWhenInUseAuthorization()
         locationManager.delegate = self
-        locationManager.distanceFilter = 40
+        locationManager.distanceFilter = 8
     }
 
     func postTouringCondition(destinationName: String, touringComment: String) {

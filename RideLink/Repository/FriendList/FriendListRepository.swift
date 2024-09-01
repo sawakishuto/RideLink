@@ -10,7 +10,8 @@ import Combine
 
 final class FriendListRepository: FriendListRepositoryProtocol {
     private let apiClient = APIClient.shared
-    
+    var cancellables = Set<AnyCancellable>()
+
     func getFriendList() -> AnyPublisher<[FriendInfoModel], Error> {
         return Deferred {
             Future { promise in
@@ -32,6 +33,7 @@ final class FriendListRepository: FriendListRepositoryProtocol {
                     print(result)
                     promise(.success(result))
                 }
+                .store(in: &self.cancellables)
             }
             
         }

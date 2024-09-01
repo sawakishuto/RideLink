@@ -8,7 +8,8 @@ final class LoginViewModel: ObservableObject {
     private var imageData: Data?
     private  var cancellables: Set<AnyCancellable> = []
     @Published var userProfile: UserProfileModel? = nil
-    
+    @Published var isLoginSuccess: Bool = false
+
     
     func signin(mailAdress: String, password: String) {
         authRepository.signIn(mailAdress: mailAdress, password: password)
@@ -16,6 +17,9 @@ final class LoginViewModel: ObservableObject {
             .sink { response in
                 switch response {
                 case .finished:
+                    print("authRepository.signIn(mailAdress: mailAdress, password: password)")
+                    self.isLoginSuccess = true
+                    
                     return
                 case .failure(let error):
                     print(error)
@@ -24,14 +28,7 @@ final class LoginViewModel: ObservableObject {
             } receiveValue: { response in
                 //TODO: uiimageをdataに変更
                 if response {
-                    self.userRepository.getUser()
-                        .sink { response in
-                            print("💎5")
-                            print(response)
-                        } receiveValue: { user in
-                            print("💎6")
-                            print(user)
-                        }
+                    self.isLoginSuccess = true
                 } else {
                     print("失敗じょ")
                     return

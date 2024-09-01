@@ -10,8 +10,9 @@ import Alamofire
 
 struct ProfilePreView: View {
     @State private var showingImagePicker = false
+    @Binding var iconImage: Data?
     @Binding var inputImage: UIImage?
-    var userImage: Data?
+    var userImage: Data? = nil
     var userName: String
     var bikeName: String
     var touringComment: String?
@@ -26,12 +27,12 @@ struct ProfilePreView: View {
                         .resizable()
                         .frame(width: 28, height: 28)
                         .foregroundColor(.gray)
-                        .offset(x: -75, y: -75)
+                        .offset(x: -55, y: -65)
 
-                    if let userImage = userImage {
-                        Image(uiImage: UIImage(data: userImage)!)
+                    if let iconImage = iconImage {
+                        Image(uiImage: UIImage(data: iconImage)!)
                             .resizable()
-                            .frame(width: 100, height: 100)
+                            .frame(width: 80, height: 80)
                             .clipShape(Circle())
                     } else {
                         ProgressView()
@@ -39,36 +40,44 @@ struct ProfilePreView: View {
                             .clipShape(Circle())
                     }
                 }
+                .padding(.bottom, 30)
             }
             .padding(.trailing, 20)
             
-            VStack(alignment: .leading) {
-                Text(userName)
-                    .font(.headline)
-                
-                Spacer().frame(height: 10)
-                
-                HStack {
-                    Image("BikeIcon")
-                        .resizable()
-                        .frame(width: 35, height: 21)
-                    
-                    Text(bikeName)
-                        .font(.subheadline)
+            HStack(alignment: .center) {
+                Image("BikeIcon")
+                    .resizable()
+                    .frame(width: 35, height: 21)
+                    .padding(.top, 7)
+
+                VStack(alignment: .leading) {
+                    Text(userName)
+                        .font(.system(size: 23))
+                        .fontWeight(.bold)
+
+                    Spacer().frame(height: 10)
+
+                        Text(bikeName)
+                            .font(.subheadline)
+
+                    Spacer().frame(height: 10)
+
+                    Text(touringComment ?? "")
+                        .font(.caption)
                 }
-                Spacer().frame(height: 10)
-                Text(touringComment ?? "")
-                    .font(.caption)
             }
+
             Spacer()
         }
         .padding([.top, .leading, .trailing])
         .sheet(isPresented: $showingImagePicker) {
             ImagePicker(image: $inputImage)
         }
+
         Rectangle()
-            .fill(Color.gray.opacity(0.5))
-            .frame(height: 3)
-            .shadow(color: .gray, radius: 5, x: 0, y: 5)
+            .fill(Color.gray.opacity(0.1))
+            .frame(height: 1)
+            .shadow(color: .gray, radius: 5, x: 0, y: 1)
+
     }
 }

@@ -49,9 +49,8 @@ struct LoginView: View {
             Spacer()
         }
         .padding()
-        .onReceive(viewModel.$userProfile) { user in
-            if user != nil {
-                routerState.userProfile = user
+        .onReceive(viewModel.$isLoginSuccess) { state in
+            if viewModel.isLoginSuccess {
                 routerState.navigateToMain()
             }
         }

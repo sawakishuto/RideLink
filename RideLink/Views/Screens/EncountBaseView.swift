@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct EncountBaseView: View {
-    let encountImage: Data?
     let ImageData: Data?
     let userName: String
     let bikeName: String
@@ -20,7 +19,6 @@ struct EncountBaseView: View {
         VStack(spacing: 20) {
             CircleImage(ImageData: ImageData)
             UserProfileCard(
-                encounterImage: encountImage,
                 userName: userName,
                 bikeName: bikeName,
                 destinationName: destinationName,
@@ -37,5 +35,5 @@ struct EncountBaseView: View {
 }
 
 #Preview {
-    EncountBaseView(encountImage: nil, ImageData: nil, userName: "", bikeName: "", destinationName: "", comment: "", encountLatitude: 0.0, encountLogitude: 0.0)
+    EncountBaseView(ImageData: nil, userName: "", bikeName: "", destinationName: "", comment: "", encountLatitude: 0.0, encountLogitude: 0.0)
 }

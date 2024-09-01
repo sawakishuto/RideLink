@@ -11,33 +11,28 @@ import MapKit
 struct EncountMap: View {
     let latitude: Double
     let longitude: Double
-    let encounterImage: Data?
     var body: some View {
-        Map {
-            Marker(coordinate: CLLocationCoordinate2D(latitude: latitude, longitude: longitude)) {
-                VStack {
-                    if let encounterImage = encounterImage {
-                        Image(uiImage: UIImage(data: encounterImage)!)
+        if #available(iOS 17.0, *) {
+            Map {
+                Marker(coordinate: CLLocationCoordinate2D(latitude: latitude, longitude: longitude)) {
+                    VStack {
+                        Image(systemName: "hand.raised.brakesignal")
                             .resizable()
                             .scaledToFit()
                             .frame(width: 30, height: 30)
                             .cornerRadius(90)
-                    } else {
-                        Image(systemName: "music.note")
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 30, height: 30)
-                            .cornerRadius(90)
+                        Text("ここでですれ違いました！🏍️")
+                            .font(.caption)
                     }
-                    Text("ここでですれ違いました！🏍️")
-                        .font(.caption)
-
                 }
             }
+        } else {
+           
+            // Fallback on earlier versions
         }
     }
 }
 
 #Preview {
-    EncountMap(latitude: 35.0, longitude: 36.0, encounterImage: nil)
+    EncountMap(latitude: 35.0, longitude: 36.0)
 }

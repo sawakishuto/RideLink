@@ -26,14 +26,13 @@ struct EncountView: View {
                     LazyHStack(spacing: itemPadding) {
                         ForEach(vm.encountInfos) { vm in
                             EncountBaseView(
-                                encountImage: vm.userInfo.profileIcon,
-                                ImageData: vm.userInfo.profileIcon,
-                                userName: vm.userInfo.userName,
-                                bikeName: vm.userInfo.bikeName,
-                                destinationName: vm.touringInfo.destinationName ?? "",
-                                comment: vm.userInfo.touringcomment ?? "",
-                                encountLatitude: vm.encountLocationLatitude,
-                                encountLogitude: vm.encountLocationLongitude
+                                ImageData: nil,
+                                userName: vm.name,
+                                bikeName: vm.bike,
+                                destinationName: vm.formattedPassedAt ?? "",
+                                comment: nil ?? "よろしくお願いいたします！",
+                                encountLatitude: vm.latitude ?? 35.00,
+                                encountLogitude: vm.longitude ?? 36.00
                             )
                             .frame(width: bodyView.size.width * 1.0)
                         }

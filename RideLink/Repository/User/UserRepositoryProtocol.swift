@@ -12,8 +12,10 @@ protocol UserRepositoryProtocol: AnyObject {
 //    uidを使ってUser情報を取得するメソッド
 
     func getUser() -> AnyPublisher<UserProfileModel, Error>
-    
+
     func postUserData(userData: UserProfileModel) -> AnyPublisher<UserProfileModel?, Error>
+    
+    func putUserData(userData: UserProfileModel) -> AnyPublisher<UserProfileModel?, Error>
 
 //    func getFriendData() -> AnyPublisher<FriendInfoModel, Error>
     

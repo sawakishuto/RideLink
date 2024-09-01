@@ -66,7 +66,7 @@ class MapViewController: UIViewController {
         view.isUserInteractionEnabled = true
         
     }
-    
+
     private lazy var mapView: MKMapView = {
         let map = MKMapView()
         var region: MKCoordinateRegion = map.region
@@ -76,7 +76,7 @@ class MapViewController: UIViewController {
         map.setRegion(region, animated: true)
         map.mapType = .standard
         map.userTrackingMode = .followWithHeading
-        map.frame = CGRect(x: 10, y: 10, width: 400, height: 300)
+        map.frame = CGRect(x: 10, y: 10, width: 400, height: view.frame.height)
         return map
     }()
     

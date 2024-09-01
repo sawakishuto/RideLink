@@ -19,11 +19,11 @@ struct FriendListView: View {
                     Spacer()
                 }
                 .padding(.bottom, 10)
-                .padding(.top, -30)
+                .padding(.top, 30)
 
-                ForEach(vm.friendList.filter { $0.isOnline }) {
+                ForEach(vm.friendList.filter { $0.isTouring! }) {
                     friend in UserCard(
-                        userProfile: friend.profile
+                        userProfile: UserProfileModel(uuid: friend.uuid, name: friend.name, bike: friend.bike)
                     )
                     .padding(.bottom, 25)
 
@@ -34,12 +34,12 @@ struct FriendListView: View {
                         .padding(.leading, 15)
                     Spacer()
                 }
-                .padding(.top, 10)
+                .padding(.top, vm.friendList.isEmpty ? 100: 10)
                 .padding(.bottom, 10)
 
-                ForEach(vm.friendList.filter { !$0.isOnline }) {
+                ForEach(vm.friendList.filter { !$0.isTouring! }) {
                     friend in UserCard(
-                        userProfile: friend.profile
+                        userProfile: UserProfileModel(uuid: friend.uuid, name: friend.name, bike: friend.bike)
                     )
                     .padding(.bottom, 25)
                 }
@@ -47,6 +47,8 @@ struct FriendListView: View {
             .padding(.top, 25)
             .padding(.bottom, 10)
         }
-        .background(Color(hex: "F8F8F8"))
+        .background(Color(hex: "F8F8F8"))   
+        .ignoresSafeArea()
+
     }
 }

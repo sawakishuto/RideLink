@@ -8,20 +8,14 @@
 import Foundation
 import Combine
 
-let mockProfile = UserProfileModel(
-    userName: "カカ",
-    bikeName: "yzf-r15",
-    profileIcon: nil,
-    touringcomment: "教養リーチ！",
-    createAt: today
-)
+
 
 final class FriendListViewModel: ObservableObject{
     @Published var friendList : [FriendInfoModel] = []
     let friendListRepository = FriendListRepository()
-    private var cancellables: Set<AnyCancellable> = []
-    
-    init() {friendList
+    private var cancellables = Set<AnyCancellable>()
+
+    init() {
         
         friendListRepository.getFriendList()
             .sink {response in
@@ -34,15 +28,11 @@ final class FriendListViewModel: ObservableObject{
                 
             } receiveValue: { [weak self]  receiveValue in
                 self?.friendList = receiveValue
-            }.store(in: &cancellables)
-        
+            }
+            .store(in: &cancellables)
+
         //mockリストを生成
         var isOnline = true
-        for _ in 1...8 {
-            let friend = FriendInfoModel(id: UUID().uuidString, isOnline: isOnline, profile: mockProfile)
-            friendList.append(friend)
-            isOnline.toggle()
-        }
     }
     
 
