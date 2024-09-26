@@ -6,3 +6,5 @@ xcshareddata
 xcuserdata
 *.xccheckout
 *.moved-aside
+RideLink/GoogleService-Info.plist
+RideLink/Info.plist
