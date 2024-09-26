@@ -16,7 +16,7 @@ final class APIClient {
 
     static let shared =  APIClient()
 
-    private let baseUrl = "https://4237-106-146-90-128.ngrok-free.app"
+    private let baseUrl = "http://localhost:8080"
     private var cancellables: Set<AnyCancellable> = []
 
     // データを取得するメソッド  ジェネリクスで指定してるから柔軟に使えるはずだよ
