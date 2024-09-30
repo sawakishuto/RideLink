@@ -1,0 +1,19 @@
+
+default_platform(:ios)
+
+platform :ios do
+  before_all do
+    setup_circle_ci
+  end
+  desc "Description of what the lane does"
+ lane :appstore_build do
+  match(type: "appstore", readonly: true)
+  gym(
+    project: "RideLink.xcodeproj",
+    scheme: "RideLink",
+    output_directory: "Archives",
+    output_name: "RideLink-app-#{ENV['CIRCLE_BUILD_NUM']}.ipa",
+    export_method: "app-store"
+  )
+end
+end
