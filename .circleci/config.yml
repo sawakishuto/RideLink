@@ -13,6 +13,7 @@ jobs:
       FASTLANE_LANE: test
     shell: /bin/bash --login -o pipefail
     steps:
+      - checkout
       - ruby/install-deps
       - run:
           name: fastlane
