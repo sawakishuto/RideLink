@@ -7,7 +7,7 @@ jobs:
   build:
     macos:
       xcode: "16.0"
-    working_directory: /Users/sawakishuto/RideLink/Ci_dir
+    working_directory: /RideLink
     environment:
       FL_OUTPUT_DIR: output
       FASTLANE_LANE: test
