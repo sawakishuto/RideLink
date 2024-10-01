@@ -24,6 +24,6 @@ struct OnlineIndicator: View {
         }
     }
 
-#Preview {
-    OnlineIndicator()
-}
+//#Preview {
+//    OnlineIndicator()
+//}

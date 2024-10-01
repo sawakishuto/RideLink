@@ -66,6 +66,6 @@ struct bannerNotification: View {
     }
 }
 
-#Preview {
-    bannerNotification(encountCount: 10, isRecieveNotification: .constant(false))
-}
+//#Preview {
+//    bannerNotification(encountCount: 10, isRecieveNotification: .constant(false))
+//}

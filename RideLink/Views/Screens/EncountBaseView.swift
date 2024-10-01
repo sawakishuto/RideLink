@@ -34,6 +34,6 @@ struct EncountBaseView: View {
     }
 }
 
-#Preview {
-    EncountBaseView(ImageData: nil, userName: "", bikeName: "", destinationName: "", comment: "", encountLatitude: 0.0, encountLogitude: 0.0)
-}
+//#Preview {
+//    EncountBaseView(ImageData: nil, userName: "", bikeName: "", destinationName: "", comment: "", encountLatitude: 0.0, encountLogitude: 0.0)
+//}

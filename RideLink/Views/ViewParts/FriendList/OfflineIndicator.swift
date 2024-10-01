@@ -25,9 +25,9 @@ struct OfflineIndicator: View {
     }
 }
 
-#Preview {
-    VStack {
-        OnlineIndicator()
-        OfflineIndicator()
-    }
-}
+//#Preview {
+//    VStack {
+//        OnlineIndicator()
+//        OfflineIndicator()
+//    }
+//}
