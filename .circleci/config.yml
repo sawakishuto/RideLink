@@ -13,7 +13,13 @@ jobs:
       FASTLANE_LANE: test
     shell: /bin/bash --login -o pipefail
     steps:
+    
+      - run:
+          name: Create directory if it doesn't exist
+          command: mkdir -p /Users/sawakishuto/RideLink  # 必要に応じて適切なパスに変更
+      
       - checkout
+      
       - ruby/install-deps
       - run:
           name: fastlane
@@ -22,4 +28,3 @@ jobs:
           path: output
       - store_test_results:
           path: output/scan
-
