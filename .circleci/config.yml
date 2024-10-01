@@ -6,7 +6,7 @@ orbs:
 jobs:
   build-and-test:
     macos:
-      xcode: "14.2.0"
+      xcode: "15.0"
       resource_class: medium
     environment:
       FL_OUTPUT_DIR: output
