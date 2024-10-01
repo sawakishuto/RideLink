@@ -1046,7 +1046,7 @@
 			requirement = {
 				kind = versionRange;
 				maximumVersion = 6.0.0;
-				minimumVersion = 5.8.0;
+				minimumVersion = 5.7.0;
 			};
 		};
 		08582C872BF4CD2F00B7FEE5 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
