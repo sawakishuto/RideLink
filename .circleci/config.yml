@@ -6,8 +6,7 @@ orbs:
 jobs:
   build-and-test:
     macos:
-      xcode: "16.0"
-      resource_class: small
+      xcode: "14.2.0"
     environment:
       FL_OUTPUT_DIR: output
       FASTLANE_LANE: test
