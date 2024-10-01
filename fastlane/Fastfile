@@ -8,7 +8,7 @@ platform :ios do
   desc "Runs all the tests"
   lane :test do
     scan(
-      devices: ["iPhone 14 Pro"],  # デバイス名を確認
+      devices: ["iPhone 14 Pro (17.0)"],  # デバイス名を確認
       include_simulator_logs: false
     )
   end
