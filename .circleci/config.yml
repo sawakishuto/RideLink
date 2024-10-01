@@ -7,7 +7,7 @@ jobs:
   build-and-test:
     macos:
       xcode: "14.2"
-      resource_class: medium
+      resource_class: small
     environment:
       FL_OUTPUT_DIR: output
       FASTLANE_LANE: test
