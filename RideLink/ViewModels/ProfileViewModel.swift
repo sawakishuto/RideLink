@@ -12,7 +12,6 @@ import UIKit
 let today = Calendar.current.startOfDay(for: Date())
 
 class ProfileViewModel: ObservableObject {
-    //認証ができていないのでmockデータを入れている
     @Published var originalData: UserProfileModel = UserProfileModel(uuid: nil, name: "", bike: "", iconBase64: "", isTouring: false)
     @Published var canSave: Bool = false
     @Published var iconImageData: Data? = nil
@@ -30,8 +29,8 @@ class ProfileViewModel: ObservableObject {
                 }
             } receiveValue: { [weak self] userProfile in
                 guard let self = self else {return}
-                originalData = userProfile
-                iconImageData = userProfile.iconImage
+                self.originalData = userProfile
+                self.iconImageData = userProfile.iconImage
             }
             .store(in: &cancellables)
     }
