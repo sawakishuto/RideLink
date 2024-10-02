@@ -9,8 +9,7 @@ platform :ios do
   lane :test do
   
   # Swiftのバージョン確認
-  sh("swift --version")
-    scan(
+scan(
       devices: ["iPhone 14 Pro"],  # デバイス名を確認
       include_simulator_logs: false
     )
