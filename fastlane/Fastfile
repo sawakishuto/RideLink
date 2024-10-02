@@ -7,6 +7,12 @@ platform :ios do
 
   desc "Runs all the tests"
   lane :test do
+  sh("brew install swift@5.8")  # Swift 5.8をインストール
+  sh("echo 'export PATH=\"/usr/local/opt/swift@5.8/bin:$PATH\"' >> ~/.bash_profile")  # 環境変数に追加
+  sh("source ~/.bash_profile")  # 環境変数を読み込む
+  
+  # Swiftのバージョン確認
+  sh("swift --version")
     scan(
       devices: ["iPhone 14 Pro"],  # デバイス名を確認
       include_simulator_logs: false
