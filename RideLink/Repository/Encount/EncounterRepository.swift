@@ -21,19 +21,23 @@ final class EncounterRepository: EncounterRepositoryProtocol {
     }
 
     func postTouringEnd() {
-        apiClient.fetchData(endPoint: paths.touringEnd.rawValue, params: nil, type: Never.self)
-            .sink {
-                switch $0 {
-                case .finished:
-                    return
-                case .failure(let error):
+        if #available(iOS 17.0, *) {
+            apiClient.fetchData(endPoint: paths.touringEnd.rawValue, params: nil, type: Never.self)
+                .sink {
+                    switch $0 {
+                    case .finished:
+                        return
+                    case .failure(let error):
+                        return
+                    }
+                } receiveValue: {
+                    print($0)
                     return
                 }
-            } receiveValue: {
-                print($0)
-                return
-            }
-            .store(in: &self.cancellables)
+                .store(in: &self.cancellables)
+        } else {
+            // Fallback on earlier versions
+        }
 
     }
 
