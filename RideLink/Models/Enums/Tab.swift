@@ -18,13 +18,13 @@ extension Tab {
         switch self {
 
         case .map:
-            "map"
+            return "map"
         case .encounts:
-            "repeat"
+            return "repeat"
         case .friends:
-            "person.2"
+            return "person.2"
         case .settings:
-            "gearshape"
+            return "gearshape"
         }
     }
 }
