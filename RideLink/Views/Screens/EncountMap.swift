@@ -27,8 +27,7 @@ struct EncountMap: View {
                 }
             }
         } else {
-           
-            // Fallback on earlier versions
+            EmptyView()
         }
     }
 }

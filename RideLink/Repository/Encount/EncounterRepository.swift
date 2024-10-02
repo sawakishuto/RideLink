@@ -36,7 +36,7 @@ final class EncounterRepository: EncounterRepositoryProtocol {
                 }
                 .store(in: &self.cancellables)
         } else {
-            // Fallback on earlier versions
+            print("FallBack")
         }
 
     }
