@@ -6,20 +6,13 @@ orbs:
 jobs:
   build-and-test:
     macos:
-      xcode: "15.4"
+      xcode: "15.4.0"  # このXcodeバージョンに合ったSwiftが含まれます
     environment:
       FL_OUTPUT_DIR: output
-      FASTLANE_LANE: test
+      FASTLANE_LANE: build_and_test
     shell: /bin/bash --login -o pipefail
     steps:
       - checkout
-      - run:
-          name: Install Swift
-          command: |
-            brew install swift@5.8  # Swiftのバージョンを指定
-            echo 'export PATH="/usr/local/opt/swift@5.8/bin:$PATH"' >> $BASH_ENV
-            source $BASH_ENV
-      - run: bundle install
       - run:
           name: Fastlane
           command: bundle exec fastlane $FASTLANE_LANE
