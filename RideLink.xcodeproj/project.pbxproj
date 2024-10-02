@@ -262,13 +262,6 @@
 			path = MapView;
 			sourceTree = "<group>";
 		};
-		08654BB32C1982EB00A88CFF /* Recovered References */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = "Recovered References";
-			sourceTree = "<group>";
-		};
 		08654BB62C1984EB00A88CFF /* EncountView */ = {
 			isa = PBXGroup;
 			children = (
@@ -297,7 +290,6 @@
 				08C0BCD72BB321AC0088109A /* RideLinkTests */,
 				08C0BCE12BB321AC0088109A /* RideLinkUITests */,
 				08C0BCC52BB321AA0088109A /* Products */,
-				08654BB32C1982EB00A88CFF /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -1062,8 +1054,7 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit";
 			requirement = {
-				kind = versionRange;
-				maximumVersion = 5.6.2;
+				kind = upToNextMajorVersion;
 				minimumVersion = 5.6.0;
 			};
 		};
