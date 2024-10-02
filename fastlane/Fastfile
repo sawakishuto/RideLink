@@ -7,7 +7,9 @@ platform :ios do
 
   desc "Runs all the tests"
   lane :test do
-    scan(
+  
+  # Swiftのバージョン確認
+scan(
       devices: ["iPhone 14 Pro"],  # デバイス名を確認
       include_simulator_logs: false
     )
